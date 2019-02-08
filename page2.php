@@ -8,19 +8,29 @@
 <body>
 <h2>
 <?php
-    $first = $_POST['first'];
-    $last = $_POST['last'];
-    printf("You entered %s %s as your name.<p>",$first,$last);
+    $name = $_POST['name'];
+    $user_name = $_POST['user_name'];
+    $password = $_POST['password'];
+    $user_level = $_POST['user_level'];
+    
+    printf("You entered %s %s %s %s as your name.<p>",$name,$user_name, $password, $user_level);
     $con = mysqli_connect("localhost","root");
 
-    mysqli_select_db($con, "lab2");
+    mysqli_select_db($con, "Bughound");
     
-    $query = "INSERT INTO people (first, last) VALUES ('".$first."','".$last."')";
+    $query = "INSERT INTO employees (
+        name, 
+        user_name,
+        password,
+        user_level
+    ) VALUES ('".$name."','".$user_name."','".$password."','".$user_level."')";
     
     echo $query;
     
     mysqli_query($con, $query);
-    
+    header("Location:page3.php");
+    exit;
+
     
     ?>
 You have successfully completed Lab1!

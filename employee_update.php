@@ -5,7 +5,7 @@
         <title>CECS 544 Lab 4</title>
     </head>
     <body>
-        <h1>Add an Employee</h1>
+        <h1>Update an Employee</h1>
         <form action="page2.php" method="post" onsubmit="return validate(this)">
             <table>
                 <tr><td>Name</td><td><input type="Text" name="name"</td></tr>

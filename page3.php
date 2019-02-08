@@ -7,7 +7,7 @@
 
 <meta charset="UTF-8">
 
-<title>View Names</title>
+<title>View-Select Edit Employees</title>
 
 </head>
 
@@ -22,21 +22,29 @@
 //MISSING construct query string for all the contents of people
 
 //MISSING execute the query
-
-echo "<table border=1 ><th>ID</th><th>First</th><th> Last</Th>\n";
+echo "<h1>View-Select edit for Employees</h1>";
+echo "<table border=1 ><th>ID</th><th>First</th>\n";
 
 $none = 0;
 
 $con = mysqli_connect("localhost","root");
-mysqli_select_db($con, "lab2");
-$sql = "SELECT ID, first, last FROM people";
+mysqli_select_db($con, "Bughound");
+$sql = "SELECT * FROM employees";
 $result = $con->query($sql);
 
 while($row=mysqli_fetch_row($result)) {
 
 $none=1;
 
-printf("<tr><td>%d</td><td>%s</td><td>%s</td></tr>\n",$row[0],$row[1],$row[2]);
+$employee_url = "employee_update.php/?eid=";
+$employee_number = '';
+
+printf("
+    <tr>
+        <td><a href='$employee_url'>%d</a></td>
+        <td>%s</td>
+    </tr>\n",$row[0],$row[1]
+);
 
 }
 
