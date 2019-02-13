@@ -5,43 +5,54 @@
         <title>CECS 544 Lab 4</title>
     </head>
     <body>
-        <h1>Add an Employee</h1>
+        <h1>Lab 4</h1>
         <form action="page2.php" method="post" onsubmit="return validate(this)">
             <table>
-                <tr><td>Name</td><td><input type="Text" name="name"</td></tr>
-                <tr><td>User Name</td><td><input type="Text" name="user_name"</td></tr>    
-                <tr><td>Password</td><td><input type="Text" name="password"</td></tr>    
-                <tr>
-                    <td>User Level</td>
-                    <td>
-                        <input type="number" name="user_level" min="1" max="5" step="1" value="1">
-                    </td>
-                </tr>        
+				<tr><td>Name:</td><td><input type="Text" name="name"</td></tr>
+                <tr><td>Username:</td><td><input type="Text" name="username"</td></tr>
+                <tr><td>Password:</td><td><input type="Password" name="password"</td></tr>
+				<tr><td>Userlevel:</td><td>
+					<select type="number" name="userlevel" size=1>
+					  <option value="1">1</option>
+					  <option value="2">2</option>
+					  <option value="3">3</option>
+					  <option value="4">4</option>
+					</select></td>
+				</tr>
             </table>
             <input type="submit" name="submit" value="Next">
             <input type="submit" name="cancel" value="Cancel">
         </form>
-        <p>
-            <h3>
-                <A href="page3.php"><span class=\"linkline\">View Names</span></a>
-            </h3>
-        </p>
+		<p>
+			<h3>
+				<A href="page3.php"><span class=\"linkline\">View Names</span></a> 
+			</h3>
+		</p>
+
         <script language=Javascript>
             function validate(theform) {
                 if(theform.name.value === ""){
-                    alert ("Name field must contain characters");
+                    alert ("First name field must contain characters");
                     return false;
                 }
-                if(theform.user_name.value === ""){
-                    alert ("User name field must contain characters");
+                if(theform.username.value === ""){
+                    alert ("Last name field must contain characters");
                     return false;
                 }
-                if(theform.password.value === ""){
-                    alert ("Password field must contain characters");
+				if(theform.password.value === ""){
+                    alert ("First name field must contain characters");
+                    return false;
+                }
+				if(theform.userlevel.value === ""){
+                    alert ("First name field must contain characters");
+                    return false;
+                }
+				if(theform.name.value === ""){
+                    alert ("First name field must contain characters");
                     return false;
                 }
                 return true;
             }
-</script>
+		</script>
     </body>
 </html>
