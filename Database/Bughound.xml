@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.8.4
+- https://www.phpmyadmin.net
+-
+- Host: localhost
+- Generation Time: Feb 13, 2019 at 03:32 AM
+- Server version: 10.1.37-MariaDB
+- PHP Version: 7.3.1
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="Bughound" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="areas">
+                CREATE TABLE `areas` (
+                  `area_id` int(11) NOT NULL AUTO_INCREMENT,
+                  `area_name` varchar(512) NOT NULL,
+                  PRIMARY KEY (`area_id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="attachments">
+                CREATE TABLE `attachments` (
+                  `attachment_id` int(11) NOT NULL,
+                  `path` varchar(512) NOT NULL,
+                  `name` varchar(512) NOT NULL,
+                  `bug_id` int(11) NOT NULL,
+                  PRIMARY KEY (`attachment_id`),
+                  KEY `fk_bug_key` (`bug_id`),
+                  CONSTRAINT `fk_bug_key` FOREIGN KEY (`bug_id`) REFERENCES `bugs` (`bug_id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="bugs">
+                CREATE TABLE `bugs` (
+                  `bug_id` int(11) NOT NULL AUTO_INCREMENT,
+                  `program_id` int(11) NOT NULL,
+                  `report_type` varchar(512) NOT NULL,
+                  `severity` varchar(512) NOT NULL,
+                  `problem_summary` varchar(512) NOT NULL,
+                  `problem` varchar(512) NOT NULL,
+                  `suggested_fix` varchar(512) NOT NULL,
+                  `bug_date` date NOT NULL,
+                  `area_id` int(11) NOT NULL,
+                  `assignee` int(11) NOT NULL,
+                  `comments` varchar(512) NOT NULL,
+                  `status` varchar(512) NOT NULL,
+                  `priority` int(11) NOT NULL,
+                  `resolution` int(11) NOT NULL,
+                  `resolution version` int(11) NOT NULL,
+                  `resolvee` int(11) NOT NULL,
+                  `resolve_date` date NOT NULL,
+                  `testee` int(11) NOT NULL,
+                  `test_date` int(11) NOT NULL,
+                  `employee_id` int(11) NOT NULL,
+                  PRIMARY KEY (`bug_id`),
+                  KEY `fk_program_key` (`program_id`),
+                  KEY `fk_area_key` (`area_id`),
+                  KEY `fk_employee_id` (`employee_id`),
+                  CONSTRAINT `fk_area_key` FOREIGN KEY (`area_id`) REFERENCES `areas` (`area_id`),
+                  CONSTRAINT `fk_employee_id` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`),
+                  CONSTRAINT `fk_program_key` FOREIGN KEY (`program_id`) REFERENCES `programs` (`program_id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="employees">
+                CREATE TABLE `employees` (
+                  `employee_id` int(11) NOT NULL AUTO_INCREMENT,
+                  `name` varchar(512) NOT NULL,
+                  `user_name` varchar(512) NOT NULL,
+                  `password` varchar(512) NOT NULL,
+                  `user_level` int(11) NOT NULL,
+                  PRIMARY KEY (`employee_id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="programs">
+                CREATE TABLE `programs` (
+                  `program_id` int(11) NOT NULL AUTO_INCREMENT,
+                  `program_name` varchar(512) NOT NULL,
+                  `version` int(11) NOT NULL,
+                  PRIMARY KEY (`program_id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'Bughound'
+    -->
+    <database name="Bughound">
+        <!-- Table areas -->
+        <!-- Table attachments -->
+        <!-- Table bugs -->
+        <!-- Table employees -->
+        <!-- Table programs -->
+    </database>
+</pma_xml_export>
