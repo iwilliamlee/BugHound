@@ -14,7 +14,7 @@
 				$userlevel = $_POST['userlevel'];
                 /* printf("You entered %s %s as your name.<p>",$first,$last);? */
 				$con = mysqli_connect("localhost","root");
-				mysqli_select_db($con, "employees");
+                mysqli_select_db($con, "Bughound");
 				$query = "INSERT INTO employees (name, user_name, password, user_level) VALUES ('".$name."','".$username."','".$password."','".$userlevel."')";
 				/* echo $query; */
 				mysqli_query($con, $query);

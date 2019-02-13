@@ -8,7 +8,7 @@
     <body>
         <?php
 			$con = mysqli_connect("localhost","root");
-			mysqli_select_db($con, "employees");
+            mysqli_select_db($con, "Bughound");
 			$query = "SELECT * FROM employees";
 			$result = mysqli_query($con, $query);
             echo "<table border=1 ><th>ID</th><th>Name</th>\n";

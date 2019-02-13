@@ -13,17 +13,17 @@
 			$password;
 			$level;
 			$con = mysqli_connect("localhost","root");
-			mysqli_select_db($con, "employees");
-			$query = "SELECT * FROM employees WHERE empoloyee_id = '$id' ";
-			//echo $query;
-			$result = mysqli_query($con, $query);
+            mysqli_select_db($con, "Bughound");
+			$query = "SELECT user_name, password, user_level, name FROM employees WHERE employee_id = '$id' ";
+            //echo $query;
             $none = 0;
+			$result = mysqli_query($con, $query);
             while($row=mysqli_fetch_row($result)) {
                 $none=1;
-				$username = $row[1];
-				$password = $row[2];
-				$level = $row[3];
-				$name = $row[4];
+				$username = $row[0];
+				$password = $row[1];
+				$level = $row[2];
+				$name = $row[3];
             }
 		?>
 		<form action="page5.php" method="post" onsubmit="return validate(this)">
