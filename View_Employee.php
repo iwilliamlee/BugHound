@@ -14,7 +14,10 @@
             $none = 0;
             while($row=mysqli_fetch_row($result)) {
                 $none=1;
-                printf("<tr><td><A href='Updating_Employee.php?employee_id={$row[0]}'><span class=\"linkline\">%d</span></a> </td><td>%s</td></tr>\n",$row[0],$row[1]);
+                printf(
+                    "<tr><td><A href='Updating_Employee.php?employee_id={$row[0]}'>
+                    <span class=\"linkline\">%d</span></a>
+                    </td><td>%s</td></tr>\n",$row[0],$row[1]);
             }
         ?>
         </table>

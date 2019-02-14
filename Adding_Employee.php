@@ -14,8 +14,14 @@
 				$userlevel = $_POST['userlevel'];
 				$con = mysqli_connect("localhost","root");
                 mysqli_select_db($con, "Bughound");
-				$query = "INSERT INTO employees (name, user_name, password, user_level) VALUES ('".$name."','".$username."','".$password."','".$userlevel."')";
-				/* echo $query; */
+				$query = "INSERT INTO employees (
+                    name, user_name, 
+                    password, 
+                    user_level)
+                    VALUES ('".$name."',
+                        '".$username."',
+                        '".$password."',
+                        '".$userlevel."')";
 				mysqli_query($con, $query);
                 printf("<p>Employee %s added.<p>",$name);
             ?>

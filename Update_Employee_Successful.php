@@ -15,9 +15,13 @@
 				$userlevel = $_POST['userlevel'];
 				$con = mysqli_connect("localhost","root");
                 mysqli_select_db($con, "Bughound");
-				$query = "UPDATE employees SET name = '$name', user_name = '$username', password = '$password', user_level = '$userlevel' WHERE employee_id = '$id' ";
+				$query = "UPDATE employees SET 
+                    name = '$name', 
+                    user_name = '$username', 
+                    password = '$password', 
+                    user_level = '$userlevel' 
+                    WHERE employee_id = '$id' ";
 				mysqli_query($con, $query);
-
             ?>
             You have successfully updated employee: <?php printf("<p> %s.<p>",$name); ?>
             <p>
@@ -28,6 +32,5 @@
                 window.location.replace("index.php");
             }
         </script>
-            
     </body>
 </html>
