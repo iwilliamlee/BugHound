@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>View Names</title>
+        <title>BugHound View Employee</title>
     </head>
     <body>
         <?php
@@ -15,7 +14,7 @@
             $none = 0;
             while($row=mysqli_fetch_row($result)) {
                 $none=1;
-                printf("<tr><td><A href='page4.php?employee_id={$row[0]}'><span class=\"linkline\">%d</span></a> </td><td>%s</td></tr>\n",$row[0],$row[1]);
+                printf("<tr><td><A href='Updating_Employee.php?employee_id={$row[0]}'><span class=\"linkline\">%d</span></a> </td><td>%s</td></tr>\n",$row[0],$row[1]);
             }
         ?>
         </table>

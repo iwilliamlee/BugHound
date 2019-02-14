@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>View Names</title>
+        <title>BugHound Updating Employee</title>
     </head>
     <body>
         <?php
@@ -26,12 +26,12 @@
 				$name = $row[3];
             }
 		?>
-		<form action="page5.php" method="post" onsubmit="return validate(this)">
+		<form action="Updating_Employee_successful.php" method="post" onsubmit="return validate(this)">
             <table>
 				<input type="hidden" name="ID" value="<?php echo htmlspecialchars($id); ?>">
 				<tr><td>Name:</td><td><input type="Text" name="name" value="<?php echo htmlspecialchars($name); ?>"</td></tr>
                 <tr><td>Username:</td><td><input type="Text" name="username" value="<?php echo htmlspecialchars($username); ?>"</td></tr>
-                <tr><td>Password:</td><td><input type="Password" name="password" value="PASSWORD"</td></tr>
+                <tr><td>Password:</td><td><input type="Password" name="password" value="<?php echo htmlspecialchars($password); ?>"</td></tr>
 				<tr><td>Userlevel:</td><td>
 					<select type="number" name="userlevel" size=1 value="4">
 					  <option value="1" <?php if($level == 1) { ?> selected="selected" <?php } ?> >1</option>

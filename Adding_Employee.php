@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>CECS 544 Lab 4 Page 2</title>
+        <title>BugHound Adding Employee</title>
     </head>
     <body>
         <h2>
@@ -12,16 +12,14 @@
                 $username = $_POST['username'];
 				$password = $_POST['password'];
 				$userlevel = $_POST['userlevel'];
-                /* printf("You entered %s %s as your name.<p>",$first,$last);? */
 				$con = mysqli_connect("localhost","root");
                 mysqli_select_db($con, "Bughound");
 				$query = "INSERT INTO employees (name, user_name, password, user_level) VALUES ('".$name."','".$username."','".$password."','".$userlevel."')";
 				/* echo $query; */
 				mysqli_query($con, $query);
-
+                printf("<p>Employee %s added.<p>",$name);
             ?>
             You have successfully added an Employee!
-            <p>
             <input type="button" value="Return" id=button1 name=button1 onclick="go_home()">    
         </h2>
         <script language=Javascript>

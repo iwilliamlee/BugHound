@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>CECS 544 Lab 4 Page 5</title>
+        <title>BugHound Update Successful</title>
     </head>
     <body>
         <h2>

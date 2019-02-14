@@ -2,15 +2,18 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>CECS 544 Lab 4</title>
+        <title>BugHound Home Page</title>
     </head>
     <body>
-        <h1>Lab 4</h1>
-        <form action="page2.php" method="post" onsubmit="return validate(this)">
+        <h1>BugHound Employee</h1>
+        <form action="Adding_Employee.php" method="post" onsubmit="return validate(this)">
             <table>
-				<tr><td>Name:</td><td><input type="Text" name="name"</td></tr>
-                <tr><td>Username:</td><td><input type="Text" name="username"</td></tr>
-                <tr><td>Password:</td><td><input type="Password" name="password"</td></tr>
+				<tr><td>Name:</td><td>
+                    <input type="Text" name="name"</td></tr>
+                <tr><td>Username:</td><td>
+                    <input type="Text" name="username"</td></tr>
+                <tr><td>Password:</td><td>
+                    <input type="Password" name="password"</td></tr>
 				<tr><td>Userlevel:</td><td>
 					<select type="number" name="userlevel" size=1>
 					  <option value="1">1</option>
@@ -25,7 +28,7 @@
         </form>
 		<p>
 			<h3>
-				<A href="page3.php"><span class=\"linkline\">View Names</span></a> 
+				<A href="View_Employee.php"><span class=\"linkline\">View Names</span></a> 
 			</h3>
 		</p>
 
