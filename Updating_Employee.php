@@ -26,7 +26,7 @@
 				$name = $row[3];
             }
 		?>
-		<form action="Updating_Employee_successful.php" method="post" onsubmit="return validate(this)">
+		<form action="Update_Employee_Successful.php" method="post" onsubmit="return validate(this)">
             <table>
 				<input type="hidden" name="ID" value="<?php echo htmlspecialchars($id); ?>">
 				<tr><td>Name:</td><td><input type="Text" name="name" value="<?php echo htmlspecialchars($name); ?>"</td></tr>

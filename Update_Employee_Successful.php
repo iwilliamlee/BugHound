@@ -19,7 +19,7 @@
 				mysqli_query($con, $query);
 
             ?>
-            You have successfully updated an Employee!
+            You have successfully updated employee: <?php printf("<p> %s.<p>",$name); ?>
             <p>
             <input type="button" value="Return" id=button1 name=button1 onclick="go_home()">    
         </h2>
