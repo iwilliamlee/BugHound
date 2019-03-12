@@ -25,11 +25,16 @@
             if($none==0)
 		Echo "<h3>No matching records found.</h3>\n";
         ?>
+        <p><INPUT type="button" value="Create" id=button1 name=button1 onclick="create()">
+
         <p><INPUT type="button" value="Cancel" id=button1 name=button1 onclick="go_home()">
         <script language=Javascript>
 
+            function create() {
+                window.location.replace("./add_employee_page.php");
+            }
             function go_home() {
-                window.location.replace("index.php");
+                window.location.replace("../index.php");
             }
 
 </script>    

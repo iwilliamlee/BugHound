@@ -1,3 +1,72 @@
-<?php		if(isset($_POST['name']) && isset($_POST['username']) && isset($_POST['password'])){		$name = $_POST['name'];		$username = $_POST['username'];		$password = $_POST['password'];		$level = $_POST['user_level'];		$con = mysqli_connect("localhost","root","","bug_hound"); 		mysqli_select_db($con, "bug_hound");		$query = "INSERT INTO employee (name, password, user_name, user_level) VALUES ('".$name."','".$password."', '".$username."', '".$level."')";		mysqli_query($con, $query);		header("Location: employee.php");				die();		}	if(isset($_POST['program_name']) && isset($_POST['release']) && isset($_POST['version'])){		$name = $_POST['program_name'];		$release = $_POST['release'];		$version = $_POST['version'];		$con = mysqli_connect("localhost","root","","bug_hound"); 		mysqli_select_db($con, "bug_hound");		$query_check = "SELECT `name`, `release_build`, `version` FROM `programs` WHERE `name`= '".$name."' AND `release_build`= '".$release."' AND `version` = '".$version."'";		$result = mysqli_query($con, $query_check);		if (mysqli_num_rows($result) != 0){			echo "<SCRIPT type='text/javascript'>				alert('Program Already In Database');				window.location.replace('program.php');				</SCRIPT>";			}			else {			$query = "INSERT INTO programs (name, release_build, version) VALUES ('".$name."','".$release."', '".$version."')";			mysqli_query($con, $query);			header("Location: program.php");					}				die();	}	
-		if(isset($_POST['area_name'])){		$name = $_POST['area_name'];		$con = mysqli_connect("localhost","root","","bug_hound"); 		mysqli_select_db($con, "bug_hound");		$query_check = "SELECT * FROM `functional_area` WHERE `name` = '".$name."'";		$result = mysqli_query($con, $query_check);		if (mysqli_num_rows($result) != 0){			echo "<SCRIPT type='text/javascript'>				alert('Area Already In Database');				window.location.replace('area.php');				</SCRIPT>";			}			else {			$query = "INSERT INTO `functional_area`(`name`) VALUES ('".$name."')";			mysqli_query($con, $query);			header("Location: area.php");				}				die();		}			
-?>
+
+
+<?php
+	
+	if(isset($_POST['name']) && isset($_POST['username']) && isset($_POST['password'])){
+		$name = $_POST['name'];
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		$level = $_POST['user_level'];
+
+		$con = mysqli_connect("localhost","root");
+		mysqli_select_db($con, "Bughound");
+
+		$query = "INSERT INTO employees (name, password, user_name, user_level) VALUES ('".$name."','".$password."', '".$username."', '".$level."')";
+
+		mysqli_query($con, $query);
+		header("Location: employee.php");
+		
+		die();	
+	}
+
+	//If it is a post to program
+	if(isset($_POST['program_name'])){
+		$name = $_POST['program_name'];
+		$release = $_POST['release'];
+		$version = $_POST['version'];
+
+		$con = mysqli_connect("localhost","root");
+		mysqli_select_db($con, "Bughound");
+
+		$query_check = "SELECT `program_name`, `release_build`, `version` FROM `programs` WHERE `name`= '".$name."' AND `release_build`= '".$release."' AND `version` = '".$version."'";
+		$result = mysqli_query($con, $query_check);
+		if (mysqli_num_rows($result) != 0){
+			echo "<SCRIPT type='text/javascript'>
+				alert('Program Already In Database');
+				window.location.replace('program.php');
+				</SCRIPT>";	
+		}	
+		else {
+			$query;
+			$query = "INSERT INTO programs (program_name, release_build, version) VALUES ('".$name."','".$release."', '".$version."')";
+			mysqli_query($con, $query);
+			header("Location: ./program/program.php");	
+		}		
+		die();
+	}	
+	
+	if(isset($_POST['area_name'])){
+		$name = $_POST['area_name'];
+
+		$con = mysqli_connect("localhost","root");
+		mysqli_select_db($con, "Bughound");
+
+		$query_check = "SELECT * FROM `areas` WHERE `area_name` = '".$name."'";
+		$result = mysqli_query($con, $query_check);
+
+		if (mysqli_num_rows($result) != 0){
+			echo "<SCRIPT type='text/javascript'>
+				alert('Area Already In Database');
+				window.location.replace('area.php');
+				</SCRIPT>";	
+		}	
+		else {
+			$query = "INSERT INTO `areas`(`area_name`) VALUES ('".$name."')";
+			mysqli_query($con, $query);
+			header("Location: ./area/area.php");		
+		}		
+		die();	
+	}
+	
+?>
+

@@ -1,9 +1,9 @@
 		<?php
 		    $username = $_POST['username'];
 			$password = $_POST['password'];
-			$con = mysqli_connect("localhost","root","","bug_hound"); 
-			mysqli_select_db($con, "bug_hound");
-			$query = "SELECT * FROM `employee` WHERE user_name='".$username."' AND password='".$password."';";
+			$con = mysqli_connect("localhost","root");
+			mysqli_select_db($con, "Bughound");
+			$query = "SELECT * FROM `employees` WHERE user_name='".$username."' AND password='".$password."';";
 			$result = mysqli_query($con, $query);
 			if (mysqli_num_rows($result) == 0)
 			{ 
@@ -24,7 +24,7 @@
 				$_SESSION["username"] = $username;
 				$_SESSION["login"] = true;
 				
-				header("Location: main.php");
+				header("Location: index.php");
 				die();
 			}
 		?>

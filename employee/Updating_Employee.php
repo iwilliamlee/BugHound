@@ -77,7 +77,7 @@
         <p><INPUT type="button" value="Cancel" id=button1 name=button1 onclick="go_home()">
         <script language=Javascript>
             function go_home() {
-                window.location.replace("index.php");
+                window.location.replace("add_employee_page.php");
             }
 
 </script>    
