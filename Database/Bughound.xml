@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 - phpMyAdmin XML Dump
-- version 4.8.4
+- version 4.8.5
 - https://www.phpmyadmin.net
 -
-- Host: localhost
-- Generation Time: Feb 13, 2019 at 03:32 AM
-- Server version: 10.1.37-MariaDB
-- PHP Version: 7.3.1
+- Host: 127.0.0.1
+- Generation Time: Mar 12, 2019 at 10:23 AM
+- Server version: 10.1.38-MariaDB
+- PHP Version: 7.3.2
 -->
 
 <pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
@@ -15,13 +15,13 @@
     - Structure schemas
     -->
     <pma:structure_schemas>
-        <pma:database name="Bughound" collation="latin1_swedish_ci" charset="latin1">
+        <pma:database name="bughound" collation="latin1_swedish_ci" charset="latin1">
             <pma:table name="areas">
                 CREATE TABLE `areas` (
                   `area_id` int(11) NOT NULL AUTO_INCREMENT,
                   `area_name` varchar(512) NOT NULL,
                   PRIMARY KEY (`area_id`)
-                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="attachments">
                 CREATE TABLE `attachments` (
@@ -47,10 +47,10 @@
                   `area_id` int(11) NOT NULL,
                   `assignee` int(11) NOT NULL,
                   `comments` varchar(512) NOT NULL,
-                  `status` varchar(512) NOT NULL,
+                  `bug_status` varchar(512) NOT NULL,
                   `priority` int(11) NOT NULL,
                   `resolution` int(11) NOT NULL,
-                  `resolution version` int(11) NOT NULL,
+                  `resolution_version` int(11) NOT NULL,
                   `resolvee` int(11) NOT NULL,
                   `resolve_date` date NOT NULL,
                   `testee` int(11) NOT NULL,
@@ -63,7 +63,7 @@
                   CONSTRAINT `fk_area_key` FOREIGN KEY (`area_id`) REFERENCES `areas` (`area_id`),
                   CONSTRAINT `fk_employee_id` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`),
                   CONSTRAINT `fk_program_key` FOREIGN KEY (`program_id`) REFERENCES `programs` (`program_id`)
-                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="employees">
                 CREATE TABLE `employees` (
@@ -73,7 +73,7 @@
                   `password` varchar(512) NOT NULL,
                   `user_level` int(11) NOT NULL,
                   PRIMARY KEY (`employee_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="programs">
                 CREATE TABLE `programs` (
@@ -81,19 +81,64 @@
                   `program_name` varchar(512) NOT NULL,
                   `version` int(11) NOT NULL,
                   PRIMARY KEY (`program_id`)
-                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
             </pma:table>
         </pma:database>
     </pma:structure_schemas>
 
     <!--
-    - Database: 'Bughound'
+    - Database: 'bughound'
     -->
-    <database name="Bughound">
+    <database name="bughound">
         <!-- Table areas -->
+        <table name="areas">
+            <column name="area_id">1</column>
+            <column name="area_name">area1</column>
+        </table>
         <!-- Table attachments -->
         <!-- Table bugs -->
         <!-- Table employees -->
+        <table name="employees">
+            <column name="employee_id">3</column>
+            <column name="name">Steven Duong</column>
+            <column name="user_name">stvduong</column>
+            <column name="password">bob</column>
+            <column name="user_level">1</column>
+        </table>
+        <table name="employees">
+            <column name="employee_id">4</column>
+            <column name="name">William Lee</column>
+            <column name="user_name">wlee</column>
+            <column name="password">ross</column>
+            <column name="user_level">2</column>
+        </table>
+        <table name="employees">
+            <column name="employee_id">5</column>
+            <column name="name">Bobross</column>
+            <column name="user_name">bross</column>
+            <column name="password">as;lkjdf</column>
+            <column name="user_level">1</column>
+        </table>
         <!-- Table programs -->
+        <table name="programs">
+            <column name="program_id">1</column>
+            <column name="program_name">Eclipse</column>
+            <column name="version">4</column>
+        </table>
+        <table name="programs">
+            <column name="program_id">2</column>
+            <column name="program_name">Eclipse</column>
+            <column name="version">3</column>
+        </table>
+        <table name="programs">
+            <column name="program_id">3</column>
+            <column name="program_name">Net Beans</column>
+            <column name="version">1</column>
+        </table>
+        <table name="programs">
+            <column name="program_id">4</column>
+            <column name="program_name">Net Beans</column>
+            <column name="version">2</column>
+        </table>
     </database>
 </pma_xml_export>
