@@ -12,6 +12,9 @@
 				<input type="button" onclick="window.location.href = './report/Bug_Report.php';" value="Submit Bug", id="bug"/>	
 			</td></tr>
 			<tr><td>
+				<input type="button" onclick="window.location.href = './report/Bug_View.php';" value="View Bug", id="bug"/>	
+			</td></tr>
+			<tr><td>
 				<input type="button" onclick="window.location.href = './employee/View_Employee.php';" value="Edit Employees", id="bug"/>		
 			</td></tr>
 			<tr><td>
