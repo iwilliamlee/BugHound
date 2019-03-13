@@ -14,7 +14,7 @@
 		$query = "INSERT INTO employees (name, password, user_name, user_level) VALUES ('".$name."','".$password."', '".$username."', '".$level."')";
 
 		mysqli_query($con, $query);
-		header("Location: employee.php");
+		header("Location: ../employee/employee.php");
 		
 		die();	
 	}
@@ -32,14 +32,14 @@
 		if (mysqli_num_rows($result) != 0){
 			echo "<SCRIPT type='text/javascript'>
 				alert('Program Already In Database');
-				window.location.replace('program.php');
+				window.location.replace('../program/program.php');
 				</SCRIPT>";	
 		}	
 		else {
 			$query;
 			$query = "INSERT INTO programs (program_name, release_build) VALUES ('".$name."','".$release."')";
 			mysqli_query($con, $query);
-			header("Location: ./program/program.php");	
+			header("Location: ../program/program.php");	
 		}		
 		die();
 	}	
@@ -56,13 +56,13 @@
 		if (mysqli_num_rows($result) != 0){
 			echo "<SCRIPT type='text/javascript'>
 				alert('Area Already In Database');
-				window.location.replace('area.php');
+				window.location.replace('../area/area.php');
 				</SCRIPT>";	
 		}	
 		else {
 			$query = "INSERT INTO `areas`(`area_name`) VALUES ('".$name."')";
 			mysqli_query($con, $query);
-			header("Location: ./area/area.php");		
+			header("Location: ../area/area.php");		
 		}		
 		die();	
 	}

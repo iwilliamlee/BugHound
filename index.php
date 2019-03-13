@@ -26,7 +26,7 @@
 
 
 		<?php
-			include 'validate_user.php';		
+			include 'auth/validate_user.php';		
 			isLoggedIn();
 			
 			$valid_level =  isValidLevel(3);

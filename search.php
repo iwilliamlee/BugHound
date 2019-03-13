@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?php
-	include 'validate_user.php';		
+	include 'auth/validate_user.php';		
 	isLoggedIn();
 	
 	$type = $_POST['type'];

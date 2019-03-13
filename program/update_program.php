@@ -22,7 +22,7 @@
 				$release = $row[1];
             }
 		?>
-        <form action="../update.php" method="post" onsubmit="return validate(this)">
+        <form action="../Database/update.php" method="post" onsubmit="return validate(this)">
             <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
             <table>
                 <tr><td>Name:</td><td><input type="Text" name="program_name" value="<?php echo htmlspecialchars($program_name); ?>"</td></tr>
@@ -50,7 +50,7 @@
         <p><INPUT type="button" value="Cancel" id=button1 name=button1 onclick="go_home()">
         <script language=Javascript>
             function go_home() {
-                window.location.replace("program.php");
+                document.location.href='/BugHound/program/program.php';
             }
 
 </script>    

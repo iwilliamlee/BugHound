@@ -19,7 +19,7 @@
 				$area_name = $row[0];
             }
 		?>
-        <form action="../update.php" method="post" onsubmit="return validate(this)">
+        <form action="../Database/update.php" method="post" onsubmit="return validate(this)">
             <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
             <table>
                 <tr><td>Name:</td><td><input type="Text" name="area_name" value="<?php echo htmlspecialchars($area_name); ?>"</td></tr>

@@ -30,7 +30,7 @@
         </h2>
         <script language=Javascript>
             function go_home(){
-                window.location.replace("add_employee_page.php");
+                window.location.replace("View_Employee.php");
             }
         </script>
             

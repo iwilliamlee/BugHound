@@ -15,7 +15,7 @@
             release_build = '$release' 
             WHERE program_id = '$id' ";
         mysqli_query($con, $query);
-        header("Location: ./program/program.php");
+        header("Location: ../program/program.php");
 		die();
     }
     
@@ -31,7 +31,7 @@
             area_name = '$name'
             WHERE area_id = '$id' ";
         mysqli_query($con, $query);
-        header("Location: ./area/area.php");
+        header("Location: ../area/area.php");
 		die();
 	}
 

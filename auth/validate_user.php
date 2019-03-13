@@ -8,7 +8,7 @@
 		if(!isset($_SESSION['login'])) {
 			echo "<SCRIPT type='text/javascript'>
 			alert('User is Not Logged In');
-			window.location.replace('login.php');
+			document.location.href='/BugHound/auth/login.php';
 			</SCRIPT>";	
 		}	
 	}

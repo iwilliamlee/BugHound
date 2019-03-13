@@ -7,12 +7,12 @@
     </head>
     <body>
 		<?php
-			include '../validate_user.php';		
+			include '../auth/validate_user.php';		
 			isLoggedIn();
 		?>
 		
         <h1>Add an Area</h1>
-        <form action="../add.php" method="post" onsubmit="return validate(this)">
+        <form action="../Database/add.php" method="post" onsubmit="return validate(this)">
             <table>
                 <tr><td>Name:</td><td><input type="Text" name="area_name"</td></tr>
             </table>

@@ -7,7 +7,7 @@
 	<body>
 		<h1> Area Page </h1>
 		<?php
-			include '../validate_user.php';		
+			include '../auth/validate_user.php';		
 			isLoggedIn();
 			
 			$con = mysqli_connect("localhost","root");
