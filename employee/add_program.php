@@ -19,8 +19,6 @@
                 <tr><td>Name:</td><td><input type="Text" name="program_name"</td></tr>
 
                 <tr><td>Release:</td><td><input type="Text" name="release"</td></tr> 
-
-                <tr><td>Version:</td><td><input type="Text" name="version"</td></tr> 
 			
             </table>
 

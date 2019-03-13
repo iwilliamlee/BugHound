@@ -7,14 +7,12 @@
 		$id = $_POST['id'];
 		$name = $_POST['program_name'];
 		$release = $_POST['release'];
-		$version = $_POST['version'];
 
         $con = mysqli_connect("localhost","root");
         mysqli_select_db($con, "Bughound");
         $query = "UPDATE programs SET 
             program_name = '$name', 
-            release_build = '$release', 
-            version = '$version' 
+            release_build = '$release' 
             WHERE program_id = '$id' ";
         mysqli_query($con, $query);
         header("Location: ./program/program.php");

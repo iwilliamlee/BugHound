@@ -8,12 +8,10 @@
         <?php
 			$id = $_GET['program_id'];
 			$program_name;
-			$version;
 			$release;
 			$con = mysqli_connect("localhost","root");
             mysqli_select_db($con, "Bughound");
 			$query = "SELECT program_name,
-                version,
                 release_build
                 FROM programs WHERE program_id = '$id' ";
             $none = 0;
@@ -21,8 +19,7 @@
             while($row=mysqli_fetch_row($result)) {
                 $none=1;
 				$program_name = $row[0];
-				$version = $row[1];
-				$release = $row[2];
+				$release = $row[1];
             }
 		?>
         <form action="../update.php" method="post" onsubmit="return validate(this)">
@@ -32,9 +29,6 @@
             </table>
             <table>
                 <tr><td>Release:</td><td><input type="Number" name="release" value="<?php echo htmlspecialchars($release); ?>"</td></tr>
-            </table>
-            <table>
-                <tr><td>Version:</td><td><input type="Number" name="version" value="<?php echo htmlspecialchars($version); ?>"</td></tr>
             </table>
             <input type="submit" name="submit" value="Submit">
         </form>
@@ -48,10 +42,6 @@
                 }
                 if(theform.release.value === ""){
                     alert ("Release field must contain a number");
-                    return false;
-                }
-                if(theform.version.value === ""){
-                    alert ("Version field must contain a number");
                     return false;
                 }
             }

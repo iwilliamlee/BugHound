@@ -20,10 +20,6 @@
             <table>
                 <tr><td>Release:</td><td><input type="Number" name="release"</td></tr>
             </table>
-            <table>
-                <tr><td>Version:</td><td><input type="Number" name="version"</td></tr>
-            </table>
-
             <input type="submit" name="submit" value="Submit">
 			<input type="button" value="Cancel" onclick="window.location.href = 'program.php'">
 
@@ -38,10 +34,6 @@
                 }
                 if(theform.release.value === ""){
                     alert ("Release field must contain a number");
-                    return false;
-                }
-                if(theform.version.value === ""){
-                    alert ("Version field must contain a number");
                     return false;
                 }
             }

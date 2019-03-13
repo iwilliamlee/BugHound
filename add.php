@@ -23,12 +23,11 @@
 	if(isset($_POST['program_name'])){
 		$name = $_POST['program_name'];
 		$release = $_POST['release'];
-		$version = $_POST['version'];
 
 		$con = mysqli_connect("localhost","root");
 		mysqli_select_db($con, "Bughound");
 
-		$query_check = "SELECT `program_name`, `release_build`, `version` FROM `programs` WHERE `name`= '".$name."' AND `release_build`= '".$release."' AND `version` = '".$version."'";
+		$query_check = "SELECT * FROM programs WHERE program_name = '".$name."' AND release_build= '".$release."'";
 		$result = mysqli_query($con, $query_check);
 		if (mysqli_num_rows($result) != 0){
 			echo "<SCRIPT type='text/javascript'>
@@ -38,7 +37,7 @@
 		}	
 		else {
 			$query;
-			$query = "INSERT INTO programs (program_name, release_build, version) VALUES ('".$name."','".$release."', '".$version."')";
+			$query = "INSERT INTO programs (program_name, release_build) VALUES ('".$name."','".$release."')";
 			mysqli_query($con, $query);
 			header("Location: ./program/program.php");	
 		}		
