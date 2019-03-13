@@ -10,7 +10,7 @@
         mysqli_select_db($con, "Bughound");
     ?>
         <h1>New Bug Report Entry Page</h1>
-        <form action="Bug_Adding.php" method="post">
+        <form action="Bug_Adding.php" method="post" enctype="multipart/form-data">
             <table>
                 <tr><!-- Line 1 -->
                     <td>Program:</td> 
@@ -76,6 +76,8 @@
                     <td><input type="Text" name="dateEntered" size="5"></td>
 				</tr>
             </table>
+            Select image to upload:
+            <input type="file" name="file[]" id="file" multiple="">
             <hr> <!--New Section-->
             <table><!--line 1-->
                 <tr>
@@ -169,8 +171,8 @@
                 </tr>
             </table>
             <input type="submit" name="submit" value="Next">
-            <input type="submit" name="reset" value="Reset">
-            <input type="submit" name="cancel" value="Cancel">
+            <input type="button" name="reset" value="Reset" onclick="reset()">
+            <input type="button" name="cancel" value="Cancel" onclick="go_home()">
         </form>
 <!--
         <script language=Javascript>
@@ -199,5 +201,13 @@
             }
 		</script>
 -->
+        <script language=Javascript>
+            function go_home() {
+                window.location.replace("../index.php");
+            }
+            function reset() {
+                window.location.reload(true);
+            }
+        </script>  
     </body>
 </html>
