@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 - phpMyAdmin XML Dump
-- version 4.8.4
+- version 4.8.5
 - https://www.phpmyadmin.net
 -
 - Host: localhost
@@ -15,7 +15,7 @@
     - Structure schemas
     -->
     <pma:structure_schemas>
-        <pma:database name="Bughound" collation="latin1_swedish_ci" charset="latin1">
+        <pma:database name="bughound" collation="latin1_swedish_ci" charset="latin1">
             <pma:table name="areas">
                 CREATE TABLE `areas` (
                   `area_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -63,7 +63,7 @@
                   CONSTRAINT `fk_area_key` FOREIGN KEY (`area_id`) REFERENCES `areas` (`area_id`),
                   CONSTRAINT `fk_employee_id` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`),
                   CONSTRAINT `fk_program_key` FOREIGN KEY (`program_id`) REFERENCES `programs` (`program_id`)
-                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="employees">
                 CREATE TABLE `employees` (
@@ -87,9 +87,9 @@
     </pma:structure_schemas>
 
     <!--
-    - Database: 'Bughound'
+    - Database: 'bughound'
     -->
-    <database name="Bughound">
+    <database name="bughound">
         <!-- Table areas -->
         <table name="areas">
             <column name="area_id">1</column>
