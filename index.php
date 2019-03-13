@@ -9,7 +9,7 @@
 
 		<table>
 			<tr><td>
-				<input type="button" onclick="window.location.href = 'bug_form.php';" value="Submit Bug", id="bug"/>	
+				<input type="button" onclick="window.location.href = './report/Bug_Report.php';" value="Submit Bug", id="bug"/>	
 			</td></tr>
 			<tr><td>
 				<input type="button" onclick="window.location.href = './employee/View_Employee.php';" value="Edit Employees", id="bug"/>		

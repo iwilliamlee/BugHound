@@ -15,7 +15,6 @@
                 $suggestedFix = $_POST['suggestedFix'];
                 $reportedBy = $_POST['reportedBy'];
                 $dateEntered = $_POST['dateEntered'];
-
                 $functionalArea = $_POST['functionalArea']; //should be area id
                 $assignedTo = $_POST['assignedTo'];
                 $comments = $_POST['comments'];
@@ -64,7 +63,7 @@
         </h2>
         <script language=Javascript>
             function go_home(){
-                window.location.replace("index.php");
+                window.location.replace("../index.php");
             }
         </script>
             

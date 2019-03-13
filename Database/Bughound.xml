@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 - phpMyAdmin XML Dump
-- version 4.8.5
+- version 4.8.4
 - https://www.phpmyadmin.net
 -
 - Host: localhost
-- Generation Time: Mar 13, 2019 at 01:15 AM
+- Generation Time: Mar 13, 2019 at 03:19 AM
 - Server version: 10.1.37-MariaDB
 - PHP Version: 7.3.1
 -->
@@ -15,13 +15,13 @@
     - Structure schemas
     -->
     <pma:structure_schemas>
-        <pma:database name="bughound" collation="latin1_swedish_ci" charset="latin1">
+        <pma:database name="Bughound" collation="latin1_swedish_ci" charset="latin1">
             <pma:table name="areas">
                 CREATE TABLE `areas` (
                   `area_id` int(11) NOT NULL AUTO_INCREMENT,
                   `area_name` varchar(512) NOT NULL,
                   PRIMARY KEY (`area_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="attachments">
                 CREATE TABLE `attachments` (
@@ -63,7 +63,7 @@
                   CONSTRAINT `fk_area_key` FOREIGN KEY (`area_id`) REFERENCES `areas` (`area_id`),
                   CONSTRAINT `fk_employee_id` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`),
                   CONSTRAINT `fk_program_key` FOREIGN KEY (`program_id`) REFERENCES `programs` (`program_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="employees">
                 CREATE TABLE `employees` (
@@ -73,7 +73,7 @@
                   `password` varchar(512) NOT NULL,
                   `user_level` int(11) NOT NULL,
                   PRIMARY KEY (`employee_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="programs">
                 CREATE TABLE `programs` (
@@ -81,15 +81,15 @@
                   `program_name` varchar(512) NOT NULL,
                   `release_build` int(11) NOT NULL,
                   PRIMARY KEY (`program_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
             </pma:table>
         </pma:database>
     </pma:structure_schemas>
 
     <!--
-    - Database: 'bughound'
+    - Database: 'Bughound'
     -->
-    <database name="bughound">
+    <database name="Bughound">
         <!-- Table areas -->
         <table name="areas">
             <column name="area_id">1</column>
@@ -99,12 +99,60 @@
             <column name="area_id">2</column>
             <column name="area_name">System Input3</column>
         </table>
+        <table name="areas">
+            <column name="area_id">3</column>
+            <column name="area_name">readxml5</column>
+        </table>
         <!-- Table attachments -->
         <!-- Table bugs -->
+        <table name="bugs">
+            <column name="bug_id">9</column>
+            <column name="program_id">1</column>
+            <column name="report_type">codingError</column>
+            <column name="severity">serious</column>
+            <column name="problem_summary">new Problem</column>
+            <column name="problem">Problem</column>
+            <column name="suggested_fix">Fix the problem</column>
+            <column name="bug_date">0003-02-19</column>
+            <column name="area_id">1</column>
+            <column name="assignee">0</column>
+            <column name="comments">This is awesome</column>
+            <column name="bug_status">open</column>
+            <column name="priority">1</column>
+            <column name="resolution">0</column>
+            <column name="resolution_version">1</column>
+            <column name="resolvee">0</column>
+            <column name="resolve_date">0000-00-00</column>
+            <column name="testee">0</column>
+            <column name="test_date">0</column>
+            <column name="employee_id">3</column>
+        </table>
+        <table name="bugs">
+            <column name="bug_id">10</column>
+            <column name="program_id">1</column>
+            <column name="report_type">codingError</column>
+            <column name="severity">serious</column>
+            <column name="problem_summary">New problem 2</column>
+            <column name="problem">Problem</column>
+            <column name="suggested_fix">Fix the problem</column>
+            <column name="bug_date">0003-02-19</column>
+            <column name="area_id">1</column>
+            <column name="assignee">0</column>
+            <column name="comments">This is awesome</column>
+            <column name="bug_status">open</column>
+            <column name="priority">1</column>
+            <column name="resolution">0</column>
+            <column name="resolution_version">1</column>
+            <column name="resolvee">0</column>
+            <column name="resolve_date">0000-00-00</column>
+            <column name="testee">0</column>
+            <column name="test_date">0</column>
+            <column name="employee_id">3</column>
+        </table>
         <!-- Table employees -->
         <table name="employees">
             <column name="employee_id">3</column>
-            <column name="name">Will1</column>
+            <column name="name">Will5</column>
             <column name="user_name">iwilliam3</column>
             <column name="password">password</column>
             <column name="user_level">3</column>
@@ -158,11 +206,25 @@
             <column name="password">123456</column>
             <column name="user_level">1</column>
         </table>
+        <table name="employees">
+            <column name="employee_id">11</column>
+            <column name="name">NewAfterEdit</column>
+            <column name="user_name">NewAfterEdit</column>
+            <column name="password">123456</column>
+            <column name="user_level">1</column>
+        </table>
+        <table name="employees">
+            <column name="employee_id">12</column>
+            <column name="name">steven</column>
+            <column name="user_name">steven</column>
+            <column name="password">123456</column>
+            <column name="user_level">1</column>
+        </table>
         <!-- Table programs -->
         <table name="programs">
             <column name="program_id">1</column>
-            <column name="program_name">GetUserInfo v3</column>
-            <column name="release_build">5</column>
+            <column name="program_name">GetUserInfo v10</column>
+            <column name="release_build">11</column>
         </table>
         <table name="programs">
             <column name="program_id">2</column>
@@ -183,6 +245,11 @@
             <column name="program_id">5</column>
             <column name="program_name">NewProgramTest</column>
             <column name="release_build">3</column>
+        </table>
+        <table name="programs">
+            <column name="program_id">6</column>
+            <column name="program_name">DeleteUser4</column>
+            <column name="release_build">5</column>
         </table>
     </database>
 </pma_xml_export>
