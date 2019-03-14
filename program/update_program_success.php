@@ -8,6 +8,8 @@
     <body>
         <h2>
             <?php
+                include '../auth/validate_user.php';	
+                isLoggedIn();
 				$id = $_POST['id'];
                 $name = $_POST['program_name'];
                 $release = $_POST['release'];

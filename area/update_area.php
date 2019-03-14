@@ -6,6 +6,8 @@
     </head>
     <body>
         <?php
+            include '../auth/validate_user.php';	
+            isLoggedIn();
 			$id = $_GET['area_id'];
 			$area_name;
 			$con = mysqli_connect("localhost","root");
@@ -19,14 +21,17 @@
 				$area_name = $row[0];
             }
 		?>
-        <form action="../Database/update.php" method="post" onsubmit="return validate(this)">
+        <p><form action="../Database/update.php" method="post" onsubmit="return validate(this)">
             <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
             <table>
                 <tr><td>Name:</td><td><input type="Text" name="area_name" value="<?php echo htmlspecialchars($area_name); ?>"</td></tr>
             </table>
             <input type="submit" name="submit" value="Submit">
         </form>
-
+        <p><form action="../Database/delete.php" method="post">
+            <input type="hidden" name="area_id" value="<?php echo htmlspecialchars($id); ?>">
+            <input type="submit" name="delete" value="Delete">
+        </form>
         <script language=Javascript>
 
             function validate(theform) {
@@ -42,8 +47,7 @@
             function go_home() {
                 window.location.replace("area.php");
             }
-
-</script>    
+        </script>    
     </body>
 </html>
 

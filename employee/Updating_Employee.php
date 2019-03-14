@@ -6,6 +6,8 @@
     </head>
     <body>
         <?php
+            include '../auth/validate_user.php';	
+            isLoggedIn();
 			$id = $_GET['employee_id'];
 			$name;
 			$username;
@@ -39,16 +41,17 @@
                     <input type="Password" name="password" value="<?php echo htmlspecialchars($password); ?>"</td></tr>
 				<tr><td>Userlevel:</td><td>
 					<select type="number" name="userlevel" size=1 value="4">
-					  <option value="1" <?php if($level == 1) { ?> selected="selected" <?php } ?> >1</option>
-					  <option value="2" <?php if($level == 2) { ?> selected="selected" <?php } ?> >2</option>
-					  <option value="3" <?php if($level == 3) { ?> selected="selected" <?php } ?> >3</option>
-					  <option value="4" <?php if($level == 4) { ?> selected="selected" <?php } ?> >4</option>
+					  <option value="1" <?php if($level == 1) { ?> selected="selected" <?php } ?> >user</option>
+					  <option value="2" <?php if($level == 2) { ?> selected="selected" <?php } ?> >admin</option>
 					</select></td>
 				</tr>
             </table>
             <input type="submit" name="submit" value="Next">
         </form>
-
+        <p><form action="../Database/delete.php" method="post">
+            <input type="hidden" name="employee_id" value="<?php echo htmlspecialchars($id); ?>">
+            <input type="submit" name="delete" value="Delete">
+        </form>
         <script language=Javascript>
             function validate(theform) {
                 if(theform.name.value === ""){
@@ -79,8 +82,7 @@
             function go_home() {
                 window.location.replace("add_employee_page.php");
             }
-
-</script>    
+        </script>    
     </body>
 </html>
 

@@ -6,6 +6,9 @@
     </head>
     <body>
         <?php
+
+            include '../auth/validate_user.php';	
+            isLoggedIn();
 			$con = mysqli_connect("localhost","root");
             mysqli_select_db($con, "Bughound");
 			$query = "SELECT * FROM employees";

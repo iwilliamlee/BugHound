@@ -16,13 +16,16 @@
 	{
 		$row = mysqli_fetch_array($result);
 		$user_level = $row['user_level'];
+		$employee_id = $row['employee_id'];
 		//$cookie_name = "user_level";
-		//setcookie(cookie_name, user_level,time()+3600 , '/');
+		//set(cookie_name, user_level,time()+3600 , '/');
 		
 		session_start();
+
 		$_SESSION["user_level"] = $user_level;
 		$_SESSION["username"] = $username;
 		$_SESSION["login"] = true;
+		$_SESSION["employee_id"] = $employee_id;
 		
 		header("Location: ../index.php");
 		die();

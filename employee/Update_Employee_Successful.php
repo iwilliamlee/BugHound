@@ -8,6 +8,8 @@
     <body>
         <h2>
             <?php
+                include '../auth/validate_user.php';	
+                isLoggedIn();
 				$id = $_POST['ID'];
                 $name = $_POST['name'];
                 $username = $_POST['username'];
@@ -21,7 +23,11 @@
                     password = '$password', 
                     user_level = '$userlevel' 
                     WHERE employee_id = '$id' ";
-				mysqli_query($con, $query);
+                mysqli_query($con, $query);
+                
+                //Update the cookies
+                $_SESSION["user_level"] = $userlevel;
+                $_SESSION["username"] = $username;
             ?>
             You have successfully updated employee: <?php printf("<p> %s.<p>",$name); ?>
             <p>

@@ -6,7 +6,21 @@
 
     <body>
         <h1>Bughound Main</h1>
-
+		<?php
+			include 'auth/validate_user.php';	
+			isLoggedIn();
+		?>
+        <script language=Javascript>
+            function logOut() {
+				//Expire all cookies
+				document.cookie.split(";").forEach(function(c) { 
+					document.cookie = c.replace(/^ +/, "").replace(/=.*/, 
+						"=;expires=" + new Date().toUTCString() + ";path=/"); 
+				});
+				//Replace to login.php
+                window.location.replace("./auth/login.php");
+            }
+        </script>    
 		<table>
 			<tr><td>
 				<input type="button" onclick="window.location.href = './report/Bug_Report.php';" value="Submit Bug", id="bug"/>	
@@ -21,21 +35,11 @@
 				<input type="button" onclick="window.location.href = './area/area.php';" value="Edit Areas", id="bug"/>		
 			</td></tr>
 			<tr><td>
-				<input type="button" onclick="window.location.href = 'db_maintenance.php';" value="Database Maintenance" id="db"/>
+				<input type="button" onclick="window.location.href = './report/bug_search.php';" value="Search Bug", id="bug"/>		
+			</td></tr>
+			<tr><td>
+				<input type="button" onclick="logOut()" value="Log Out" id=logout/>
 			</td></tr>
 
-
-		<?php
-			include 'auth/validate_user.php';		
-			isLoggedIn();
-			
-			$valid_level =  isValidLevel(3);
-			if(!$valid_level) {
-				echo "<SCRIPT type='text/javascript'>
-				var x = document.getElementById('db');
-				x.style.display = 'none';
-				</SCRIPT>";			
-			}
-		?>
     </body>
 </html>

@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title>Area</title>
+
 	</head>
 	<body>
 		<h1> Area Page </h1>
@@ -38,8 +40,10 @@
 		?>
 		</table>
 			
-		<INPUT type="button" value="Create" id=create onclick="window.location.href = 'add_area.php'" >
+		<INPUT type="button" value="Create" id=create onclick="window.location.href = './add_area.php'">
 		<INPUT type="button" value="Done" id=done onclick="window.location.href = '../index.php'">
 		
+	
+
 	</body>
 </html>

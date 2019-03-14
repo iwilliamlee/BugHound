@@ -7,7 +7,7 @@
         <title>Bughound Login</title>
     </head>
 
-    <body>
+    <body>    
         <h1>Bughound Login</h1>
         <form action="login_check.php" method="post" onsubmit="return validate(this)">
 

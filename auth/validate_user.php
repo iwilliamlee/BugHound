@@ -16,6 +16,9 @@
 	function isValidLevel($min_level){
 		$user_level =  (int)$_SESSION["user_level"];
 		if($user_level < $min_level) {
+			echo "<SCRIPT type='text/javascript'>
+				alert('You do not have the access level to make this change');
+			</SCRIPT>";	
 			return false;
 		}
 		return true;

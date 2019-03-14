@@ -6,6 +6,8 @@
     </head>
     <body>
         <?php
+            include '../auth/validate_user.php';	
+            isLoggedIn();
 			$id = $_GET['program_id'];
 			$program_name;
 			$release;
@@ -32,7 +34,10 @@
             </table>
             <input type="submit" name="submit" value="Submit">
         </form>
-
+        <p><form action="../Database/delete.php" method="post">
+            <input type="hidden" name="program_id" value="<?php echo htmlspecialchars($id); ?>">
+            <input type="submit" name="delete" value="Delete">
+        </form>
         <script language=Javascript>
 
             function validate(theform) {
