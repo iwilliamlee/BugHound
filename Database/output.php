@@ -1,16 +1,4 @@
-
-
 <?php
-
-//         //database configuration
-
-// $config['db_name']    = "Bughound";
-// $config['table_name'] = "bugs";
- 
-// //connect to host
-//     $con = mysqli_connect("localhost","root");
-//     mysqli_select_db($con, "Bughound");        //select all items in table
-//     $query = "SELECT * FROM bugs";
     $dbh = new PDO('mysql:host=localhost;dbname=bughound','root');
 
     $sxe = new SimpleXMLElement('<workResponse></workResponse>');
@@ -35,5 +23,5 @@
     
     echo $dom->saveXML();
     $dom->save('test1.xml');
-    ?>
+?>
 
