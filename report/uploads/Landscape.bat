@@ -1,0 +1,1 @@
+C:\display\display.exe /device 2 /rotate 0

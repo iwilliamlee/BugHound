@@ -10,12 +10,12 @@
             mysqli_select_db($con, "Bughound");
             $query = 
                 "SELECT bug_id, 
-                problem_summary
+                problem_summary,
                 program_id,
                 report_type,
                 severity, 
                 area_id,
-                assignee
+                assignee,
                 bug_status,
                 priority,
                 resolution,
@@ -88,7 +88,11 @@
                         <td>
                             %s
                         </td>
+                        <td>
+                            %s
+                        </td>
                     </tr>\n",
+                        $row[0],
                         $row[1],
                         $row[2],
                         $row[3],
