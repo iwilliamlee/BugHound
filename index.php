@@ -51,18 +51,5 @@
 				<input type="button" onclick="window.location.href = './report/Bug_View_User.php';" value="View Bug - user", id="bug"/>	
 			</td></tr>
 
-
-		<?php
-			include 'auth/validate_user.php';		
-			isLoggedIn();
-			
-			$valid_level =  isValidLevel(3);
-			if(!$valid_level) {
-				echo "<SCRIPT type='text/javascript'>
-				var x = document.getElementById('db');
-				x.style.display = 'none';
-				</SCRIPT>";			
-			}
-		?>
     </body>
 </html>
