@@ -5,7 +5,7 @@
 - https://www.phpmyadmin.net
 -
 - Host: localhost
-- Generation Time: Mar 13, 2019 at 03:19 AM
+- Generation Time: Mar 14, 2019 at 02:37 AM
 - Server version: 10.1.37-MariaDB
 - PHP Version: 7.3.1
 -->
@@ -21,13 +21,13 @@
                   `area_id` int(11) NOT NULL AUTO_INCREMENT,
                   `area_name` varchar(512) NOT NULL,
                   PRIMARY KEY (`area_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="attachments">
                 CREATE TABLE `attachments` (
                   `attachment_id` int(11) NOT NULL,
                   `path` varchar(512) NOT NULL,
-                  `name` varchar(512) NOT NULL,
+                  `file_name` varchar(512) NOT NULL,
                   `bug_id` int(11) NOT NULL,
                   PRIMARY KEY (`attachment_id`),
                   KEY `fk_bug_key` (`bug_id`),
@@ -39,9 +39,10 @@
                   `bug_id` int(11) NOT NULL AUTO_INCREMENT,
                   `program_id` int(11) NOT NULL,
                   `report_type` varchar(512) NOT NULL,
-                  `severity` varchar(512) NOT NULL,
+                  `severity` int(11) NOT NULL,
                   `problem_summary` varchar(512) NOT NULL,
                   `problem` varchar(512) NOT NULL,
+                  `reproducible` tinyint(1) NOT NULL,
                   `suggested_fix` varchar(512) NOT NULL,
                   `bug_date` date NOT NULL,
                   `area_id` int(11) NOT NULL,
@@ -55,6 +56,7 @@
                   `resolve_date` date NOT NULL,
                   `testee` int(11) NOT NULL,
                   `test_date` int(11) NOT NULL,
+                  `deferred` tinyint(1) NOT NULL,
                   `employee_id` int(11) NOT NULL,
                   PRIMARY KEY (`bug_id`),
                   KEY `fk_program_key` (`program_id`),
@@ -63,7 +65,7 @@
                   CONSTRAINT `fk_area_key` FOREIGN KEY (`area_id`) REFERENCES `areas` (`area_id`),
                   CONSTRAINT `fk_employee_id` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`),
                   CONSTRAINT `fk_program_key` FOREIGN KEY (`program_id`) REFERENCES `programs` (`program_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="employees">
                 CREATE TABLE `employees` (
@@ -81,7 +83,7 @@
                   `program_name` varchar(512) NOT NULL,
                   `release_build` int(11) NOT NULL,
                   PRIMARY KEY (`program_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
             </pma:table>
         </pma:database>
     </pma:structure_schemas>
@@ -93,15 +95,15 @@
         <!-- Table areas -->
         <table name="areas">
             <column name="area_id">1</column>
-            <column name="area_name">System.IO5</column>
+            <column name="area_name">System.IO7</column>
         </table>
         <table name="areas">
             <column name="area_id">2</column>
             <column name="area_name">System Input3</column>
         </table>
         <table name="areas">
-            <column name="area_id">3</column>
-            <column name="area_name">readxml5</column>
+            <column name="area_id">5</column>
+            <column name="area_name">Add an Area</column>
         </table>
         <!-- Table attachments -->
         <!-- Table bugs -->
@@ -109,9 +111,10 @@
             <column name="bug_id">9</column>
             <column name="program_id">1</column>
             <column name="report_type">codingError</column>
-            <column name="severity">serious</column>
+            <column name="severity">0</column>
             <column name="problem_summary">new Problem</column>
             <column name="problem">Problem</column>
+            <column name="reproducible">0</column>
             <column name="suggested_fix">Fix the problem</column>
             <column name="bug_date">0003-02-19</column>
             <column name="area_id">1</column>
@@ -125,15 +128,17 @@
             <column name="resolve_date">0000-00-00</column>
             <column name="testee">0</column>
             <column name="test_date">0</column>
+            <column name="deferred">0</column>
             <column name="employee_id">3</column>
         </table>
         <table name="bugs">
             <column name="bug_id">10</column>
             <column name="program_id">1</column>
             <column name="report_type">codingError</column>
-            <column name="severity">serious</column>
+            <column name="severity">0</column>
             <column name="problem_summary">New problem 2</column>
             <column name="problem">Problem</column>
+            <column name="reproducible">0</column>
             <column name="suggested_fix">Fix the problem</column>
             <column name="bug_date">0003-02-19</column>
             <column name="area_id">1</column>
@@ -147,6 +152,7 @@
             <column name="resolve_date">0000-00-00</column>
             <column name="testee">0</column>
             <column name="test_date">0</column>
+            <column name="deferred">0</column>
             <column name="employee_id">3</column>
         </table>
         <!-- Table employees -->
@@ -155,7 +161,7 @@
             <column name="name">Will5</column>
             <column name="user_name">iwilliam3</column>
             <column name="password">password</column>
-            <column name="user_level">3</column>
+            <column name="user_level">1</column>
         </table>
         <table name="employees">
             <column name="employee_id">4</column>
@@ -176,28 +182,7 @@
             <column name="name">test</column>
             <column name="user_name">testaccount</column>
             <column name="password">123456</column>
-            <column name="user_level">1</column>
-        </table>
-        <table name="employees">
-            <column name="employee_id">7</column>
-            <column name="name">test3</column>
-            <column name="user_name">test2</column>
-            <column name="password">test2</column>
-            <column name="user_level">1</column>
-        </table>
-        <table name="employees">
-            <column name="employee_id">8</column>
-            <column name="name">test4</column>
-            <column name="user_name">test4</column>
-            <column name="password">123456</column>
-            <column name="user_level">1</column>
-        </table>
-        <table name="employees">
-            <column name="employee_id">9</column>
-            <column name="name">test6</column>
-            <column name="user_name">test5</column>
-            <column name="password">123456</column>
-            <column name="user_level">1</column>
+            <column name="user_level">2</column>
         </table>
         <table name="employees">
             <column name="employee_id">10</column>
@@ -237,19 +222,9 @@
             <column name="release_build">3</column>
         </table>
         <table name="programs">
-            <column name="program_id">4</column>
-            <column name="program_name">GetUserData</column>
+            <column name="program_id">7</column>
+            <column name="program_name">NewTestData</column>
             <column name="release_build">1</column>
-        </table>
-        <table name="programs">
-            <column name="program_id">5</column>
-            <column name="program_name">NewProgramTest</column>
-            <column name="release_build">3</column>
-        </table>
-        <table name="programs">
-            <column name="program_id">6</column>
-            <column name="program_name">DeleteUser4</column>
-            <column name="release_build">5</column>
         </table>
     </database>
 </pma_xml_export>
