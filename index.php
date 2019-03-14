@@ -41,15 +41,13 @@
 				<input type="button" onclick="window.location.href = './report/bug_search.php';" value="Search Bug", id="bug"/>		
 			</td></tr>
 			<tr><td>
-				<input type="button" onclick="logOut()" value="Log Out" id=logout/>
-			</td></tr>
-
-			<tr><td>
 				<input type="button" onclick="window.location.href = './report/Bug_Report_User.php';" value="Submit Bug - user", id="bug"/>	
 			</td></tr>
 			<tr><td>
 				<input type="button" onclick="window.location.href = './report/Bug_View_User.php';" value="View Bug - user", id="bug"/>	
 			</td></tr>
-
+			<tr><td>
+				<input type="button" onclick="logOut()" value="Log Out" id=logout/>
+			</td></tr>
     </body>
 </html>

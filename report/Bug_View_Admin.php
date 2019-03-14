@@ -8,9 +8,37 @@
         <?php
 			$con = mysqli_connect("localhost","root");
             mysqli_select_db($con, "Bughound");
-			$query = "SELECT bug_id, severity, report_type, problem_summary, employee_id FROM bugs";
+            $query = 
+                "SELECT bug_id, 
+                problem_summary
+                program_id,
+                report_type,
+                severity, 
+                area_id,
+                assignee
+                bug_status,
+                priority,
+                resolution,
+                employee_id,
+                bug_date,
+                resolve_date
+                FROM bugs";
+            // $query = "SELECT * FROM bugs";
 			$result = mysqli_query($con, $query);
-            echo "<table border=1 ><th>ID</th><th>Severity</th><th>Report Type</th><th>Summary</th><th>Reported By</th>\n";
+            echo "<table border=1 >
+                <th>ID</th>
+                <th>Problem</th>
+                <th>Program</th>
+                <th>Report Type</th>
+                <th>Severity</th>
+                <th>Functional Area</th>
+                <th>Assigned To</th>
+                <th>Status</th>
+                <th>Priority</th>
+                <th>Resolution</th>
+                <th>Reported By</th>
+                <th>Report D<ate/th>
+                <th>Resolved Date</th>\n";
             $none = 0;
             while($row=mysqli_fetch_row($result)) {
                 $none=1;
@@ -32,7 +60,41 @@
                         <td>
                             %s
                         </td>
-                    </tr>\n",$row[0],$row[1],$row[2],$row[3],$row[4]);
+                        <td>
+                            %s
+                        </td>
+                        <td>
+                            %s
+                        </td>
+                        <td>
+                            %s
+                        </td>
+                        <td>
+                            %s
+                        </td>
+                        <td>
+                            %s
+                        </td>
+                        <td>
+                            %s
+                        </td>
+                        <td>
+                            %s
+                        </td>
+                    </tr>\n",
+                        $row[1],
+                        $row[2],
+                        $row[3],
+                        $row[4],
+                        $row[5],
+                        $row[6],
+                        $row[7],
+                        $row[8],
+                        $row[9],
+                        $row[10],
+                        $row[11],
+                        $row[12]
+                );
             }
         ?>
         </table>
