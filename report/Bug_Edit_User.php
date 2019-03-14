@@ -39,7 +39,7 @@
         }
     ?>
         <h1>Edit Bug Report Entry Page</h1>
-        <form action="Bug_Update.php" method="post" enctype="multipart/form-data">
+        <form action="Bug_Update_User.php" method="post" enctype="multipart/form-data">
             <table>
                 <tr>
                         <?php echo "<td> Bug ID: <input type='text' name='bugID' readonly size='1' value=' " .$bug_id. "'";?> </td>
@@ -159,140 +159,11 @@
             </table>
             Select image to upload:
             <input type="file" name="file[]" id="file" multiple="">
-            <hr> <!--New Section-->
-            <table><!--line 1-->
-                <tr>
-                    <td>Functional Area:</td>
-                    <td><select name="functionalArea">
-                    <?php
-                        $query = "SELECT * FROM areas";
-                        $result = mysqli_query($con, $query);
-                        $none = 0;
-                        while($row=$result->fetch_assoc()) {
-                            echo "<option value=".$row['area_id'].">" . $row['area_name'] . "</option>";
-                        }
-                    ?>
-					</select></td>
-                    <td>Assigned To: </td>
-                    <td><select name="assignedTo">
-                        <?php
-                            $query = "SELECT * FROM employees";
-                            $result = mysqli_query($con, $query);
-                            $none = 0;
-                            while($row=$result->fetch_assoc()) {
-                                if($row['employee_id'] == $assignedTo){
-                                    echo "<option value=".$row['employee_id']." selected='selected'>" . $row['user_name'] . "</option>";
-                                } else {
-                                    echo "<option value=".$row['employee_id'].">" . $row['user_name'] . "</option>";
-                                }
-                            }
-                        ?>
-					</select></td>
-				</tr>
-            </table>
-            <table>
-                <tr>
-                    <td>Comments:</td>
-                    <td><input type="Text" name="comments" size="45" value="<?php echo $comments; ?>"></td>
-                </tr>
-            </table>
-            <table>
-                <tr>
-                    <td>Status</td>
-                    <td><select name="status">
-					  <option value="open" <?php if($status == "open") { ?> selected="selected" <?php } ?> >Open</option>
-					  <option value="close" <?php if($status == "close") { ?> selected="selected" <?php } ?> >Close</option>
-					</select></td>
-                    <td>Priority</td>
-                    <td><select name="priority">
-                        <option value="1" 
-                            <?php if($priority == 1) { ?> selected="selected" <?php } ?> >1</option>
-                        <option value="2"
-                            <?php if($priority == 2) { ?> selected="selected" <?php } ?> >2</option>
-                        <option value="3"
-                            <?php if($priority == 3) { ?> selected="selected" <?php } ?> >3</option>
-                        <option value="4"
-                            <?php if($priority == 4) { ?> selected="selected" <?php } ?> >4</option>
-                        <option value="5"
-                            <?php if($priority == 5) { ?> selected="selected" <?php } ?> >5</option>
-                        <option value="6"
-                            <?php if($priority == 6) { ?> selected="selected" <?php } ?> >6</option>
-					</select></td>
-                    <td>Resolution</td>
-                    <td><select name="resolution">
-                      <option value="0"
-                        <?php if($resolution == 0) { ?> selected="selected" <?php } ?>>On Going</option>
-                      <option value="1"
-                        <?php if($resolution == 1) { ?> selected="selected" <?php } ?>>Resolved</option>
-					  <option value="2"
-                        <?php if($resolution == 2) { ?> selected="selected" <?php } ?>>Escalated</option>
-					</select></td>
-                    <td>Resolution Version</td>
-                    <td><select name="resolutionVersion">
-                    <option value="1" 
-                        <?php if($resolutionVersion == 1) { ?> selected="selected" <?php } ?> >1</option>
-					  <option value="2"
-                        <?php if($resolutionVersion == 2) { ?> selected="selected" <?php } ?> >2</option>
-					  <option value="3"
-                        <?php if($resolutionVersion == 3) { ?> selected="selected" <?php } ?> >3</option>
-                      <option value="4"
-                        <?php if($resolutionVersion == 4) { ?> selected="selected" <?php } ?> >4</option>
-                      <option value="5"
-                        <?php if($resolutionVersion == 5) { ?> selected="selected" <?php } ?> >5</option>
-                      <option value="6"
-                        <?php if($resolutionVersion == 6) { ?> selected="selected" <?php } ?> >6</option>
-                      <option value="7"
-                        <?php if($resolutionVersion == 7) { ?> selected="selected" <?php } ?> >7</option>
-                      <option value="8"
-                        <?php if($resolutionVersion == 8) { ?> selected="selected" <?php } ?> >8</option>
-                      <option value="9"
-                        <?php if($resolutionVersion == 9) { ?> selected="selected" <?php } ?> >9</option>
-                      <option value="10"
-                        <?php if($resolutionVersion == 10) { ?> selected="selected" <?php } ?> >10</option>
-					</select></td>
-                </tr>
-            </table>
-            <table>
-                <tr>
-                    <td>Resolved By</td>
-                    <td><select name="resolvedBy">
-                        <?php
-                            $query = "SELECT * FROM employees";
-                            $result = mysqli_query($con, $query);
-                            $none = 0;
-                            while($row=$result->fetch_assoc()) {
-                                if($row['employee_id'] == $resolvedBy){
-                                    echo "<option value=".$row['employee_id']." selected='selected'>" . $row['user_name'] . "</option>";
-                                } else {
-                                    echo "<option value=".$row['employee_id'].">" . $row['user_name'] . "</option>";
-                                }
-                            }
-                        ?>
-					</select></td>
-                    <td>Date(yyyy/mm/dd): </td>
-                    <td><input type="Text" name="dateResolved" size="6" value="<?php echo $dateResolved; ?>"></td>
-                    <td>Tested by:</td>
-                    <td><select name="testedBy">
-                        <?php
-                            $query = "SELECT * FROM employees";
-                            $result = mysqli_query($con, $query);
-                            $none = 0;
-                            while($row=$result->fetch_assoc()) {
-                                if($row['employee_id'] == $testedBy){
-                                    echo "<option value=".$row['employee_id']." selected='selected'>" . $row['user_name'] . "</option>";
-                                } else {
-                                    echo "<option value=".$row['employee_id'].">" . $row['user_name'] . "</option>";
-                                }
-                            }
-                        ?>
-					</select></td>
-                    </select></td>
-                    <td>Date(yyyy/mm/dd): </td>
-                    <td><input type="Text" name="dateTested" size="6" value="<?php echo $dateTested; ?>"></td>
-                    <td><input type="checkbox" name="deferred" value="yes" 
-                        <?php if($deferred) { ?> checked <?php } ?>>Treated as deferred?<br></td>
-                </tr>
-            </table>
+            <hr> <!--Hidden area for posting-->
+            <?php echo "<input type='hidden' name='functionalArea' readonly size='1' value=' " .$functionalArea. "'";?>
+
+
+            <input type="submit" name="submit" value="Next"> <!-- I don't know why but this first button won't show up -->
             <input type="submit" name="submit" value="Next">
             <input type="button" name="cancel" value="Cancel" onclick="go_home()">
         </form>

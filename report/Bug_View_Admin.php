@@ -17,7 +17,7 @@
                 printf(
                     "<tr>
                         <td>
-                            <A href='bug_edit.php?bug_id={$row[0]}'>
+                            <A href='bug_edit_Admin.php?bug_id={$row[0]}'>
                             <span class=\"linkline\">%d</span></a>
                         </td>
                         <td>

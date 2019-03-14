@@ -9,10 +9,10 @@
 
 		<table>
 			<tr><td>
-				<input type="button" onclick="window.location.href = './report/Bug_Report.php';" value="Submit Bug", id="bug"/>	
+				<input type="button" onclick="window.location.href = './report/Bug_Report_Admin.php';" value="Submit Bug", id="bug"/>	
 			</td></tr>
 			<tr><td>
-				<input type="button" onclick="window.location.href = './report/Bug_View.php';" value="View Bug", id="bug"/>	
+				<input type="button" onclick="window.location.href = './report/Bug_View_Admin.php';" value="View Bug", id="bug"/>	
 			</td></tr>
 			<tr><td>
 				<input type="button" onclick="window.location.href = './employee/View_Employee.php';" value="Edit Employees", id="bug"/>		
@@ -25,6 +25,13 @@
 			</td></tr>
 			<tr><td>
 				<input type="button" onclick="window.location.href = 'db_maintenance.php';" value="Database Maintenance" id="db"/>
+			</td></tr>
+
+			<tr><td>
+				<input type="button" onclick="window.location.href = './report/Bug_Report_User.php';" value="Submit Bug - user", id="bug"/>	
+			</td></tr>
+			<tr><td>
+				<input type="button" onclick="window.location.href = './report/Bug_View_User.php';" value="View Bug - user", id="bug"/>	
 			</td></tr>
 
 
