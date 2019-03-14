@@ -278,7 +278,8 @@
         <p><INPUT type="button" value="Go Home" id=button1 name=button1 onclick="go_home()">
         <script language=Javascript>
             function create() {
-                window.location.replace("./bug_report.php");
+                var reportPage='<?php echo $createPage;?>';
+                window.location.replace("./" + reportPage);
             }
             function go_home() {
                 window.location.replace("../index.php");
