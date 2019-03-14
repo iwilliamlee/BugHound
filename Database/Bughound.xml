@@ -5,7 +5,7 @@
 - https://www.phpmyadmin.net
 -
 - Host: localhost
-- Generation Time: Mar 14, 2019 at 02:37 AM
+- Generation Time: Mar 14, 2019 at 09:14 PM
 - Server version: 10.1.37-MariaDB
 - PHP Version: 7.3.1
 -->
@@ -106,28 +106,34 @@
             <column name="area_name">Add an Area</column>
         </table>
         <!-- Table attachments -->
+        <table name="attachments">
+            <column name="attachment_id">0</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">9</column>
+        </table>
         <!-- Table bugs -->
         <table name="bugs">
             <column name="bug_id">9</column>
-            <column name="program_id">1</column>
+            <column name="program_id">2</column>
             <column name="report_type">codingError</column>
-            <column name="severity">0</column>
+            <column name="severity">1</column>
             <column name="problem_summary">new Problem</column>
             <column name="problem">Problem</column>
             <column name="reproducible">0</column>
             <column name="suggested_fix">Fix the problem</column>
             <column name="bug_date">0003-02-19</column>
             <column name="area_id">1</column>
-            <column name="assignee">0</column>
+            <column name="assignee">3</column>
             <column name="comments">This is awesome</column>
             <column name="bug_status">open</column>
             <column name="priority">1</column>
             <column name="resolution">0</column>
             <column name="resolution_version">1</column>
-            <column name="resolvee">0</column>
-            <column name="resolve_date">0000-00-00</column>
-            <column name="testee">0</column>
-            <column name="test_date">0</column>
+            <column name="resolvee">6</column>
+            <column name="resolve_date">2018-12-12</column>
+            <column name="testee">3</column>
+            <column name="test_date">2018</column>
             <column name="deferred">0</column>
             <column name="employee_id">3</column>
         </table>
@@ -135,22 +141,22 @@
             <column name="bug_id">10</column>
             <column name="program_id">1</column>
             <column name="report_type">codingError</column>
-            <column name="severity">0</column>
+            <column name="severity">1</column>
             <column name="problem_summary">New problem 2</column>
             <column name="problem">Problem</column>
             <column name="reproducible">0</column>
             <column name="suggested_fix">Fix the problem</column>
             <column name="bug_date">0003-02-19</column>
             <column name="area_id">1</column>
-            <column name="assignee">0</column>
+            <column name="assignee">3</column>
             <column name="comments">This is awesome</column>
             <column name="bug_status">open</column>
             <column name="priority">1</column>
             <column name="resolution">0</column>
             <column name="resolution_version">1</column>
-            <column name="resolvee">0</column>
-            <column name="resolve_date">0000-00-00</column>
-            <column name="testee">0</column>
+            <column name="resolvee">3</column>
+            <column name="resolve_date">1000-00-00</column>
+            <column name="testee">3</column>
             <column name="test_date">0</column>
             <column name="deferred">0</column>
             <column name="employee_id">3</column>
