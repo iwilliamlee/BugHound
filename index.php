@@ -23,7 +23,10 @@
         </script>    
 		<table>
 			<tr><td>
-				<input type="button" onclick="window.location.href = './report/Bug_Report.php';" value="Submit Bug", id="bug"/>	
+				<input type="button" onclick="window.location.href = './report/Bug_Report_Admin.php';" value="Submit Bug", id="bug"/>	
+			</td></tr>
+			<tr><td>
+				<input type="button" onclick="window.location.href = './report/Bug_View_Admin.php';" value="View Bug", id="bug"/>	
 			</td></tr>
 			<tr><td>
 				<input type="button" onclick="window.location.href = './employee/View_Employee.php';" value="Edit Employees", id="bug"/>		
@@ -41,5 +44,25 @@
 				<input type="button" onclick="logOut()" value="Log Out" id=logout/>
 			</td></tr>
 
+			<tr><td>
+				<input type="button" onclick="window.location.href = './report/Bug_Report_User.php';" value="Submit Bug - user", id="bug"/>	
+			</td></tr>
+			<tr><td>
+				<input type="button" onclick="window.location.href = './report/Bug_View_User.php';" value="View Bug - user", id="bug"/>	
+			</td></tr>
+
+
+		<?php
+			include 'auth/validate_user.php';		
+			isLoggedIn();
+			
+			$valid_level =  isValidLevel(3);
+			if(!$valid_level) {
+				echo "<SCRIPT type='text/javascript'>
+				var x = document.getElementById('db');
+				x.style.display = 'none';
+				</SCRIPT>";			
+			}
+		?>
     </body>
 </html>

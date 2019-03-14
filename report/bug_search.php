@@ -16,72 +16,72 @@
                 </form>
             </tr>
             <tr>
-                <form action="bug_search.php" method="post" onsubmit="return validate(this)">
+                <form action="bug_search.php" method="get" onsubmit="return validate(this)">
                     <td>Report Type:</td>
-                    <td><input type="Text" name="search" value="<?php  if(isset($_GET['program'])) echo htmlspecialchars($_GET['program']); ?>"</td>
+                    <td><input type="Text" name="report_type" value="<?php  if(isset($_GET['program'])) echo htmlspecialchars($_GET['program']); ?>"</td>
                     <td><input type="submit" name="submit" value="Search"></td>
                 </form>
             </tr>
             <tr>
-                <form action="bug_search.php" method="post" onsubmit="return validate(this)">
+                <form action="bug_search.php" method="get" onsubmit="return validate(this)">
                     <td>Severity:</td>
-                    <td><input type="Text" name="search" value="<?php  if(isset($_GET['program'])) echo htmlspecialchars($_GET['program']); ?>"</td>
+                    <td><input type="Text" name="severity" value="<?php  if(isset($_GET['program'])) echo htmlspecialchars($_GET['program']); ?>"</td>
                     <td><input type="submit" name="submit" value="Search"></td>
                 </form>
             </tr>
             <tr>
-                <form action="bug_search.php" method="post" onsubmit="return validate(this)">
+                <form action="bug_search.php" method="get" onsubmit="return validate(this)">
                     <td>Area:</td>
-                    <td><input type="Text" name="search" value="<?php  if(isset($_GET['program'])) echo htmlspecialchars($_GET['program']); ?>"</td>
+                    <td><input type="Text" name="area" value="<?php  if(isset($_GET['program'])) echo htmlspecialchars($_GET['program']); ?>"</td>
                     <td><input type="submit" name="submit" value="Search"></td>
                 </form>
             </tr>
             <tr>
-                <form action="bug_search.php" method="post" onsubmit="return validate(this)">
+                <form action="bug_search.php" method="get" onsubmit="return validate(this)">
                     <td>Assigned To:</td>
-                    <td><input type="Text" name="search" value="<?php  if(isset($_GET['program'])) echo htmlspecialchars($_GET['program']); ?>"</td>
+                    <td><input type="Text" name="assigned" value="<?php  if(isset($_GET['program'])) echo htmlspecialchars($_GET['program']); ?>"</td>
                     <td><input type="submit" name="submit" value="Search"></td>
                 </form>
             </tr>
             <tr>
-                <form action="bug_search.php" method="post" onsubmit="return validate(this)">
+                <form action="bug_search.php" method="get" onsubmit="return validate(this)">
                     <td>Status:</td>
-                    <td><input type="Text" name="search" value="<?php  if(isset($_GET['program'])) echo htmlspecialchars($_GET['program']); ?>"</td>
+                    <td><input type="Text" name="status" value="<?php  if(isset($_GET['program'])) echo htmlspecialchars($_GET['program']); ?>"</td>
                     <td><input type="submit" name="submit" value="Search"></td>
                 </form>
             </tr>
             <tr>
-                <form action="bug_search.php" method="post" onsubmit="return validate(this)">
+                <form action="bug_search.php" method="get" onsubmit="return validate(this)">
                     <td>Priority:</td>
-                    <td><input type="Text" name="search" value="<?php  if(isset($_GET['program'])) echo htmlspecialchars($_GET['program']); ?>"</td>
+                    <td><input type="Text" name="priority" value="<?php  if(isset($_GET['program'])) echo htmlspecialchars($_GET['program']); ?>"</td>
                     <td><input type="submit" name="submit" value="Search"></td>
                 </form>
             </tr>
             <tr>
-                <form action="bug_search.php" method="post" onsubmit="return validate(this)">
+                <form action="bug_search.php" method="get" onsubmit="return validate(this)">
                     <td>Resolution:</td>
-                    <td><input type="Text" name="search" value="<?php  if(isset($_GET['program'])) echo htmlspecialchars($_GET['program']); ?>"</td>
+                    <td><input type="Text" name="resolution" value="<?php  if(isset($_GET['program'])) echo htmlspecialchars($_GET['program']); ?>"</td>
                     <td><input type="submit" name="submit" value="Search"></td>
                 </form>
             </tr>
             <tr>
-                <form action="bug_search.php" method="post" onsubmit="return validate(this)">
+                <form action="bug_search.php" method="get" onsubmit="return validate(this)">
                     <td>Reported By:</td>
-                    <td><input type="Text" name="search" value="<?php  if(isset($_GET['program'])) echo htmlspecialchars($_GET['program']); ?>"</td>
+                    <td><input type="Text" name="reported_by" value="<?php  if(isset($_GET['program'])) echo htmlspecialchars($_GET['program']); ?>"</td>
                     <td><input type="submit" name="submit" value="Search"></td>
                 </form>
             </tr>
             <tr>
-                <form action="bug_search.php" method="post" onsubmit="return validate(this)">
+                <form action="bug_search.php" method="get" onsubmit="return validate(this)">
                     <td>Report Date:</td>
-                    <td><input type="Text" name="search" value="<?php  if(isset($_GET['program'])) echo htmlspecialchars($_GET['program']); ?>"</td>
+                    <td><input type="Text" name="report_date" value="<?php  if(isset($_GET['program'])) echo htmlspecialchars($_GET['program']); ?>"</td>
                     <td><input type="submit" name="submit" value="Search"></td>
                 </form>
             </tr>
             <tr>
-                <form action="bug_search.php" method="post" onsubmit="return validate(this)">
+                <form action="bug_search.php" method="get" onsubmit="return validate(this)">
                     <td>Resolved By:</td>
-                    <td><input type="Text" name="search" value="<?php  if(isset($_GET['program'])) echo htmlspecialchars($_GET['program']); ?>"</td>
+                    <td><input type="Text" name="resolved_by" value="<?php  if(isset($_GET['program'])) echo htmlspecialchars($_GET['program']); ?>"</td>
                     <td><input type="submit" name="submit" value="Search"></td>
                 </form>
             </tr>
@@ -99,36 +99,47 @@
                 $query = "SELECT * FROM employees WHERE name LIKE '%$search%' ";
             }
             else if(isset($_GET['report_type'])) {
-                $query = "SELECT * FROM employees";
+                $search = $_GET['report_type'];
+                $query = "SELECT * FROM employees WHERE name LIKE '%$search%' ";
             }
             else if(isset($_GET['severity'])) {
-                $query = "SELECT * FROM employees";
+                $search = $_GET['severity'];
+                $query = "SELECT * FROM employees WHERE name LIKE '%$search%' ";
             }
             else if(isset($_GET['area'])) {
-                $query = "SELECT * FROM employees";
+                $search = $_GET['area'];
+                $query = "SELECT * FROM employees WHERE name LIKE '%$search%' ";
             }
-            else if(isset($_GET['assign'])) {
-                $query = "SELECT * FROM employees";
+            else if(isset($_GET['assigned'])) {
+                $search = $_GET['assigned'];
+                $query = "SELECT * FROM employees WHERE name LIKE '%$search%' ";
             }
             else if(isset($_GET['status'])) {
-                $query = "SELECT * FROM employees";
+                $search = $_GET['status'];
+                $query = "SELECT * FROM employees WHERE name LIKE '%$search%' ";
             }
             else if(isset($_GET['priority'])) {
-                $query = "SELECT * FROM employees";
+                $search = $_GET['priority'];
+                $query = "SELECT * FROM employees WHERE name LIKE '%$search%' ";
             }
             else if(isset($_GET['resolution'])) {
-                $query = "SELECT * FROM employees";
+                $search = $_GET['resolution'];
+                $query = "SELECT * FROM employees WHERE name LIKE '%$search%' ";
             }
             else if(isset($_GET['reported_by'])) {
-                $query = "SELECT * FROM employees";
+                $search = $_GET['reported_by'];
+                $query = "SELECT * FROM employees WHERE name LIKE '%$search%' ";
             }
             else if(isset($_GET['report_date'])) {
-                $query = "SELECT * FROM employees";
+                $search = $_GET['report_date'];
+                $query = "SELECT * FROM employees WHERE name LIKE '%$search%' ";
             }
             else if(isset($_GET['resolved_by'])) {
-                $query = "SELECT * FROM employees";
+                $search = $_GET['resolved_by'];
+                $query = "SELECT * FROM employees WHERE name LIKE '%$search%' ";
             }
             else {
+                $search = $_GET['program'];
                 $query = "SELECT * FROM employees";
             }
 

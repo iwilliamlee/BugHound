@@ -10,7 +10,7 @@
         mysqli_select_db($con, "Bughound");
     ?>
         <h1>New Bug Report Entry Page</h1>
-        <form action="Bug_Adding.php" method="post">
+        <form action="Bug_Adding.php" method="post" enctype="multipart/form-data" onsubmit="return validate(this)">
             <table>
                 <tr><!-- Line 1 -->
                     <td>Program:</td> 
@@ -38,9 +38,16 @@
 					</select></td>
                     <td>Severity:</td>
                     <td><select name="severity">
-					  <option value="serious">Serious</option>
-					  <option value="moderate">Moderate</option>
-					  <option value="low">Low</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
 					</select></td>
                 </tr>
             </table>
@@ -72,10 +79,12 @@
                             }
                         ?>
 					</select></td>
-                    <td>Date: </td>
+                    <td>Date(yyyy/mm/dd): </td>
                     <td><input type="Text" name="dateEntered" size="5"></td>
 				</tr>
             </table>
+            Select image to upload:
+            <input type="file" name="file[]" id="file" multiple="">
             <hr> <!--New Section-->
             <table><!--line 1-->
                 <tr>
@@ -93,7 +102,7 @@
                     <td>Assigned To: </td>
                     <td><select name="assignedTo">
                         <?php
-                            $query = "SELECT user_name FROM employees";
+                            $query = "SELECT * FROM employees";
                             $result = mysqli_query($con, $query);
                             $none = 0;
                             while($row=$result->fetch_assoc()) {
@@ -118,21 +127,31 @@
 					</select></td>
                     <td>Priority</td>
                     <td><select name="priority">
-					  <option value="1">1</option>
-					  <option value="2">2</option>
-					  <option value="3">3</option>
+                    <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
 					</select></td>
                     <td>Resolution</td>
                     <td><select name="resolution">
-                      <option value="onGoing">On Going</option>
-                      <option value="resolved">Resolved</option>
-					  <option value="escalated">Escalated</option>
+                      <option value="0">On Going</option>
+                      <option value="1">Resolved</option>
+					  <option value="2">Escalated</option>
 					</select></td>
                     <td>Resolution Version</td>
                     <td><select name="resolutionVersion">
-					  <option value="1">1</option>
-					  <option value="2">2</option>
-					  <option value="3">3</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
 					</select></td>
                 </tr>
             </table>
@@ -141,7 +160,7 @@
                     <td>Resolved By</td>
                     <td><select name="resolvedBy">
                         <?php
-                            $query = "SELECT user_name FROM employees";
+                            $query = "SELECT * FROM employees";
                             $result = mysqli_query($con, $query);
                             $none = 0;
                             while($row=$result->fetch_assoc()) {
@@ -149,12 +168,12 @@
                             }
                         ?>
 					</select></td>
-                    <td>Date: </td>
+                    <td>Date(yyyy/mm/dd): </td>
                     <td><input type="Text" name="dateResolved" size="5"></td>
                     <td>Tested by:</td>
                     <td><select name="testedBy">
                         <?php
-                            $query = "SELECT user_name FROM employees";
+                            $query = "SELECT * FROM employees";
                             $result = mysqli_query($con, $query);
                             $none = 0;
                             while($row=$result->fetch_assoc()) {
@@ -163,41 +182,41 @@
                         ?>
 					</select></td>
                     </select></td>
-                    <td>Date: </td>
+                    <td>Date(yyyy/mm/dd): </td>
                     <td><input type="Text" name="dateTested" size="5"></td>
                     <td><input type="checkbox" name="deferred" value="yes">Treated as deferred?<br></td>
                 </tr>
             </table>
             <input type="submit" name="submit" value="Next">
-            <input type="submit" name="reset" value="Reset">
-            <input type="submit" name="cancel" value="Cancel">
+            <input type="button" name="reset" value="Reset" onclick="reset()">
+            <input type="button" name="cancel" value="Cancel" onclick="go_home()">
         </form>
-<!--
+
         <script language=Javascript>
             function validate(theform) {
-                if(theform.name.value === ""){
-                    alert ("First name field must contain characters");
+                if(theform.problemSummary.value === ""){
+                    alert ("Problem Summary field must contain characters");
                     return false;
                 }
-                if(theform.username.value === ""){
-                    alert ("Last name field must contain characters");
+                if(theform.problem.value === ""){
+                    alert ("Problem field must contain characters");
                     return false;
                 }
-				if(theform.password.value === ""){
-                    alert ("First name field must contain characters");
-                    return false;
-                }
-				if(theform.userlevel.value === ""){
-                    alert ("First name field must contain characters");
-                    return false;
-                }
-				if(theform.name.value === ""){
-                    alert ("First name field must contain characters");
+				if(theform.dateEntered.value === ""){
+                    alert ("Date Entered field must contain characters");
                     return false;
                 }
                 return true;
             }
 		</script>
--->
+
+        <script language=Javascript>
+            function go_home() {
+                window.location.replace("../index.php");
+            }
+            function reset() {
+                window.location.reload(true);
+            }
+        </script>  
     </body>
 </html>
