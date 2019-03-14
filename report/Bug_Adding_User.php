@@ -7,6 +7,7 @@
     <body>
         <h2>
             <?php
+
                 $programID = $_POST['programName'];
                 $reportType = $_POST['reportType'];
 				$severity = $_POST['severity'];
