@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<workResponse>
+  <contentResponses>
+    <contentResponse>
+      <bug_id>9</bug_id>
+      <program_id>2</program_id>
+      <report_type>codingError</report_type>
+      <severity>1</severity>
+      <problem_summary>new Problem</problem_summary>
+      <problem>Problem</problem>
+      <reproducible>0</reproducible>
+      <suggested_fix>Fix the problem</suggested_fix>
+      <bug_date>0003-02-19</bug_date>
+      <area_id>1</area_id>
+      <assignee>3</assignee>
+      <comments>This is awesome</comments>
+      <bug_status>open</bug_status>
+      <priority>1</priority>
+      <resolution>0</resolution>
+      <resolution_version>1</resolution_version>
+      <resolvee>6</resolvee>
+      <resolve_date>2018-12-12</resolve_date>
+      <testee>3</testee>
+      <test_date>2018</test_date>
+      <deferred>0</deferred>
+      <employee_id>3</employee_id>
+    </contentResponse>
+    <contentResponse>
+      <bug_id>10</bug_id>
+      <program_id>1</program_id>
+      <report_type>codingError</report_type>
+      <severity>1</severity>
+      <problem_summary>New problem 2</problem_summary>
+      <problem>Problem</problem>
+      <reproducible>0</reproducible>
+      <suggested_fix>Fix the problem</suggested_fix>
+      <bug_date>0003-02-19</bug_date>
+      <area_id>1</area_id>
+      <assignee>3</assignee>
+      <comments>This is awesome</comments>
+      <bug_status>open</bug_status>
+      <priority>1</priority>
+      <resolution>0</resolution>
+      <resolution_version>1</resolution_version>
+      <resolvee>3</resolvee>
+      <resolve_date>1000-00-00</resolve_date>
+      <testee>3</testee>
+      <test_date>0</test_date>
+      <deferred>0</deferred>
+      <employee_id>3</employee_id>
+    </contentResponse>
+  </contentResponses>
+</workResponse>

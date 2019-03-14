@@ -90,22 +90,22 @@
 
         <?php
 
-            include '../auth/validate_user.php';
-            isLoggedIn();
+            // include '../auth/validate_user.php';
+            // isLoggedIn();
             
             
-            $updatePage;
-            $createPage;
+            // $updatePage;
+            // $createPage;
         	
             
-            if(isAdmin()) {
-                $updatePage = "Bug_Edit_Admin.php";
-                $createPage = "Bug_Report_Admin.php";
-            }
-            else {
-                $updatePage = "Bug_Edit_User.php";
-                $createPage = "Bug_Report_User.php";
-            }
+            // if(isAdmin()) {
+            //     $updatePage = "Bug_Edit_Admin.php";
+            //     $createPage = "Bug_Report_Admin.php";
+            // }
+            // else {
+            //     $updatePage = "Bug_Edit_User.php";
+            //     $createPage = "Bug_Report_User.php";
+            // }
 
 
 			$con = mysqli_connect("localhost","root");

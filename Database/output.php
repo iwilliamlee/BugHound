@@ -1,57 +1,39 @@
 
 
 <?php
-	include '../auth/validate_user.php';		
-	isLoggedIn();
 
-	if(isset($_POST['bug'])){
-        
+//         //database configuration
 
-		$con = mysqli_connect("localhost","root");
-        mysqli_select_db($con, "Bughound");
+// $config['db_name']    = "Bughound";
+// $config['table_name'] = "bugs";
+ 
+// //connect to host
+//     $con = mysqli_connect("localhost","root");
+//     mysqli_select_db($con, "Bughound");        //select all items in table
+//     $query = "SELECT * FROM bugs";
+    $dbh = new PDO('mysql:host=localhost;dbname=bughound','root');
 
-        $xml = new XMLWriter();
-        
-        $queryCols = $_POST['queryCols'];
-        $queryJoin = $_POST['queryJoin'];
-        $queryConditional = $_POST['queryConditional'];
-        $query = $queryCols . $queryJoin . $queryConditional;
-
-
-
-        if (!mysqli_query($con,$query))
-        {
-            echo("Error description: " . mysqli_error($con));
-            return;
-        }
-
-        $writer = new XMLWriter();
-        $writer->openURI('test.xml');
-        $writer->startDocument("1.0");
-        $writer->startElement("greeting");
-        $writer->text('Hello World');
-        $writer->endDocument();
-        $writer->flush();
-        // $result = mysqli_query($con, $query);
-        // $xml->openURI("test.xml");
-        // $xml->startDocument("1.0");
-        // $xml->setIndent(true);
-        
-        // $xml->startElement('bug');
-        
-        // while ($row = mysqli_fetch_array($result)) {
-        //   $xml->startElement("country");
-        //   $xml->writeAttribute('udid', $row['bug_id']);
-        //   $xml->writeRaw($row['country']);
-        //   $xml->endElement();
-        // }
-        
-        // $xml->endElement();
-        // $xml->endDocument();        
-        // $xml->flush();
-
-        header("Location: ../report/bug_view.php");
-		die();	
-	}
-?>
+    $sxe = new SimpleXMLElement('<workResponse></workResponse>');
+    $sxe_crs = $sxe->addChild('contentResponses');
+    
+    function array_walk_simplexml(&$value, $key, &$sx) {
+        $sx->addChild($key, $value);
+    }
+    
+    $stmt = $dbh->query('SELECT * FROM bugs');
+    
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $sx_cr = $sxe_crs->addChild('contentResponse');
+        array_walk($row, 'array_walk_simplexml', $sx_cr);
+    }
+    
+    $dom_sxe = dom_import_simplexml($sxe);
+    $dom = new DOMDocument('1.0');
+    $dom->formatOutput = true;
+    $dom_sxe = $dom->importNode($dom_sxe, true);
+    $dom_sxe = $dom->appendChild($dom_sxe);
+    
+    echo $dom->saveXML();
+    $dom->save('test1.xml');
+    ?>
 
