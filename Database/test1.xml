@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<workResponse>
+  <contentResponses>
+    <contentResponse>
+      <bug_id>9</bug_id>
+      <problem_summary>Not a cool problem</problem_summary>
+      <program_name>InsertUserInfo</program_name>
+      <report_type>codingError</report_type>
+      <severity>1</severity>
+      <area_name>System.IO7</area_name>
+      <name>WilliamUser2</name>
+      <bug_status>open</bug_status>
+      <priority>1</priority>
+      <resolution>0</resolution>
+      <bug_date>0003-02-19</bug_date>
+      <resolve_date>2018-12-12</resolve_date>
+    </contentResponse>
+  </contentResponses>
+</workResponse>

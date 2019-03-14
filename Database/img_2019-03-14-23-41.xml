@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<workResponse>
+  <contentResponses>
+    <contentResponse>
+      <bug_id>9</bug_id>
+      <problem_summary>Not a cool problem</problem_summary>
+      <program_name>InsertUserInfo</program_name>
+      <report_type>codingError</report_type>
+      <severity>1</severity>
+      <area_name>System.IO7</area_name>
+      <name>WilliamUser2</name>
+      <bug_status>open</bug_status>
+      <priority>1</priority>
+      <resolution>0</resolution>
+      <bug_date>0003-02-19</bug_date>
+      <resolve_date>2018-12-12</resolve_date>
+    </contentResponse>
+    <contentResponse>
+      <bug_id>10</bug_id>
+      <problem_summary>Its a weird problem</problem_summary>
+      <program_name>deleteUserInfo</program_name>
+      <report_type>codingError</report_type>
+      <severity>1</severity>
+      <area_name>System.IO7</area_name>
+      <name>WilliamUser2</name>
+      <bug_status>open</bug_status>
+      <priority>1</priority>
+      <resolution>0</resolution>
+      <bug_date>0003-02-19</bug_date>
+      <resolve_date>1000-00-00</resolve_date>
+    </contentResponse>
+    <contentResponse>
+      <bug_id>13</bug_id>
+      <problem_summary>HELLO WORLD</problem_summary>
+      <program_name>GetUserInfo v10</program_name>
+      <report_type>codingError</report_type>
+      <severity>1</severity>
+      <area_name>System.IO7</area_name>
+      <name>WilliamUser2</name>
+      <bug_status>open</bug_status>
+      <priority>1</priority>
+      <resolution>0</resolution>
+      <bug_date>1994-09-09</bug_date>
+      <resolve_date>0000-00-00</resolve_date>
+    </contentResponse>
+  </contentResponses>
+</workResponse>

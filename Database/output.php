@@ -1,4 +1,11 @@
-
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>BugHound Adding Bug</title>
+    </head>
+<body>
+<h2>Export completed
 
 <?php
 	include '../auth/validate_user.php';		
@@ -16,7 +23,7 @@
             $sx->addChild($key, $value);
         }
         
-        $stmt = $dbh->query("SELECT * FROM bugs");
+        $stmt = $dbh->query($query);
         
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $sx_cr = $sxe_crs->addChild('contentResponse');
@@ -28,12 +35,22 @@
         $dom->formatOutput = true;
         $dom_sxe = $dom->importNode($dom_sxe, true);
         $dom_sxe = $dom->appendChild($dom_sxe);
+        $dom->save('output-'.date('Y-m-d-H-s').'.xml');
         
-        echo $dom->saveXML();
-        $dom->save('test1.xml');
 
-        header("Location: ../report/bug_view.php");
-		die();	
+        // header("Location: ../report/bug_view.php");
+        die();	
     }
 ?>
+
+<input type="button" value="Return" id=button1 name=button1 onclick="go_home()">    
+</h2>
+        <script language=Javascript>
+            function go_home(){
+                window.location.replace("http://localhost/BugHound/index.php");
+            }
+        </script>
+                    
+    </body>
+</html>
 
