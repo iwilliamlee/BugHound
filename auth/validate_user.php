@@ -23,4 +23,12 @@
 		}
 		return true;
 	}
+
+	function isAdmin() {
+		$user_level =  (int)$_SESSION["user_level"];
+		if($user_level < 2) {
+			return false;
+		}
+		return true;
+	}
 ?>
