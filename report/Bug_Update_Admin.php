@@ -49,7 +49,6 @@
                 {
                     echo("error is: " .mysqli_error($con));
                 };
-                // $bugID = mysqli_insert_id($con);
                 printf("<p>Bug %d updated</p>", $bugID);
 
                 //uploading file
