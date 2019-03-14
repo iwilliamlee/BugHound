@@ -266,10 +266,7 @@
         ?>
         <p><form action="../Database/output.php" method="post">
             <input type="hidden" name="bug" value="1">
-            <input type="hidden" name="txt" value="1">
-            <input type="hidden" name="queryCols" value="<?php echo htmlspecialchars($queryCols); ?>">
-            <input type="hidden" name="queryJoin" value="<?php echo htmlspecialchars($queryJoin); ?>">
-            <input type="hidden" name="queryConditional" value="<?php echo htmlspecialchars($queryConditional); ?>">
+            <input type="hidden" name="query" value="<?php echo htmlspecialchars($query); ?>">
             <input type="submit" name="outputText" value="Output to XML">
         </form>
 

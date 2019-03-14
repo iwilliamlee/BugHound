@@ -5,13 +5,10 @@
     isLoggedIn();
     
     if(isset($_POST['bug'])){
-        $queryCols = $_POST['queryCols'];
-        $queryJoin = $_POST['queryJoin'];
-        $queryConditional = $_POST['queryConditional'];
-        $query = $queryCols . $queryJoin . $queryConditional;
+        $query = $_POST['query'];
     
     
-        $dbh = new PDO('mysql:host=localhost;dbname=bughound','root');
+        $dbh = new PDO('mysql:host=localhost;dbname=Bughound','root');
         $sxe = new SimpleXMLElement('<workResponse></workResponse>');
         $sxe_crs = $sxe->addChild('contentResponses');
         
@@ -19,7 +16,7 @@
             $sx->addChild($key, $value);
         }
         
-        $stmt = $dbh->query($query);
+        $stmt = $dbh->query("SELECT * FROM bugs");
         
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $sx_cr = $sxe_crs->addChild('contentResponse');
