@@ -5,7 +5,7 @@
 - https://www.phpmyadmin.net
 -
 - Host: localhost
-- Generation Time: Mar 14, 2019 at 09:14 PM
+- Generation Time: Mar 14, 2019 at 10:51 PM
 - Server version: 10.1.37-MariaDB
 - PHP Version: 7.3.1
 -->
@@ -21,7 +21,7 @@
                   `area_id` int(11) NOT NULL AUTO_INCREMENT,
                   `area_name` varchar(512) NOT NULL,
                   PRIMARY KEY (`area_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="attachments">
                 CREATE TABLE `attachments` (
@@ -65,7 +65,7 @@
                   CONSTRAINT `fk_area_key` FOREIGN KEY (`area_id`) REFERENCES `areas` (`area_id`),
                   CONSTRAINT `fk_employee_id` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`),
                   CONSTRAINT `fk_program_key` FOREIGN KEY (`program_id`) REFERENCES `programs` (`program_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="employees">
                 CREATE TABLE `employees` (
@@ -83,7 +83,7 @@
                   `program_name` varchar(512) NOT NULL,
                   `release_build` int(11) NOT NULL,
                   PRIMARY KEY (`program_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
             </pma:table>
         </pma:database>
     </pma:structure_schemas>
@@ -118,7 +118,7 @@
             <column name="program_id">2</column>
             <column name="report_type">codingError</column>
             <column name="severity">1</column>
-            <column name="problem_summary">new Problem</column>
+            <column name="problem_summary">Not a cool problem</column>
             <column name="problem">Problem</column>
             <column name="reproducible">0</column>
             <column name="suggested_fix">Fix the problem</column>
@@ -142,7 +142,7 @@
             <column name="program_id">1</column>
             <column name="report_type">codingError</column>
             <column name="severity">1</column>
-            <column name="problem_summary">New problem 2</column>
+            <column name="problem_summary">Its a weird problem</column>
             <column name="problem">Problem</column>
             <column name="reproducible">0</column>
             <column name="suggested_fix">Fix the problem</column>
@@ -161,55 +161,44 @@
             <column name="deferred">0</column>
             <column name="employee_id">3</column>
         </table>
+        <table name="bugs">
+            <column name="bug_id">13</column>
+            <column name="program_id">1</column>
+            <column name="report_type">codingError</column>
+            <column name="severity">1</column>
+            <column name="problem_summary">HELLO WORLD</column>
+            <column name="problem">HELLO_WORLD_BUG</column>
+            <column name="reproducible">0</column>
+            <column name="suggested_fix"></column>
+            <column name="bug_date">1994-09-09</column>
+            <column name="area_id">1</column>
+            <column name="assignee">3</column>
+            <column name="comments"></column>
+            <column name="bug_status">open</column>
+            <column name="priority">1</column>
+            <column name="resolution">0</column>
+            <column name="resolution_version">1</column>
+            <column name="resolvee">3</column>
+            <column name="resolve_date">0000-00-00</column>
+            <column name="testee">3</column>
+            <column name="test_date">0</column>
+            <column name="deferred">0</column>
+            <column name="employee_id">3</column>
+        </table>
         <!-- Table employees -->
         <table name="employees">
             <column name="employee_id">3</column>
-            <column name="name">Will5</column>
+            <column name="name">WilliamUser2</column>
             <column name="user_name">iwilliam3</column>
             <column name="password">password</column>
             <column name="user_level">1</column>
         </table>
         <table name="employees">
-            <column name="employee_id">4</column>
-            <column name="name">Chuck Li</column>
-            <column name="user_name">ichucklee</column>
-            <column name="password">PASSWORD</column>
-            <column name="user_level">1</column>
-        </table>
-        <table name="employees">
-            <column name="employee_id">5</column>
-            <column name="name">William</column>
-            <column name="user_name">iwilliam4321</column>
-            <column name="password">password</column>
-            <column name="user_level">1</column>
-        </table>
-        <table name="employees">
             <column name="employee_id">6</column>
-            <column name="name">test</column>
+            <column name="name">testAdmin</column>
             <column name="user_name">testaccount</column>
             <column name="password">123456</column>
             <column name="user_level">2</column>
-        </table>
-        <table name="employees">
-            <column name="employee_id">10</column>
-            <column name="name">testtest</column>
-            <column name="user_name">testest</column>
-            <column name="password">123456</column>
-            <column name="user_level">1</column>
-        </table>
-        <table name="employees">
-            <column name="employee_id">11</column>
-            <column name="name">NewAfterEdit</column>
-            <column name="user_name">NewAfterEdit</column>
-            <column name="password">123456</column>
-            <column name="user_level">1</column>
-        </table>
-        <table name="employees">
-            <column name="employee_id">12</column>
-            <column name="name">steven</column>
-            <column name="user_name">steven</column>
-            <column name="password">123456</column>
-            <column name="user_level">1</column>
         </table>
         <!-- Table programs -->
         <table name="programs">
