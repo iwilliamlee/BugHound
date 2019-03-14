@@ -23,6 +23,12 @@
                 bug_date,
                 resolve_date
                 FROM bugs";
+
+            if (!mysqli_query($con,$query))
+            {
+                echo("Error description: " . mysqli_error($con));
+                return;
+            }
             // $query = "SELECT * FROM bugs";
 			$result = mysqli_query($con, $query);
             echo "<table border=1 >
@@ -39,6 +45,7 @@
                 <th>Reported By</th>
                 <th>Report D<ate/th>
                 <th>Resolved Date</th>\n";
+
             $none = 0;
             while($row=mysqli_fetch_row($result)) {
                 $none=1;
