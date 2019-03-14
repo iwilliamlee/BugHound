@@ -83,7 +83,7 @@
         </h2>
         <script language=Javascript>
             function go_home(){
-                window.location.replace("../index.php");
+                window.location.replace("./bug_view.php");
             }
         </script>
             

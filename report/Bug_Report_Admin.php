@@ -10,7 +10,7 @@
         mysqli_select_db($con, "Bughound");
     ?>
         <h1>New Bug Report Entry Page</h1>
-        <form action="Bug_Adding.php" method="post" enctype="multipart/form-data" onsubmit="return validate(this)">
+        <form action="Bug_Adding_Admin.php" method="post" enctype="multipart/form-data" onsubmit="return validate(this)">
             <table>
                 <tr><!-- Line 1 -->
                     <td>Program:</td> 

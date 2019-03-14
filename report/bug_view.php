@@ -8,77 +8,77 @@
 
     <table>
             <tr>
-                <form action="Bug_View_Admin.php" method="get" onsubmit="return validate(this)">
+                <form action="bug_view.php" method="get" onsubmit="return validate(this)">
                     <td>Program:</td>
                     <td><input type="Text" name="program" value="<?php  if(isset($_GET['program'])) echo htmlspecialchars($_GET['program']); ?>"</td>
                     <td><input type="submit" name="submit" value="Search"></td>
                 </form>
             </tr>
             <tr>
-                <form action="Bug_View_Admin.php" method="get" onsubmit="return validate(this)">
+                <form action="bug_view.php" method="get" onsubmit="return validate(this)">
                     <td>Report Type:</td>
                     <td><input type="Text" name="report_type" value="<?php  if(isset($_GET['report_type'])) echo htmlspecialchars($_GET['report_type']); ?>"</td>
                     <td><input type="submit" name="submit" value="Search"></td>
                 </form>
             </tr>
             <tr>
-                <form action="Bug_View_Admin.php" method="get" onsubmit="return validate(this)">
+                <form action="bug_view.php" method="get" onsubmit="return validate(this)">
                     <td>Severity:</td>
                     <td><input type="Text" name="severity" value="<?php  if(isset($_GET['severity'])) echo htmlspecialchars($_GET['severity']); ?>"</td>
                     <td><input type="submit" name="submit" value="Search"></td>
                 </form>
             </tr>
             <tr>
-                <form action="Bug_View_Admin.php" method="get" onsubmit="return validate(this)">
+                <form action="bug_view.php" method="get" onsubmit="return validate(this)">
                     <td>Area:</td>
                     <td><input type="Text" name="area" value="<?php  if(isset($_GET['area'])) echo htmlspecialchars($_GET['area']); ?>"</td>
                     <td><input type="submit" name="submit" value="Search"></td>
                 </form>
             </tr>
             <tr>
-                <form action="Bug_View_Admin.php" method="get" onsubmit="return validate(this)">
+                <form action="bug_view.php" method="get" onsubmit="return validate(this)">
                     <td>Assigned To:</td>
                     <td><input type="Text" name="assigned" value="<?php  if(isset($_GET['assigned'])) echo htmlspecialchars($_GET['assigned']); ?>"</td>
                     <td><input type="submit" name="submit" value="Search"></td>
                 </form>
             </tr>
             <tr>
-                <form action="Bug_View_Admin.php" method="get" onsubmit="return validate(this)">
+                <form action="bug_view.php" method="get" onsubmit="return validate(this)">
                     <td>Status:</td>
                     <td><input type="Text" name="status" value="<?php  if(isset($_GET['status'])) echo htmlspecialchars($_GET['status']); ?>"</td>
                     <td><input type="submit" name="submit" value="Search"></td>
                 </form>
             </tr>
             <tr>
-                <form action="Bug_View_Admin.php" method="get" onsubmit="return validate(this)">
+                <form action="bug_view.php" method="get" onsubmit="return validate(this)">
                     <td>Priority:</td>
                     <td><input type="Text" name="priority" value="<?php  if(isset($_GET['priority'])) echo htmlspecialchars($_GET['priority']); ?>"</td>
                     <td><input type="submit" name="submit" value="Search"></td>
                 </form>
             </tr>
             <tr>
-                <form action="Bug_View_Admin.php" method="get" onsubmit="return validate(this)">
+                <form action="bug_view.php" method="get" onsubmit="return validate(this)">
                     <td>Resolution:</td>
                     <td><input type="Text" name="resolution" value="<?php  if(isset($_GET['resolution'])) echo htmlspecialchars($_GET['resolution']); ?>"</td>
                     <td><input type="submit" name="submit" value="Search"></td>
                 </form>
             </tr>
             <tr>
-                <form action="Bug_View_Admin.php" method="get" onsubmit="return validate(this)">
+                <form action="bug_view.php" method="get" onsubmit="return validate(this)">
                     <td>Reported By:</td>
                     <td><input type="Text" name="reported_by" value="<?php  if(isset($_GET['reported_by'])) echo htmlspecialchars($_GET['reported_by']); ?>"</td>
                     <td><input type="submit" name="submit" value="Search"></td>
                 </form>
             </tr>
             <tr>
-                <form action="Bug_View_Admin.php" method="get" onsubmit="return validate(this)">
+                <form action="bug_view.php" method="get" onsubmit="return validate(this)">
                     <td>Report Date:</td>
                     <td><input type="Text" name="report_date" value="<?php  if(isset($_GET['report_date'])) echo htmlspecialchars($_GET['report_date']); ?>"</td>
                     <td><input type="submit" name="submit" value="Search"></td>
                 </form>
             </tr>
             <tr>
-                <form action="Bug_View_Admin.php" method="get" onsubmit="return validate(this)">
+                <form action="bug_view.php" method="get" onsubmit="return validate(this)">
                     <td>Resolved By:</td>
                     <td><input type="Text" name="resolved_by" value="<?php  if(isset($_GET['resolved_by'])) echo htmlspecialchars($_GET['resolved_by']); ?>"</td>
                     <td><input type="submit" name="submit" value="Search"></td>

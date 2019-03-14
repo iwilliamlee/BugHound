@@ -80,7 +80,7 @@
         <p><INPUT type="button" value="Cancel" id=button1 name=button1 onclick="go_home()">
         <script language=Javascript>
             function go_home() {
-                window.location.replace("add_employee_page.php");
+                window.location.replace("View_Employee.php");
             }
         </script>    
     </body>
