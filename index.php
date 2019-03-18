@@ -25,15 +25,17 @@
 			<tr><td>
 				<input type="button" onclick="window.location.href = './report/bug_view.php';" value="Edit Bug", id="bug"/>	
 			</td></tr>
-			<tr><td>
-				<input type="button" onclick="window.location.href = './employee/View_Employee.php';" value="Edit Employees", id="bug"/>		
+<tr><td>
+				<input type="button" onclick="window.location.href = './area/area.php';" value="Edit Areas", id="bug"/>		
 			</td></tr>
 			<tr><td>
 				<input type="button" onclick="window.location.href = './program/program.php';" value="Edit Programs", id="bug"/>		
 			</td></tr>
 			<tr><td>
-				<input type="button" onclick="window.location.href = './area/area.php';" value="Edit Areas", id="bug"/>		
+				<input type="button" onclick="window.location.href = './employee/View_Employee.php';" value="Edit Employees", id="bug"/>		
 			</td></tr>
+
+
 			<tr><td>
 				<input type="button" onclick="logOut()" value="Log Out" id=logout/>
 			</td></tr>

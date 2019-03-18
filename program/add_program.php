@@ -28,7 +28,7 @@
         <script language=Javascript>
 
             function validate(theform) {
-                if(theform.name.value === ""){
+                if(theform.program_name.value === ""){
                     alert ("Name field must contain characters");
                     return false;
                 }

@@ -5,7 +5,8 @@
         <title>BugHound Adding Bug</title>
     </head>
 <body>
-<h2>Export completed
+<h2>Export completed <input type="button" value="Return" id=button1 name=button1 onclick="go_home()">    
+
 
 <?php
 	include '../auth/validate_user.php';		
@@ -41,13 +42,12 @@
         // header("Location: ../report/bug_view.php");
         die();	
     }
-?>
+?>   
 
-<input type="button" value="Return" id=button1 name=button1 onclick="go_home()">    
 </h2>
         <script language=Javascript>
             function go_home(){
-                window.location.replace("http://localhost/BugHound/index.php");
+                window.location.replace("../bug_view.php");
             }
         </script>
                     
