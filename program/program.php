@@ -21,7 +21,7 @@
 			
 			else 
 			{
-				echo "<table border=1 id = 'table'><th>Program ID</th><th>Name</th><th>Release</th>\n";
+				echo "<table border=1 id = 'table'><th>Program ID</th><th>Name</th><th>Version</th><th>Release</th>\n";
 				while($row=mysqli_fetch_array($result)) {
 					printf("<tr>
 								<td>
@@ -30,9 +30,11 @@
 								</td>
 								<td>%s</td>
 								<td>%s</td>
+								<td>%s</td>
 							</tr>\n",
 							$row['program_id'],
 							$row['program_name'],
+							$row['program_version'],
 							$row['release_build']
 					);
 				}

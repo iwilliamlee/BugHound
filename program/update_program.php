@@ -9,27 +9,29 @@
             include '../auth/validate_user.php';	
             isLoggedIn();
 			$id = $_GET['program_id'];
-			$program_name;
+            $program_name;
+            $program_version;
 			$release;
 			$con = mysqli_connect("localhost","root");
             mysqli_select_db($con, "Bughound");
 			$query = "SELECT program_name,
+                program_version,
                 release_build
                 FROM programs WHERE program_id = '$id' ";
             $none = 0;
 			$result = mysqli_query($con, $query);
             while($row=mysqli_fetch_row($result)) {
                 $none=1;
-				$program_name = $row[0];
-				$release = $row[1];
+                $program_name = $row[0];
+                $program_version = $row[1];
+				$release = $row[2];
             }
 		?>
         <form action="../Database/update.php" method="post" onsubmit="return validate(this)">
             <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
             <table>
                 <tr><td>Name:</td><td><input type="Text" name="program_name" value="<?php echo htmlspecialchars($program_name); ?>"</td></tr>
-            </table>
-            <table>
+                <tr><td>Version:</td><td><input type="Number" name="version" value="<?php echo htmlspecialchars($program_version); ?>"</td></tr>
                 <tr><td>Release:</td><td><input type="Number" name="release" value="<?php echo htmlspecialchars($release); ?>"</td></tr>
             </table>
             <input type="submit" name="submit" value="Submit">

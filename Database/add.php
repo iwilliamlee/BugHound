@@ -22,6 +22,7 @@
 	//If it is a post to program
 	if(isset($_POST['program_name'])){
 		$name = $_POST['program_name'];
+		$version = $_POST['version'];
 		$release = $_POST['release'];
 
 		$con = mysqli_connect("localhost","root");
@@ -37,7 +38,7 @@
 		}	
 		else {
 			$query;
-			$query = "INSERT INTO programs (program_name, release_build) VALUES ('".$name."','".$release."')";
+			$query = "INSERT INTO programs (program_name, program_version, release_build) VALUES ('".$name."','".$version."','".$release."')";
 			mysqli_query($con, $query);
 			header("Location: ../program/program.php");	
 		}		
@@ -46,6 +47,7 @@
 	
 	if(isset($_POST['area_name'])){
 		$name = $_POST['area_name'];
+		$program_id = $_POST['program_id'];
 
 		$con = mysqli_connect("localhost","root");
 		mysqli_select_db($con, "Bughound");
@@ -60,7 +62,7 @@
 				</SCRIPT>";	
 		}	
 		else {
-			$query = "INSERT INTO `areas`(`area_name`) VALUES ('".$name."')";
+			$query = "INSERT INTO areas (area_name, program_id) VALUES ('".$name."','".$program_id."')";
 			mysqli_query($con, $query);
 			header("Location: ../area/area.php");		
 		}		

@@ -16,10 +16,10 @@
 
             <table>
                 <tr><td>Name:</td><td><input type="Text" name="program_name"</td></tr>
-            </table>
-            <table>
+                <tr><td>Version:</td><td><input type="Number" name="version""</td></tr>
                 <tr><td>Release:</td><td><input type="Number" name="release"</td></tr>
             </table>
+
             <input type="submit" name="submit" value="Submit">
 			<input type="button" value="Cancel" onclick="window.location.href = 'program.php'">
 

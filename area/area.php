@@ -14,7 +14,7 @@
 			
 			$con = mysqli_connect("localhost","root");
 			mysqli_select_db($con, "Bughound");
-			$query = "SELECT * FROM areas";
+			$query = "SELECT * FROM areas INNER JOIN programs ON areas.program_id = programs.program_id ORDER BY areas.area_id";
 			$result = mysqli_query($con, $query);
 			 
 			if (mysqli_num_rows($result) == 0){
@@ -23,7 +23,7 @@
 			
 			else 
 			{
-				echo "<table border=1 id = 'table'><th>Area ID</th><th>Name</th>\n";
+				echo "<table border=1 id = 'table'><th>Area ID</th><th>Area Name</th><th>Assigned Program</th>\n";
 				while($row=mysqli_fetch_array($result)) {
 					printf("<tr>
 								<td>
@@ -31,9 +31,11 @@
 									<span class=\"linkline\">%d</span></a>
 								</td>
 								<td>%s</td>
+								<td>%s</td>
 							</tr>\n",
 							$row['area_id'],
-							$row['area_name']
+							$row['area_name'],
+							$row['program_name'] . " v" . $row['program_version'] 
 					);
 				}
 			}
