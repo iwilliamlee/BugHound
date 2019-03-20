@@ -22,6 +22,7 @@
                     <span class=\"linkline\">%d</span></a>
                     </td><td>%s</td></tr>\n",$row[0],$row[1]);
             }
+            mysqli_close($con);
         ?>
         </table>
         <?php

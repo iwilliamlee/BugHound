@@ -17,7 +17,7 @@ $con = mysqli_connect("localhost","root");
 mysqli_select_db($con, "Bughound");
 $result = mysqli_query($con, $query);
     $none = 0;
-    $file = fopen('output-'.date('Y-m-d-H-s').'.txt',"w");
+    $file = fopen('outputText-'.date('Y-m-d-H-s').'.txt',"w");
 while($row = mysqli_fetch_row($result)){
     $none=1;
     $string = implode(" ", $row)."\n";
@@ -53,9 +53,8 @@ mysqli_close($con);
         $dom->formatOutput = true;
         $dom_sxe = $dom->importNode($dom_sxe, true);
         $dom_sxe = $dom->appendChild($dom_sxe);
-        // echo $sxe->asXML();
 
-        $dom->save('output-'.date('Y-m-d-H-s').'.xml');
+        $dom->save('outputXML-'.date('Y-m-d-H-s').'.xml');
         
         die();	
     }

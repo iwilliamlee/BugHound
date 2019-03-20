@@ -29,6 +29,7 @@
 				$level = $row[2];
 				$name = $row[3];
             }
+            mysqli_close($con);
 		?>
 		<form action="Update_Employee_Successful.php" method="post" onsubmit="return validate(this)">
             <table>

@@ -24,7 +24,7 @@
                     user_level = '$userlevel' 
                     WHERE employee_id = '$id' ";
                 mysqli_query($con, $query);
-                
+                mysqli_close($con);
                 //Update the cookies
                 $_SESSION["user_level"] = $userlevel;
                 $_SESSION["username"] = $username;

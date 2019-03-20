@@ -21,7 +21,8 @@
                     release_build = '$release'
                     WHERE program_id = '$id' ";
 
-				mysqli_query($con, $query);
+                mysqli_query($con, $query);
+                mysqli_close($con);
             ?>
             You have successfully updated program: <?php printf("<p> %s.<p>",$name); ?>
             <p>

@@ -23,6 +23,7 @@
 				$program_name = $row[0];
 				$release = $row[1];
             }
+            mysqli_close($con);
 		?>
         <form action="../Database/update.php" method="post" onsubmit="return validate(this)">
             <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">

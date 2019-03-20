@@ -16,7 +16,8 @@
             WHERE program_id = '$id' ";
         mysqli_query($con, $query);
         header("Location: ../program/program.php");
-		die();
+        mysqli_close($con);
+        die();
     }
     
 
@@ -32,6 +33,7 @@
             WHERE area_id = '$id' ";
         mysqli_query($con, $query);
         header("Location: ../area/area.php");
+        mysqli_close($con);
 		die();
 	}
 

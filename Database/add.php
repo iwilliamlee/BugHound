@@ -15,7 +15,7 @@
 
 		mysqli_query($con, $query);
 		header("Location: ../employee/employee.php");
-		
+		mysqli_close($con);
 		die();	
 	}
 
@@ -41,6 +41,7 @@
 			mysqli_query($con, $query);
 			header("Location: ../program/program.php");	
 		}		
+		mysqli_close($con);
 		die();
 	}	
 	
@@ -63,7 +64,8 @@
 			$query = "INSERT INTO `areas`(`area_name`) VALUES ('".$name."')";
 			mysqli_query($con, $query);
 			header("Location: ../area/area.php");		
-		}		
+		}	
+		mysqli_close($con);	
 		die();	
 	}
 	

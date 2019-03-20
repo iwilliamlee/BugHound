@@ -109,7 +109,7 @@
                 return true;
             }
 		</script>
-
+        <?Php mysqli_close($con); ?>
         <script language=Javascript>
             function go_home() {
                 window.location.replace("../index.php");

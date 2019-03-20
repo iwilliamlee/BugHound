@@ -281,6 +281,7 @@
             function go_home() {
                 window.location.replace("../index.php");
             }
-        </script>    
+        </script>
+        <?php mysqli_close($con); ?>
     </body>
 </html>

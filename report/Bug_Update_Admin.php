@@ -69,6 +69,7 @@
                         };
                     }
                 } 
+                mysqli_close($con);
             ?>
             <input type="button" value="Return" id=button1 name=button1 onclick="go_home()">    
         </h2>

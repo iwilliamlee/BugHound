@@ -22,7 +22,8 @@
                         '".$username."',
                         '".$password."',
                         '".$userlevel."')";
-				mysqli_query($con, $query);
+                mysqli_query($con, $query);
+                mysqli_close($con);
                 printf("<p>Employee %s added.<p>",$name);
             ?>
             You have successfully added an Employee!

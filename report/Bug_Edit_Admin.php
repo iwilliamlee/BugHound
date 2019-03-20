@@ -37,6 +37,7 @@
             $status = $row[12]; $priority = $row[13]; $resolution = $row[14]; $resolutionVersion = $row[15];
             $resolvedBy = $row[16]; $dateResolved = $row[17]; $testedBy = $row[18]; $dateTested = $row[19]; $deferred = $row[20];
         }
+        mysqli_close($con);
     ?>
         <h1>Edit Bug Report Entry Page</h1>
         <form action="Bug_Update_Admin.php" method="post" enctype="multipart/form-data">

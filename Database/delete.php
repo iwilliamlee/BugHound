@@ -48,6 +48,7 @@
 			}	
 		}		
 		die();	
+		mysqli_close($con);
 	}
 
 	if(isset($_POST['program_id'])){
@@ -81,6 +82,7 @@
 			}	
 		}		
 		die();	
+		mysqli_close($con);
 	}
 	
 
@@ -115,6 +117,7 @@
 			}	
 		}		
 		die();	
+		mysqli_close($con);
 	}
 
 ?>
