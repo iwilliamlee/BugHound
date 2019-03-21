@@ -4,8 +4,8 @@
 - version 4.8.4
 - https://www.phpmyadmin.net
 -
-- Host: localhost
-- Generation Time: Mar 19, 2019 at 05:28 AM
+- Host: 127.0.0.1
+- Generation Time: Mar 22, 2019 at 12:39 AM
 - Server version: 10.1.37-MariaDB
 - PHP Version: 7.3.1
 -->
@@ -15,7 +15,7 @@
     - Structure schemas
     -->
     <pma:structure_schemas>
-        <pma:database name="Bughound" collation="latin1_swedish_ci" charset="latin1">
+        <pma:database name="bughound" collation="latin1_swedish_ci" charset="latin1">
             <pma:table name="areas">
                 CREATE TABLE `areas` (
                   `area_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -24,7 +24,7 @@
                   PRIMARY KEY (`area_id`),
                   KEY `fk_program_id` (`program_id`),
                   CONSTRAINT `fk_program_id` FOREIGN KEY (`program_id`) REFERENCES `programs` (`program_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="attachments">
                 CREATE TABLE `attachments` (
@@ -35,14 +35,14 @@
                   PRIMARY KEY (`attachment_id`),
                   KEY `fk_bug_key` (`bug_id`),
                   CONSTRAINT `fk_bug_key` FOREIGN KEY (`bug_id`) REFERENCES `bugs` (`bug_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="bugs">
                 CREATE TABLE `bugs` (
                   `bug_id` int(11) NOT NULL AUTO_INCREMENT,
                   `program_id` int(11) NOT NULL,
                   `report_type` varchar(512) NOT NULL,
-                  `severity` int(11) NOT NULL,
+                  `severity` varchar(11) NOT NULL,
                   `problem_summary` varchar(512) NOT NULL,
                   `problem` varchar(512) NOT NULL,
                   `reproducible` tinyint(1) NOT NULL,
@@ -53,7 +53,7 @@
                   `comments` varchar(512) NOT NULL,
                   `bug_status` varchar(512) NOT NULL,
                   `priority` int(11) NOT NULL,
-                  `resolution` int(11) NOT NULL,
+                  `resolution` varchar(11) NOT NULL,
                   `resolution_version` int(11) NOT NULL,
                   `resolvee` int(11) NOT NULL,
                   `resolve_date` date NOT NULL,
@@ -68,7 +68,7 @@
                   CONSTRAINT `fk_area_key` FOREIGN KEY (`area_id`) REFERENCES `areas` (`area_id`),
                   CONSTRAINT `fk_employee_id` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`),
                   CONSTRAINT `fk_program_key` FOREIGN KEY (`program_id`) REFERENCES `programs` (`program_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="employees">
                 CREATE TABLE `employees` (
@@ -78,7 +78,7 @@
                   `password` varchar(512) NOT NULL,
                   `user_level` int(11) NOT NULL,
                   PRIMARY KEY (`employee_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="programs">
                 CREATE TABLE `programs` (
@@ -87,126 +87,453 @@
                   `program_version` int(11) NOT NULL,
                   `release_build` int(11) NOT NULL,
                   PRIMARY KEY (`program_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
             </pma:table>
         </pma:database>
     </pma:structure_schemas>
 
     <!--
-    - Database: 'Bughound'
+    - Database: 'bughound'
     -->
-    <database name="Bughound">
+    <database name="bughound">
         <!-- Table areas -->
         <table name="areas">
-            <column name="area_id">1</column>
-            <column name="area_name">output</column>
-            <column name="program_id">4</column>
+            <column name="area_id">3</column>
+            <column name="area_name">Ada95 Parser</column>
+            <column name="program_id">7</column>
         </table>
         <table name="areas">
-            <column name="area_id">2</column>
-            <column name="area_name">input</column>
-            <column name="program_id">5</column>
+            <column name="area_id">4</column>
+            <column name="area_name">Ada95 Lexer</column>
+            <column name="program_id">7</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">5</column>
+            <column name="area_name">Ada95 IDE</column>
+            <column name="program_id">7</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">6</column>
+            <column name="area_name">Logon</column>
+            <column name="program_id">8</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">7</column>
+            <column name="area_name">Start</column>
+            <column name="program_id">8</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">8</column>
+            <column name="area_name">DB Maintenance</column>
+            <column name="program_id">8</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">9</column>
+            <column name="area_name">Search</column>
+            <column name="program_id">8</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">10</column>
+            <column name="area_name">Insert New</column>
+            <column name="program_id">8</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">11</column>
+            <column name="area_name">Search Results</column>
+            <column name="program_id">8</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">12</column>
+            <column name="area_name">Add Edit Areas</column>
+            <column name="program_id">8</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">13</column>
+            <column name="area_name">Add Employees</column>
+            <column name="program_id">8</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">14</column>
+            <column name="area_name">Add Programs</column>
+            <column name="program_id">8</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">15</column>
+            <column name="area_name">View Bugs</column>
+            <column name="program_id">8</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">16</column>
+            <column name="area_name">Lexer</column>
+            <column name="program_id">9</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">17</column>
+            <column name="area_name">Parser</column>
+            <column name="program_id">9</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">18</column>
+            <column name="area_name">Code Generator</column>
+            <column name="program_id">9</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">19</column>
+            <column name="area_name">Linker</column>
+            <column name="program_id">9</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">20</column>
+            <column name="area_name">Lexer</column>
+            <column name="program_id">10</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">21</column>
+            <column name="area_name">Parser</column>
+            <column name="program_id">10</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">22</column>
+            <column name="area_name">Code Generator</column>
+            <column name="program_id">10</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">23</column>
+            <column name="area_name">Linker</column>
+            <column name="program_id">10</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">24</column>
+            <column name="area_name">Lexer</column>
+            <column name="program_id">11</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">25</column>
+            <column name="area_name">Parser</column>
+            <column name="program_id">11</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">26</column>
+            <column name="area_name">Coder Generator</column>
+            <column name="program_id">11</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">27</column>
+            <column name="area_name">Linker</column>
+            <column name="program_id">11</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">28</column>
+            <column name="area_name">IDE</column>
+            <column name="program_id">11</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">29</column>
+            <column name="area_name">Lexer</column>
+            <column name="program_id">12</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">30</column>
+            <column name="area_name">Parser</column>
+            <column name="program_id">12</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">31</column>
+            <column name="area_name">Code Generator</column>
+            <column name="program_id">12</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">32</column>
+            <column name="area_name">Linker</column>
+            <column name="program_id">12</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">33</column>
+            <column name="area_name">IDE</column>
+            <column name="program_id">12</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">34</column>
+            <column name="area_name">Editor</column>
+            <column name="program_id">13</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">35</column>
+            <column name="area_name">Spell Checker</column>
+            <column name="program_id">13</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">36</column>
+            <column name="area_name">Dynodraw</column>
+            <column name="program_id">13</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">37</column>
+            <column name="area_name">Formulator</column>
+            <column name="program_id">13</column>
         </table>
         <!-- Table attachments -->
         <table name="attachments">
-            <column name="attachment_id">1</column>
+            <column name="attachment_id">15</column>
             <column name="path"></column>
             <column name="file_name"></column>
-            <column name="bug_id">1</column>
+            <column name="bug_id">8</column>
         </table>
         <table name="attachments">
-            <column name="attachment_id">4</column>
+            <column name="attachment_id">16</column>
             <column name="path"></column>
             <column name="file_name"></column>
-            <column name="bug_id">2</column>
+            <column name="bug_id">8</column>
         </table>
         <table name="attachments">
-            <column name="attachment_id">5</column>
+            <column name="attachment_id">17</column>
             <column name="path"></column>
             <column name="file_name"></column>
-            <column name="bug_id">3</column>
+            <column name="bug_id">8</column>
         </table>
         <table name="attachments">
-            <column name="attachment_id">6</column>
+            <column name="attachment_id">18</column>
             <column name="path"></column>
             <column name="file_name"></column>
-            <column name="bug_id">3</column>
+            <column name="bug_id">8</column>
         </table>
         <table name="attachments">
-            <column name="attachment_id">7</column>
+            <column name="attachment_id">19</column>
             <column name="path"></column>
             <column name="file_name"></column>
-            <column name="bug_id">3</column>
+            <column name="bug_id">9</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">20</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">10</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">21</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">11</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">22</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">12</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">24</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">14</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">25</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">12</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">26</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">15</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">27</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">16</column>
         </table>
         <!-- Table bugs -->
         <table name="bugs">
-            <column name="bug_id">1</column>
-            <column name="program_id">5</column>
-            <column name="report_type">codingError</column>
-            <column name="severity">1</column>
-            <column name="problem_summary">Terrible problem in COBOL</column>
-            <column name="problem">COBOL programmers are dying</column>
-            <column name="reproducible">1</column>
-            <column name="suggested_fix">Hire some more</column>
-            <column name="bug_date">1994-07-11</column>
-            <column name="area_id">2</column>
-            <column name="assignee">14</column>
-            <column name="comments">Assigning it to testaccount</column>
-            <column name="bug_status">open</column>
-            <column name="priority">1</column>
-            <column name="resolution">0</column>
-            <column name="resolution_version">1</column>
-            <column name="resolvee">13</column>
-            <column name="resolve_date">0000-00-00</column>
-            <column name="testee">13</column>
-            <column name="test_date">0</column>
-            <column name="deferred">0</column>
-            <column name="employee_id">13</column>
-        </table>
-        <table name="bugs">
-            <column name="bug_id">2</column>
-            <column name="program_id">4</column>
-            <column name="report_type">codingError</column>
-            <column name="severity">3</column>
-            <column name="problem_summary">Minor issue in Pascal input</column>
-            <column name="problem">pascal cant handle concat</column>
+            <column name="bug_id">8</column>
+            <column name="program_id">9</column>
+            <column name="report_type">documentation</column>
+            <column name="severity">fatal</column>
+            <column name="problem_summary">All our COBOL programmers are old and dying out so fast we can\'t find replacements</column>
+            <column name="problem">COBOL</column>
             <column name="reproducible">0</column>
-            <column name="suggested_fix">not sure</column>
-            <column name="bug_date">1994-07-12</column>
-            <column name="area_id">1</column>
-            <column name="assignee">13</column>
-            <column name="comments">Assigning it to testser</column>
-            <column name="bug_status">open</column>
-            <column name="priority">1</column>
-            <column name="resolution">0</column>
-            <column name="resolution_version">1</column>
-            <column name="resolvee">13</column>
-            <column name="resolve_date">0000-00-00</column>
-            <column name="testee">13</column>
-            <column name="test_date">0</column>
-            <column name="deferred">0</column>
-            <column name="employee_id">13</column>
-        </table>
-        <table name="bugs">
-            <column name="bug_id">3</column>
-            <column name="program_id">5</column>
-            <column name="report_type">codingError</column>
-            <column name="severity">1</column>
-            <column name="problem_summary">Minor issue in Pascal input</column>
-            <column name="problem">pascal cant handle concat</column>
-            <column name="reproducible">0</column>
-            <column name="suggested_fix">Hire some more</column>
-            <column name="bug_date">1994-07-11</column>
-            <column name="area_id">1</column>
+            <column name="suggested_fix"></column>
+            <column name="bug_date">2019-03-21</column>
+            <column name="area_id">3</column>
             <column name="assignee">13</column>
             <column name="comments"></column>
-            <column name="bug_status">close</column>
+            <column name="bug_status">open</column>
             <column name="priority">1</column>
-            <column name="resolution">0</column>
+            <column name="resolution">on going</column>
             <column name="resolution_version">1</column>
             <column name="resolvee">13</column>
             <column name="resolve_date">0000-00-00</column>
             <column name="testee">13</column>
+            <column name="test_date">0</column>
+            <column name="deferred">0</column>
+            <column name="employee_id">16</column>
+        </table>
+        <table name="bugs">
+            <column name="bug_id">9</column>
+            <column name="program_id">7</column>
+            <column name="report_type">design_Issue</column>
+            <column name="severity">minor</column>
+            <column name="problem_summary">IDE File -&gt; Print defaults to pdf - should be blank initially</column>
+            <column name="problem">IDE File</column>
+            <column name="reproducible">1</column>
+            <column name="suggested_fix"></column>
+            <column name="bug_date">2019-03-21</column>
+            <column name="area_id">3</column>
+            <column name="assignee">13</column>
+            <column name="comments"></column>
+            <column name="bug_status">open</column>
+            <column name="priority">1</column>
+            <column name="resolution">on going</column>
+            <column name="resolution_version">1</column>
+            <column name="resolvee">13</column>
+            <column name="resolve_date">0000-00-00</column>
+            <column name="testee">13</column>
+            <column name="test_date">0</column>
+            <column name="deferred">0</column>
+            <column name="employee_id">19</column>
+        </table>
+        <table name="bugs">
+            <column name="bug_id">10</column>
+            <column name="program_id">13</column>
+            <column name="report_type">design_Issue</column>
+            <column name="severity">serious</column>
+            <column name="problem_summary">Forumlator Missing capital Greek Sigma</column>
+            <column name="problem">Formulator</column>
+            <column name="reproducible">1</column>
+            <column name="suggested_fix"></column>
+            <column name="bug_date">2019-03-21</column>
+            <column name="area_id">3</column>
+            <column name="assignee">13</column>
+            <column name="comments"></column>
+            <column name="bug_status">open</column>
+            <column name="priority">1</column>
+            <column name="resolution">on going</column>
+            <column name="resolution_version">1</column>
+            <column name="resolvee">13</column>
+            <column name="resolve_date">0000-00-00</column>
+            <column name="testee">13</column>
+            <column name="test_date">0</column>
+            <column name="deferred">0</column>
+            <column name="employee_id">17</column>
+        </table>
+        <table name="bugs">
+            <column name="bug_id">11</column>
+            <column name="program_id">12</column>
+            <column name="report_type">codingError</column>
+            <column name="severity">minor</column>
+            <column name="problem_summary">IDE should have a toolbar for compiling, linking, running.</column>
+            <column name="problem">IDE</column>
+            <column name="reproducible">1</column>
+            <column name="suggested_fix"></column>
+            <column name="bug_date">2019-03-21</column>
+            <column name="area_id">3</column>
+            <column name="assignee">13</column>
+            <column name="comments"></column>
+            <column name="bug_status">open</column>
+            <column name="priority">1</column>
+            <column name="resolution">on going</column>
+            <column name="resolution_version">1</column>
+            <column name="resolvee">13</column>
+            <column name="resolve_date">0000-00-00</column>
+            <column name="testee">13</column>
+            <column name="test_date">0</column>
+            <column name="deferred">0</column>
+            <column name="employee_id">18</column>
+        </table>
+        <table name="bugs">
+            <column name="bug_id">12</column>
+            <column name="program_id">11</column>
+            <column name="report_type">codingError</column>
+            <column name="severity">serious</column>
+            <column name="problem_summary">IDE Help-&gt;Editor goes to empty page</column>
+            <column name="problem">IDE</column>
+            <column name="reproducible">1</column>
+            <column name="suggested_fix"></column>
+            <column name="bug_date">2019-03-21</column>
+            <column name="area_id">3</column>
+            <column name="assignee">13</column>
+            <column name="comments"></column>
+            <column name="bug_status">open</column>
+            <column name="priority">1</column>
+            <column name="resolution">on going</column>
+            <column name="resolution_version">1</column>
+            <column name="resolvee">13</column>
+            <column name="resolve_date">0000-00-00</column>
+            <column name="testee">13</column>
+            <column name="test_date">0</column>
+            <column name="deferred">0</column>
+            <column name="employee_id">16</column>
+        </table>
+        <table name="bugs">
+            <column name="bug_id">14</column>
+            <column name="program_id">7</column>
+            <column name="report_type">codingError</column>
+            <column name="severity">minor</column>
+            <column name="problem_summary">add areas pageâ€ has no means to Cancel or quit after adding</column>
+            <column name="problem">Add Areas Page</column>
+            <column name="reproducible">0</column>
+            <column name="suggested_fix"></column>
+            <column name="bug_date">2019-03-14</column>
+            <column name="area_id">3</column>
+            <column name="assignee">0</column>
+            <column name="comments"></column>
+            <column name="bug_status"></column>
+            <column name="priority">0</column>
+            <column name="resolution"></column>
+            <column name="resolution_version">0</column>
+            <column name="resolvee">0</column>
+            <column name="resolve_date">0000-00-00</column>
+            <column name="testee">0</column>
+            <column name="test_date">0</column>
+            <column name="deferred">0</column>
+            <column name="employee_id">16</column>
+        </table>
+        <table name="bugs">
+            <column name="bug_id">15</column>
+            <column name="program_id">7</column>
+            <column name="report_type">codingError</column>
+            <column name="severity">minor</column>
+            <column name="problem_summary">asdf</column>
+            <column name="problem">asdf</column>
+            <column name="reproducible">0</column>
+            <column name="suggested_fix">asdf</column>
+            <column name="bug_date">2019-03-21</column>
+            <column name="area_id">3</column>
+            <column name="assignee">13</column>
+            <column name="comments"></column>
+            <column name="bug_status">open</column>
+            <column name="priority">1</column>
+            <column name="resolution">on going</column>
+            <column name="resolution_version">1</column>
+            <column name="resolvee">13</column>
+            <column name="resolve_date">0000-00-00</column>
+            <column name="testee">13</column>
+            <column name="test_date">0</column>
+            <column name="deferred">0</column>
+            <column name="employee_id">13</column>
+        </table>
+        <table name="bugs">
+            <column name="bug_id">16</column>
+            <column name="program_id">7</column>
+            <column name="report_type">codingError</column>
+            <column name="severity">minor</column>
+            <column name="problem_summary">asdf</column>
+            <column name="problem">asdf</column>
+            <column name="reproducible">0</column>
+            <column name="suggested_fix"></column>
+            <column name="bug_date">2019-03-21</column>
+            <column name="area_id">3</column>
+            <column name="assignee">0</column>
+            <column name="comments"></column>
+            <column name="bug_status"></column>
+            <column name="priority">0</column>
+            <column name="resolution"></column>
+            <column name="resolution_version">0</column>
+            <column name="resolvee">0</column>
+            <column name="resolve_date">0000-00-00</column>
+            <column name="testee">0</column>
             <column name="test_date">0</column>
             <column name="deferred">0</column>
             <column name="employee_id">13</column>
@@ -214,30 +541,109 @@
         <!-- Table employees -->
         <table name="employees">
             <column name="employee_id">13</column>
-            <column name="name">testname</column>
-            <column name="user_name">testuser</column>
+            <column name="name">adminName</column>
+            <column name="user_name">Admin</column>
             <column name="password">123</column>
             <column name="user_level">1</column>
         </table>
         <table name="employees">
             <column name="employee_id">14</column>
-            <column name="name">test</column>
-            <column name="user_name">testaccount</column>
+            <column name="name">userName</column>
+            <column name="user_name">User</column>
+            <column name="password">123</column>
+            <column name="user_level">2</column>
+        </table>
+        <table name="employees">
+            <column name="employee_id">15</column>
+            <column name="name">Bob</column>
+            <column name="user_name">smithbob</column>
+            <column name="password">123</column>
+            <column name="user_level">3</column>
+        </table>
+        <table name="employees">
+            <column name="employee_id">16</column>
+            <column name="name">Sue</column>
+            <column name="user_name">Jonessue</column>
+            <column name="password">123</column>
+            <column name="user_level">2</column>
+        </table>
+        <table name="employees">
+            <column name="employee_id">17</column>
+            <column name="name">Habib</column>
+            <column name="user_name">smithhabib</column>
+            <column name="password">123</column>
+            <column name="user_level">2</column>
+        </table>
+        <table name="employees">
+            <column name="employee_id">18</column>
+            <column name="name">Yoshi</column>
+            <column name="user_name">jonesyoshi</column>
+            <column name="password">123</column>
+            <column name="user_level">1</column>
+        </table>
+        <table name="employees">
+            <column name="employee_id">19</column>
+            <column name="name">Becky</column>
+            <column name="user_name">jonesbecky</column>
+            <column name="password">123</column>
+            <column name="user_level">1</column>
+        </table>
+        <table name="employees">
+            <column name="employee_id">20</column>
+            <column name="name">Francois</column>
+            <column name="user_name">smithfrancois</column>
+            <column name="password">123</column>
+            <column name="user_level">2</column>
+        </table>
+        <table name="employees">
+            <column name="employee_id">21</column>
+            <column name="name">Felix</column>
+            <column name="user_name">smithfelix</column>
             <column name="password">123</column>
             <column name="user_level">2</column>
         </table>
         <!-- Table programs -->
         <table name="programs">
-            <column name="program_id">4</column>
-            <column name="program_name">ada65</column>
-            <column name="program_version">2</column>
-            <column name="release_build">3</column>
+            <column name="program_id">7</column>
+            <column name="program_name">Ada95 Coder</column>
+            <column name="program_version">1</column>
+            <column name="release_build">1</column>
         </table>
         <table name="programs">
-            <column name="program_id">5</column>
-            <column name="program_name">pascal21</column>
+            <column name="program_id">8</column>
+            <column name="program_name">BugHound</column>
             <column name="program_version">1</column>
-            <column name="release_build">3</column>
+            <column name="release_build">1</column>
+        </table>
+        <table name="programs">
+            <column name="program_id">9</column>
+            <column name="program_name">COBOL Coder</column>
+            <column name="program_version">1</column>
+            <column name="release_build">1</column>
+        </table>
+        <table name="programs">
+            <column name="program_id">10</column>
+            <column name="program_name">COBOL Coder</column>
+            <column name="program_version">1</column>
+            <column name="release_build">2</column>
+        </table>
+        <table name="programs">
+            <column name="program_id">11</column>
+            <column name="program_name">COBOL Coder</column>
+            <column name="program_version">2</column>
+            <column name="release_build">1</column>
+        </table>
+        <table name="programs">
+            <column name="program_id">12</column>
+            <column name="program_name">Pascal Coder</column>
+            <column name="program_version">1</column>
+            <column name="release_build">1</column>
+        </table>
+        <table name="programs">
+            <column name="program_id">13</column>
+            <column name="program_name">Word Writer 2011</column>
+            <column name="program_version">1</column>
+            <column name="release_build">1</column>
         </table>
     </database>
 </pma_xml_export>
