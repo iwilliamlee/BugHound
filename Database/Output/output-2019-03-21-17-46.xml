@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<bugReport>
+  <bugContent>
+    <bug>
+      <bug_id>1</bug_id>
+      <problem_summary>Terrible problem in COBOL</problem_summary>
+      <program_name>pascal21</program_name>
+      <report_type>codingError</report_type>
+      <severity>1</severity>
+      <area_name>input</area_name>
+      <Assignee>test</Assignee>
+      <bug_status>open</bug_status>
+      <priority>1</priority>
+      <resolution>0</resolution>
+      <name>testname</name>
+      <bug_date>1994-07-11</bug_date>
+      <resolve_date>0000-00-00</resolve_date>
+      <problem>COBOL programmers are dying</problem>
+      <reproducible>1</reproducible>
+      <suggested_fix>Hire some more</suggested_fix>
+      <comments>Assigning it to testaccount</comments>
+      <resolution_version>1</resolution_version>
+      <Resolvee>testname</Resolvee>
+      <Testee>testname</Testee>
+      <test_date>0</test_date>
+      <deferred>0</deferred>
+    </bug>
+    <bug>
+      <bug_id>2</bug_id>
+      <problem_summary>Minor issue in Pascal input</problem_summary>
+      <program_name>ada65</program_name>
+      <report_type>codingError</report_type>
+      <severity>3</severity>
+      <area_name>output</area_name>
+      <Assignee>testname</Assignee>
+      <bug_status>open</bug_status>
+      <priority>1</priority>
+      <resolution>0</resolution>
+      <name>testname</name>
+      <bug_date>1994-07-12</bug_date>
+      <resolve_date>0000-00-00</resolve_date>
+      <problem>pascal cant handle concat</problem>
+      <reproducible>0</reproducible>
+      <suggested_fix>not sure</suggested_fix>
+      <comments>Assigning it to testser</comments>
+      <resolution_version>1</resolution_version>
+      <Resolvee>testname</Resolvee>
+      <Testee>testname</Testee>
+      <test_date>0</test_date>
+      <deferred>0</deferred>
+    </bug>
+  </bugContent>
+</bugReport>

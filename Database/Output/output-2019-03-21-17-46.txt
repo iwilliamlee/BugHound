@@ -1,0 +1,50 @@
+Bug ID: 1
+Program Name: pascal21
+Report type: codingError
+Severity: 1
+Problem Summary: Terrible problem in COBOL
+Problem: COBOL programmers are dying
+Reproducible 1
+Suggested Fix: Hire some more
+Reported by: testname
+Report Date: 1994-07-11
+-----
+Area: input
+Assigned to: test
+Comments: Assigning it to testaccount
+Bug Status: open
+Priority: 1
+Resolution: 0
+Resolution Version 1
+Resolved by: testname
+Resolved date: 0000-00-00
+Tested by: testname
+Test Date: 0
+Deferred: 0
+
+=======================
+Bug ID: 2
+Program Name: ada65
+Report type: codingError
+Severity: 3
+Problem Summary: Minor issue in Pascal input
+Problem: pascal cant handle concat
+Reproducible 0
+Suggested Fix: not sure
+Reported by: testname
+Report Date: 1994-07-12
+-----
+Area: output
+Assigned to: testname
+Comments: Assigning it to testser
+Bug Status: open
+Priority: 1
+Resolution: 0
+Resolution Version 1
+Resolved by: testname
+Resolved date: 0000-00-00
+Tested by: testname
+Test Date: 0
+Deferred: 0
+
+=======================

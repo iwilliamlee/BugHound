@@ -10,6 +10,9 @@
             <tr>
                 <td>Program:</td>
                 <td><input type="Text" name="program" value="<?php  if(isset($_GET['program'])) echo htmlspecialchars($_GET['program']); ?>"</td>
+                <td>Version:</td>
+                <td><input type="Number" name="version""</td>
+                <td>Release:</td><td><input type="Number" name="release"</td>
             </tr>
             <tr>
                 <td>Report Type:</td>
@@ -90,6 +93,8 @@
             bug_id, 
             problem_summary,
             program_name,
+            program_version,
+            release_build,
             report_type,
             severity,
             area_name,
@@ -129,6 +134,14 @@
         if(isset($_GET['program'])) {
             $search = mysqli_real_escape_string($con, $_GET['program']);
             $queryConditional .= " program_name LIKE '%$search%' AND ";
+        }
+        if(isset($_GET['version'])) {
+            $search = mysqli_real_escape_string($con, $_GET['version']);
+            $queryConditional .= " program_version LIKE '%$search%' AND ";
+        }
+        if(isset($_GET['release'])) {
+            $search = mysqli_real_escape_string($con, $_GET['release']);
+            $queryConditional .= " release_build LIKE '%$search%' AND ";
         }
         if(isset($_GET['report_type'])) {
             $search = mysqli_real_escape_string($con, $_GET['report_type']);
@@ -190,6 +203,8 @@
             <th>ID</th>
             <th>Problem</th>
             <th>Program</th>
+            <th>Version</th>
+            <th>Build</th>
             <th>Report Type</th>
             <th>Severity</th>
             <th>Functional Area</th>
@@ -222,6 +237,8 @@
                     <td>%s</td>
                     <td>%s</td>
                     <td>%s</td>
+                    <td>%s</td>
+                    <td>%s</td>
                 </tr>\n",
                     $row[0],
                     $row[1],
@@ -235,7 +252,9 @@
                     $row[9],
                     $row[10],
                     $row[11],
-                    $row[12]
+                    $row[12],
+                    $row[13],
+                    $row[14]
             );
         }
     ?></table>
