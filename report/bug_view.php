@@ -10,6 +10,10 @@
             <tr>
                 <td>Program:</td>
                 <td><input type="Text" name="program" value="<?php  if(isset($_GET['program'])) echo htmlspecialchars($_GET['program']); ?>"</td>
+                <td>Version:</td>
+                <td><input type="Text" name="version" value="<?php  if(isset($_GET['version'])) echo htmlspecialchars($_GET['version']); ?>"</td>
+                <td>Release:</td>
+                <td><input type="Text" name="release" value="<?php  if(isset($_GET['release'])) echo htmlspecialchars($_GET['release']); ?>"</td>
             </tr>
             <tr>
                 <td>Report Type:</td>
@@ -108,7 +112,9 @@
             resolvees.name as Resolvee,
             testees.name as Testee,
             test_date,
-            deferred
+            deferred,
+            program_version,
+            release_build
         ";
 
         $queryJoin = " FROM bugs 
@@ -129,6 +135,14 @@
         if(isset($_GET['program'])) {
             $search = mysqli_real_escape_string($con, $_GET['program']);
             $queryConditional .= " program_name LIKE '%$search%' AND ";
+        }
+        if(isset($_GET['version'])) {
+            $search = mysqli_real_escape_string($con, $_GET['version']);
+            $queryConditional .= " program_version LIKE '%$search%' AND ";
+        }
+        if(isset($_GET['release'])) {
+            $search = mysqli_real_escape_string($con, $_GET['release']);
+            $queryConditional .= " release_build LIKE '%$search%' AND ";
         }
         if(isset($_GET['report_type'])) {
             $search = mysqli_real_escape_string($con, $_GET['report_type']);
@@ -190,6 +204,8 @@
             <th>ID</th>
             <th>Problem</th>
             <th>Program</th>
+            <th>Version</th>
+            <th>Release</th>
             <th>Report Type</th>
             <th>Severity</th>
             <th>Functional Area</th>
@@ -222,10 +238,14 @@
                     <td>%s</td>
                     <td>%s</td>
                     <td>%s</td>
+                    <td>%s</td>
+                    <td>%s</td>
                 </tr>\n",
                     $row[0],
                     $row[1],
                     $row[2],
+                    $row[22],
+                    $row[23],
                     $row[3],
                     $row[4],
                     $row[5],

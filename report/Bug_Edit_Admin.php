@@ -77,26 +77,12 @@
 					</select></td>
                     <td>Severity:</td>
                     <td><select name="severity">
-					  <option value="1" 
-                        <?php if($severity == 1) { ?> selected="selected" <?php } ?> >1</option>
-					  <option value="2"
-                        <?php if($severity == 2) { ?> selected="selected" <?php } ?> >2</option>
-					  <option value="3"
-                        <?php if($severity == 3) { ?> selected="selected" <?php } ?> >3</option>
-                      <option value="4"
-                        <?php if($severity == 4) { ?> selected="selected" <?php } ?> >4</option>
-                      <option value="5"
-                        <?php if($severity == 5) { ?> selected="selected" <?php } ?> >5</option>
-                      <option value="6"
-                        <?php if($severity == 6) { ?> selected="selected" <?php } ?> >6</option>
-                      <option value="7"
-                        <?php if($severity == 7) { ?> selected="selected" <?php } ?> >7</option>
-                      <option value="8"
-                        <?php if($severity == 8) { ?> selected="selected" <?php } ?> >8</option>
-                      <option value="9"
-                        <?php if($severity == 9) { ?> selected="selected" <?php } ?> >9</option>
-                      <option value="10"
-                        <?php if($severity == 10) { ?> selected="selected" <?php } ?> >10</option>
+					  <option value="minor" 
+                        <?php if($severity == "minor") { ?> selected="selected" <?php } ?> >Minor</option>
+					  <option value="serious"
+                        <?php if($severity == "serious") { ?> selected="selected" <?php } ?> >Serious</option>
+					  <option value="fatal"
+                        <?php if($severity == "fatal") { ?> selected="selected" <?php } ?> >Fatal</option>
 					</select></td>
                 </tr>
             </table>
@@ -152,7 +138,9 @@
                         while($row=mysqli_fetch_row($result)) {
                             $none=1;
                             printf(
-                                "<tr><td>%s</td></tr>\n",$row[1]);
+                                "<tr><td>
+                                    <a href='./uploads/%s' download=%s>%s</a>
+                                </td></tr>\n",$row[1], $row[1], $row[1]);
                         }
                     ?>
                 </tr>
@@ -224,12 +212,12 @@
 					</select></td>
                     <td>Resolution</td>
                     <td><select name="resolution">
-                      <option value="0"
-                        <?php if($resolution == 0) { ?> selected="selected" <?php } ?>>On Going</option>
-                      <option value="1"
-                        <?php if($resolution == 1) { ?> selected="selected" <?php } ?>>Resolved</option>
-					  <option value="2"
-                        <?php if($resolution == 2) { ?> selected="selected" <?php } ?>>Escalated</option>
+                      <option value="on going"
+                        <?php if($resolution == "on going") { ?> selected="selected" <?php } ?>>On Going</option>
+                      <option value="resolved"
+                        <?php if($resolution == "resolved") { ?> selected="selected" <?php } ?>>Resolved</option>
+					  <option value="escalated"
+                        <?php if($resolution == "escalated") { ?> selected="selected" <?php } ?>>Escalated</option>
 					</select></td>
                     <td>Resolution Version</td>
                     <td><select name="resolutionVersion">

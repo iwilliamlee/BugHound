@@ -38,16 +38,9 @@
 					</select></td>
                     <td>Severity:</td>
                     <td><select name="severity">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
+                        <option value="minor">Minor</option>
+                        <option value="serious">Serious</option>
+                        <option value="fatal">Fatal</option>
 					</select></td>
                 </tr>
             </table>
@@ -85,7 +78,7 @@
             </table>
             Select image to upload:
             <input type="file" name="file[]" id="file" multiple="">
-            <input type="hidden" name="functionalArea" value='1'> <!-- default AREA for all new bugs -->
+            <input type="hidden" name="functionalArea" value="1"> <!-- default AREA for all new bugs -->
 
             <input type="submit" name="submit" value="Next">
             <input type="button" name="reset" value="Reset" onclick="reset()">
