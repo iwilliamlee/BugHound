@@ -96,7 +96,7 @@
             program_version,
             release_build,
             report_type,
-            severity,
+            severity_name,
             area_name,
             assignees.name as Assignee,
             bug_status,
@@ -117,18 +117,20 @@
         ";
 
         $queryJoin = " FROM bugs 
-            INNER JOIN programs 
+            LEFT JOIN programs 
             ON bugs.program_id = programs.program_id
-            INNER JOIN areas
+            LEFT JOIN areas
             ON bugs.area_id = areas.area_id
-            INNER JOIN employees as assignees
+            LEFT JOIN employees as assignees
             ON bugs.assignee = assignees.employee_id
-            INNER JOIN employees as reportees
+            LEFT JOIN employees as reportees
             ON bugs.employee_id = reportees.employee_id
-            INNER JOIN employees as resolvees
+            LEFT JOIN employees as resolvees
             ON bugs.resolvee = resolvees.employee_id 
-            INNER JOIN employees as testees
-            ON bugs.testee = testees.employee_id";
+            LEFT JOIN employees as testees
+            ON bugs.testee = testees.employee_id
+            LEFT JOIN severity as severity_table
+            ON bugs.severity = severity_table.severity_id";
             
         $queryConditional = " WHERE ";
         if(isset($_GET['program'])) {
@@ -149,7 +151,7 @@
         }
         if(isset($_GET['severity'])) {
             $search = mysqli_real_escape_string($con, $_GET['severity']);
-            $queryConditional .= " severity LIKE '%$search%' AND ";
+            $queryConditional .= " severity_name LIKE '%$search%' AND ";
         }
         if(isset($_GET['area'])) {
             $search = mysqli_real_escape_string($con, $_GET['area']);

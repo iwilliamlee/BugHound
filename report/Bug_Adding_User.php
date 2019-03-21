@@ -26,16 +26,14 @@
                     problem, 
                     suggested_fix,
                     employee_id, bug_date,
-                    
-                    area_id)
+                    area_id, bug_status)
                     VALUES (
                         '$programID', '$reportType', '$severity', 
                         '$problemSummary', '$reproducible',
                         '$problem',
                         '$suggestedFix',
                         '$reportedBy', '$dateEntered',
-                        
-                        '$functionalArea')";
+                        '$functionalArea', 'open')";
                 if(!mysqli_query($con, $query))
                 {
                     echo("error is: " .mysqli_error($con));

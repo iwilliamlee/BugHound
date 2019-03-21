@@ -28,8 +28,8 @@
                     problem = '$problem', 
                     suggested_fix = '$suggestedFix',
                     employee_id = '$reportedBy', bug_date = '$dateEntered', 
-
-                    area_id = '$functionalArea'
+                    area_id = '$functionalArea',
+                    bug_status='open'
                     WHERE bug_id = '$bugID' ";
                 if(!mysqli_query($con, $query))
                 {

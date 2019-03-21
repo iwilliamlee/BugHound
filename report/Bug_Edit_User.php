@@ -78,25 +78,11 @@
                     <td>Severity:</td>
                     <td><select name="severity">
 					  <option value="1" 
-                        <?php if($severity == 1) { ?> selected="selected" <?php } ?> >1</option>
+                        <?php if($severity == 1) { ?> selected="selected" <?php } ?> >fatal</option>
 					  <option value="2"
-                        <?php if($severity == 2) { ?> selected="selected" <?php } ?> >2</option>
+                        <?php if($severity == 2) { ?> selected="selected" <?php } ?> >minor</option>
 					  <option value="3"
-                        <?php if($severity == 3) { ?> selected="selected" <?php } ?> >3</option>
-                      <option value="4"
-                        <?php if($severity == 4) { ?> selected="selected" <?php } ?> >4</option>
-                      <option value="5"
-                        <?php if($severity == 5) { ?> selected="selected" <?php } ?> >5</option>
-                      <option value="6"
-                        <?php if($severity == 6) { ?> selected="selected" <?php } ?> >6</option>
-                      <option value="7"
-                        <?php if($severity == 7) { ?> selected="selected" <?php } ?> >7</option>
-                      <option value="8"
-                        <?php if($severity == 8) { ?> selected="selected" <?php } ?> >8</option>
-                      <option value="9"
-                        <?php if($severity == 9) { ?> selected="selected" <?php } ?> >9</option>
-                      <option value="10"
-                        <?php if($severity == 10) { ?> selected="selected" <?php } ?> >10</option>
+                        <?php if($severity == 3) { ?> selected="selected" <?php } ?> >serious</option>
 					</select></td>
                 </tr>
             </table>
