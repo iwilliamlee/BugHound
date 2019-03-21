@@ -1,0 +1,100 @@
+Bug ID: 1
+Program Name: pascal21
+Report type: codingError
+Severity: 1
+Problem Summary: Terrible problem in COBOL
+Problem: COBOL programmers are dying
+Reproducible 1
+Suggested Fix: Hire some more
+Reported by: userName
+Report Date: 1994-07-11
+-----
+Area: input
+Assigned to: adminName
+Comments: Assigning it to testaccount
+Bug Status: open
+Priority: 1
+Resolution: 0
+Resolution Version 1
+Resolved by: userName
+Resolved date: 0000-00-00
+Tested by: userName
+Test Date: 2018
+Deferred: 1
+
+=======================
+Bug ID: 2
+Program Name: ada65
+Report type: codingError
+Severity: 3
+Problem Summary: Minor issue in Pascal input
+Problem: pascal cant handle concat
+Reproducible 0
+Suggested Fix: not sure
+Reported by: userName
+Report Date: 1994-07-12
+-----
+Area: output
+Assigned to: userName
+Comments: Assigning it to testser
+Bug Status: open
+Priority: 1
+Resolution: 0
+Resolution Version 1
+Resolved by: userName
+Resolved date: 0000-00-00
+Tested by: userName
+Test Date: 0
+Deferred: 0
+
+=======================
+Bug ID: 5
+Program Name: pascal21
+Report type: codingError
+Severity: 1
+Problem Summary: asdf
+Problem: asdf
+Reproducible 0
+Suggested Fix: asdf
+Reported by: userName
+Report Date: 2018-10-09
+-----
+Area: output
+Assigned to: userName
+Comments: 
+Bug Status: open
+Priority: 1
+Resolution: 0
+Resolution Version 1
+Resolved by: userName
+Resolved date: 0000-00-00
+Tested by: userName
+Test Date: 0
+Deferred: 0
+
+=======================
+Bug ID: 6
+Program Name: ada65
+Report type: codingError
+Severity: 1
+Problem Summary: asdf
+Problem: asdf
+Reproducible 0
+Suggested Fix: fffd
+Reported by: userName
+Report Date: 0005-05-19
+-----
+Area: output
+Assigned to: userName
+Comments: 
+Bug Status: open
+Priority: 1
+Resolution: 0
+Resolution Version 1
+Resolved by: userName
+Resolved date: 0000-00-00
+Tested by: userName
+Test Date: 0
+Deferred: 0
+
+=======================

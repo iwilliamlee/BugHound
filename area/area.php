@@ -44,8 +44,6 @@
 			
 		<INPUT type="button" value="Create" id=create onclick="window.location.href = './add_area.php'">
 		<INPUT type="button" value="Done" id=done onclick="window.location.href = '../index.php'">
-		
-	
-
+		<input type="submit" name="outputText" value="Output to XML" onclick="window.location.href = './Export_All_Area.php'">
 	</body>
 </html>

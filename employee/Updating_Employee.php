@@ -77,6 +77,10 @@
                 return true;
             }
 		</script>
+        <form action="./Export_Single_Employee.php" method="post">
+            <input type="hidden" name="empID" value="<?php echo htmlspecialchars($id); ?>">
+            <input type="submit" name="outputText" value="Output to XML">
+        </form>
         <p><INPUT type="button" value="Cancel" id=button1 name=button1 onclick="go_home()">
         <script language=Javascript>
             function go_home() {

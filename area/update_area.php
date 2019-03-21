@@ -61,7 +61,11 @@
             }
         </script>
 
-        <p><INPUT type="button" value="Cancel" id=button1 name=button1 onclick="go_home()">
+        <INPUT type="button" value="Cancel" id=button1 name=button1 onclick="go_home()">
+        <form action="./Export_Single_Area.php" method="post">
+            <input type="hidden" name="areaID" value="<?php echo htmlspecialchars($id); ?>">
+            <input type="submit" name="outputText" value="Output to XML">
+        </form>
         <script language=Javascript>
             function go_home() {
                 window.location.replace("area.php");

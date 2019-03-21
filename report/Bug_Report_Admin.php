@@ -23,7 +23,8 @@
                                 unset($id, $name);
                                 $id = $row['program_id'];
                                 $name = $row['program_name'];
-                                echo "<option value=".$id.">" . $name . "</option>";
+                                echo "<option value=".$id.">" . $name . " Ver. " . $row['program_version'] . " Re. " . $row['release_build'] .
+                                "</option>";
                             }
                         ?>
 					</select></td>

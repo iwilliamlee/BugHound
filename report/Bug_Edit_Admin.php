@@ -53,9 +53,9 @@
                             $none = 0;
                             while($row=$result->fetch_assoc()) {
                                 if($row['program_id'] == $programID){
-                                    echo "<option value=".$row['program_id']." selected='selected'>" . $row['program_name'] . "</option>";
+                                    echo "<option value=".$row['program_id']." selected='selected'>" . $row['program_name'] . " Ver. " . $row['program_version'] . " Re. " . $row['release_build'] ."</option>";
                                 } else {
-                                    echo "<option value=".$row['program_id'].">" . $row['program_name'] . "</option>";
+                                    echo "<option value=".$row['program_id'].">" . $row['program_name'] . " Ver. " . $row['program_version'] . " Re. " . $row['release_build'] ."</option>";
                                 }
                             }
                         ?>

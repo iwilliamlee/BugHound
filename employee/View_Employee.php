@@ -28,15 +28,19 @@
             if($none==0)
 		Echo "<h3>No matching records found.</h3>\n";
         ?>
-        <p><INPUT type="button" value="Create" id=button1 name=button1 onclick="create()">
+        <p><INPUT type="button" value="Create" id=button1 name=button1 onclick="create()"></p>
+        <p><input type="submit" name="outputText" value="Output to XML" onclick="export_emp()"></p>
 
-        <p><INPUT type="button" value="Cancel" id=button1 name=button1 onclick="go_home()">
+        <p><INPUT type="button" value="Cancel" id=button1 name=button1 onclick="go_home()"></p>
         <script language=Javascript>
             function create() {
                 window.location.replace("./add_employee_page.php");
             }
             function go_home() {
                 window.location.replace("../index.php");
+            }
+            function export_emp() {
+                window.location.replace("./Export_All_Employee.php");
             }
         </script>    
     </body>
