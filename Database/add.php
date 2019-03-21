@@ -3,13 +3,12 @@
 <?php
 	
 	if(isset($_POST['name']) && isset($_POST['username']) && isset($_POST['password'])){
-		$name = mysqli_real_escape_string($con, mysqli_real_escape_string($con, $_POST['name']);
+		$con = mysqli_connect("localhost","root");
+		mysqli_select_db($con, "Bughound");
+		$name = mysqli_real_escape_string($con, $_POST['name']);
 		$username = mysqli_real_escape_string($con, $_POST['username']);
 		$password = mysqli_real_escape_string($con, $_POST['password']);
 		$level = $_POST['user_level'];
-
-		$con = mysqli_connect("localhost","root");
-		mysqli_select_db($con, "Bughound");
 
 		$query = "INSERT INTO employees (name, password, user_name, user_level) VALUES ('".$name."','".$password."', '".$username."', '".$level."')";
 
@@ -21,14 +20,13 @@
 
 	//If it is a post to program
 	if(isset($_POST['program_name'])){
+		$con = mysqli_connect("localhost","root");
+		mysqli_select_db($con, "Bughound");
 		$name = mysqli_real_escape_string($con, $_POST['program_name']);
 		$version = mysqli_real_escape_string($con, $_POST['version']);
 		$release = mysqli_real_escape_string($con, $_POST['release']);
 
-		$con = mysqli_connect("localhost","root");
-		mysqli_select_db($con, "Bughound");
-
-		$query_check = "SELECT * FROM programs WHERE program_name = '".$name."' AND release_build= '".$release."'";
+		$query_check = "SELECT * FROM programs WHERE program_name = '$name' AND release_build= '$release' AND program_version = '$version' ";
 		$result = mysqli_query($con, $query_check);
 		if (mysqli_num_rows($result) != 0){
 			echo "<SCRIPT type='text/javascript'>
@@ -37,22 +35,19 @@
 				</SCRIPT>";	
 		}	
 		else {
-			$query;
-			$query = "INSERT INTO programs (program_name, program_version, release_build) VALUES ('".$name."','".$version."','".$release."')";
+			$query = "INSERT INTO programs (program_name, program_version, release_build) VALUES ('$name','$version','$release')";
 			mysqli_query($con, $query);
 			header("Location: ../program/program.php");	
 		}		
-		die();
 	}	
 	
 	if(isset($_POST['area_name'])){
-		$name = mysqli_real_escape_string($con, $_POST['area_name']);
-		$program_id = $_POST['program_id'];
-
 		$con = mysqli_connect("localhost","root");
 		mysqli_select_db($con, "Bughound");
+		$name = mysqli_real_escape_string($con, $_POST['area_name']);
+		$program_id = mysqli_real_escape_string($con, $_POST['program_id']);
 
-		$query_check = "SELECT * FROM `areas` WHERE `area_name` = '".$name."'";
+		$query_check = "SELECT * FROM areas WHERE area_name = '$name' AND program_id = '$program_id'";
 		$result = mysqli_query($con, $query_check);
 
 		if (mysqli_num_rows($result) != 0){
@@ -62,7 +57,7 @@
 				</SCRIPT>";	
 		}	
 		else {
-			$query = "INSERT INTO areas (area_name, program_id) VALUES ('".$name."','".$program_id."')";
+			$query = "INSERT INTO areas (area_name, program_id) VALUES ('$name','$program_id')";
 			mysqli_query($con, $query);
 			header("Location: ../area/area.php");		
 		}		

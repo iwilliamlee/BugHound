@@ -1,5 +1,0 @@
-Area ID: 2
-Program Name: pascal21
-Area Name: input
-
-=======================
