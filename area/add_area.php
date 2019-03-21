@@ -25,7 +25,7 @@
                             $result = mysqli_query($con, $query);
                             $none = 0;
                             while($row=$result->fetch_assoc()) {
-                                echo "<option value=".$row['program_id'].">" . $row['program_name'] . " v" . $row['program_version'] . "</option>";
+                                echo "<option value=".$row['program_id'].">" . $row['program_name'] . " v" . $row['program_version'] . " r" . $row['release_build'] ."</option>";
                             }
                         ?>
                     </select></td>
