@@ -56,7 +56,9 @@
                 <td><input type="Text" name="resolved_by" value="<?php  if(isset($_GET['resolved_by'])) echo htmlspecialchars($_GET['resolved_by']); ?>"</td>
             </tr>
             <tr>
-                <td><input type="submit" name="submit" value="Search"></td>
+                <td><input type="submit" name="submit" value="Search">
+                <input type="button" value="reset" id=button1 name=button1 onclick="reload()"></td>
+
             </tr>
         </table>
     </form>
@@ -100,8 +102,8 @@
             area_name,
             assignees.name as Assignee,
             bug_status,
-            priority,
-            resolution,
+            priority_name,
+            resolution_name,
             reportees.name,
             bug_date,
             resolve_date,
@@ -130,7 +132,11 @@
             LEFT JOIN employees as testees
             ON bugs.testee = testees.employee_id
             LEFT JOIN severity as severity_table
-            ON bugs.severity = severity_table.severity_id";
+            ON bugs.severity = severity_table.severity_id
+            LEFT JOIN resolution
+            ON resolution = resolution_id
+            LEFT JOIN priority
+            ON priority = priority_id";
             
         $queryConditional = " WHERE ";
         if(isset($_GET['program'])) {
@@ -163,11 +169,11 @@
         }
         if(isset($_GET['priority'])) {
             $search = mysqli_real_escape_string($con, $_GET['priority']);
-            $queryConditional .= " priority LIKE '%$search%' AND ";
+            $queryConditional .= " priority_name LIKE '%$search%' AND ";
         }
         if(isset($_GET['resolution'])) {
             $search = mysqli_real_escape_string($con, $_GET['resolution']);
-            $queryConditional .= " resolution LIKE '%$search%' AND ";
+            $queryConditional .= " resolution_name LIKE '%$search%' AND ";
         }
         if(isset($_GET['reported_by'])) {
             $search = mysqli_real_escape_string($con, $_GET['reported_by']);
@@ -206,7 +212,7 @@
             <th>Problem</th>
             <th>Program</th>
             <th>Version</th>
-            <th>Build</th>
+            <th>Release</th>
             <th>Report Type</th>
             <th>Severity</th>
             <th>Functional Area</th>
@@ -284,6 +290,9 @@
         }
         function go_home() {
             window.location.replace("../index.php");
+        }
+        function reload() {
+            window.location.replace("./bug_view.php");
         }
     </script>    
     </body>

@@ -196,17 +196,11 @@
                     <td>Priority</td>
                     <td><select name="priority">
                         <option value="1" 
-                            <?php if($priority == 1) { ?> selected="selected" <?php } ?> >1</option>
+                            <?php if($priority == 1) { ?> selected="selected" <?php } ?> >low</option>
                         <option value="2"
-                            <?php if($priority == 2) { ?> selected="selected" <?php } ?> >2</option>
+                            <?php if($priority == 2) { ?> selected="selected" <?php } ?> >medium</option>
                         <option value="3"
-                            <?php if($priority == 3) { ?> selected="selected" <?php } ?> >3</option>
-                        <option value="4"
-                            <?php if($priority == 4) { ?> selected="selected" <?php } ?> >4</option>
-                        <option value="5"
-                            <?php if($priority == 5) { ?> selected="selected" <?php } ?> >5</option>
-                        <option value="6"
-                            <?php if($priority == 6) { ?> selected="selected" <?php } ?> >6</option>
+                            <?php if($priority == 3) { ?> selected="selected" <?php } ?> >FIX ASAP</option>
 					</select></td>
                     <td>Resolution</td>
                     <td><select name="resolution">

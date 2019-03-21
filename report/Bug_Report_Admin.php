@@ -121,12 +121,9 @@
 					</select></td>
                     <td>Priority</td>
                     <td><select name="priority">
-                    <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
+                        <option value="1">low</option>
+                        <option value="2">medium</option>
+                        <option value="3">FIX ASAP</option>
 					</select></td>
                     <td>Resolution</td>
                     <td><select name="resolution">
