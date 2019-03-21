@@ -83,19 +83,32 @@
 
 
 
-        $queryCols = "SELECT bug_id, 
+
+
+
+        $queryCols = "SELECT 
+            bug_id, 
             problem_summary,
             program_name,
             report_type,
             severity,
             area_name,
-            assignees.name,
+            assignees.name as Assignee,
             bug_status,
             priority,
             resolution,
             reportees.name,
             bug_date,
-            resolve_date
+            resolve_date,
+            problem,
+            reproducible,
+            suggested_fix,
+            comments,
+            resolution_version,
+            resolvees.name as Resolvee,
+            testees.name as Testee,
+            test_date,
+            deferred
         ";
 
         $queryJoin = " FROM bugs 
@@ -106,47 +119,51 @@
             INNER JOIN employees as assignees
             ON bugs.assignee = assignees.employee_id
             INNER JOIN employees as reportees
-            ON bugs.employee_id = reportees.employee_id ";
+            ON bugs.employee_id = reportees.employee_id
+            INNER JOIN employees as resolvees
+            ON bugs.resolvee = resolvees.employee_id 
+            INNER JOIN employees as testees
+            ON bugs.testee = testees.employee_id";
             
         $queryConditional = " WHERE ";
         if(isset($_GET['program'])) {
-            $search = $_GET['program'];
+            $search = mysqli_real_escape_string($con, $_GET['program']);
             $queryConditional .= " program_name LIKE '%$search%' AND ";
         }
         if(isset($_GET['report_type'])) {
-            $search = $_GET['report_type'];
+            $search = mysqli_real_escape_string($con, $_GET['report_type']);
             $queryConditional .= " report_type LIKE '%$search%' AND ";
         }
         if(isset($_GET['severity'])) {
-            $search = $_GET['severity'];
+            $search = mysqli_real_escape_string($con, $_GET['severity']);
             $queryConditional .= " severity LIKE '%$search%' AND ";
         }
         if(isset($_GET['area'])) {
-            $search = $_GET['area'];
+            $search = mysqli_real_escape_string($con, $_GET['area']);
             $queryConditional .= " area_name LIKE '%$search%' AND ";
         }
         if(isset($_GET['assigned'])) {
-            $search = $_GET['assigned'];
+            $search = mysqli_real_escape_string($con, $_GET['assigned']);
             $queryConditional .= " assignees.name LIKE '%$search%' AND ";
         }
         if(isset($_GET['priority'])) {
-            $search = $_GET['priority'];
+            $search = mysqli_real_escape_string($con, $_GET['priority']);
             $queryConditional .= " priority LIKE '%$search%' AND ";
         }
         if(isset($_GET['resolution'])) {
-            $search = $_GET['resolution'];
+            $search = mysqli_real_escape_string($con, $_GET['resolution']);
             $queryConditional .= " resolution LIKE '%$search%' AND ";
         }
         if(isset($_GET['reported_by'])) {
-            $search = $_GET['reported_by'];
+            $search = mysqli_real_escape_string($con, $_GET['reported_by']);
             $queryConditional .= " reportees.name LIKE '%$search%' AND ";
         }
         if(isset($_GET['report_date'])) {
-            $search = $_GET['report_date'];
+            $search = mysqli_real_escape_string($con, $_GET['report_date']);
             $queryConditional .= " bug_date LIKE '%$search%' AND ";
         }
         if(isset($_GET['resolved_by'])) {
-            $search = $_GET['resolved_by'];
+            $search = mysqli_real_escape_string($con, $_GET['resolved_by']);
             $queryConditional .= " resolve_date LIKE '%$search%' AND ";
         }
         

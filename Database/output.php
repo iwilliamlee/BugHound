@@ -5,22 +5,45 @@
         <title>BugHound Adding Bug</title>
     </head>
 <body>
-<h2>Export completed <input type="button" value="Return" id=button1 name=button1 onclick="go_home()">    
+<h2>Export completed <input type="button" value="Return" id=button1 name=button1 onclick="go_home()"> </h2> 
 <table>
 <?php
 
 include '../auth/validate_user.php';		
     isLoggedIn();
-
-$query = "SELECT * FROM bugs";
-$con = mysqli_connect("localhost","root");
-mysqli_select_db($con, "Bughound");
-$result = mysqli_query($con, $query);
+    $query = $_POST['query'];
+    $con = mysqli_connect("localhost","root");
+    mysqli_select_db($con, "Bughound");
+    $result = mysqli_query($con, $query);
     $none = 0;
-    $file = fopen('output-'.date('Y-m-d-H-s').'.txt',"w");
+    $file = fopen('Output/output-'.date('Y-m-d-H-s').'.txt',"w");
 while($row = mysqli_fetch_row($result)){
     $none=1;
-    $string = implode(" ", $row)."\n";
+    // $string = implode(" ", $row)."\n";
+    $string = sprintf("Bug ID: %s\n", $row[0]);
+    $string .= sprintf("Program Name: %s\n", $row[2]);
+    $string .= sprintf("Report type: %s\n", $row[3]);
+    $string .= sprintf("Severity: %s\n", $row[4]);
+    $string .= sprintf("Problem Summary: %s\n", $row[1]);
+    $string .= sprintf("Problem: %s\n", $row[13]); //missing
+    $string .= sprintf("Reproducible %s\n", $row[14]);//missing
+    $string .= sprintf("Suggested Fix: %s\n", $row[15]); //missing
+    $string .= sprintf("Reported by: %s\n", $row[10]);
+    $string .= sprintf("Report Date: %s\n", $row[11]);
+    $string .= "-----\n";
+    $string .= sprintf("Area: %s\n", $row[5]);
+    $string .= sprintf("Assigned to: %s\n", $row[6]);
+    $string .= sprintf("Comments: %s\n", $row[16]); //missing
+    $string .= sprintf("Bug Status: %s\n", $row[7]);
+    $string .= sprintf("Priority: %s\n", $row[8]);
+    $string .= sprintf("Resolution: %s\n", $row[9]);
+    $string .= sprintf("Resolution Version %s\n", $row[17]);//missing
+    $string .= sprintf("Resolved by: %s\n", $row[18]); //missing
+    $string .= sprintf("Resolved date: %s\n", $row[12]);
+    $string .= sprintf("Tested by: %s\n", $row[19]); //missing
+    $string .= sprintf("Test Date: %s\n", $row[20]);//missing
+    $string .= sprintf("Deferred: %s\n", $row[21]);//missing
+    $string .= "\n=======================\n";
     fwrite($file,$string);
 }
 fclose($file);
@@ -55,18 +78,14 @@ mysqli_close($con);
         $dom_sxe = $dom->appendChild($dom_sxe);
         // echo $sxe->asXML();
 
-        $dom->save('output-'.date('Y-m-d-H-s').'.xml');
-        
-        die();	
+        $dom->save('Output/output-'.date('Y-m-d-H-s').'.xml');
     }
 ?>   
-</h2>
         <script language=Javascript>
             function go_home(){
                 window.location.replace("../bug_view.php");
             }
-        </script>
-                    
+        </script>      
     </body>
 </html>
 

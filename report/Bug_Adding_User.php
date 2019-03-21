@@ -7,20 +7,19 @@
     <body>
         <h2>
             <?php
-
+                $con = mysqli_connect("localhost","root");
+                mysqli_select_db($con, "Bughound");
                 $programID = $_POST['programName'];
                 $reportType = $_POST['reportType'];
 				$severity = $_POST['severity'];
-                $problemSummary = $_POST['problemSummary'];
+                $problemSummary = mysqli_real_escape_string($con, $_POST['problemSummary']);
                 $reproducible = isset($_POST['reproducible']);
-                $problem = $_POST['problem'];
-                $suggestedFix = $_POST['suggestedFix'];
+                $problem = mysqli_real_escape_string($con, $_POST['problem']);
+                $suggestedFix = mysqli_real_escape_string($con, $_POST['suggestedFix']);
                 $reportedBy = $_POST['reportedBy'];
                 $dateEntered = $_POST['dateEntered'];
                 $functionalArea = $_POST['functionalArea']; //Default to area '1'
-
-				$con = mysqli_connect("localhost","root");
-                mysqli_select_db($con, "Bughound");
+                
 				$query = "INSERT INTO bugs (
                     program_id, report_type, severity, 
                     problem_summary, reproducible,

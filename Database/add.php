@@ -3,9 +3,9 @@
 <?php
 	
 	if(isset($_POST['name']) && isset($_POST['username']) && isset($_POST['password'])){
-		$name = $_POST['name'];
-		$username = $_POST['username'];
-		$password = $_POST['password'];
+		$name = mysqli_real_escape_string($con, mysqli_real_escape_string($con, $_POST['name']);
+		$username = mysqli_real_escape_string($con, $_POST['username']);
+		$password = mysqli_real_escape_string($con, $_POST['password']);
 		$level = $_POST['user_level'];
 
 		$con = mysqli_connect("localhost","root");
@@ -21,9 +21,9 @@
 
 	//If it is a post to program
 	if(isset($_POST['program_name'])){
-		$name = $_POST['program_name'];
-		$version = $_POST['version'];
-		$release = $_POST['release'];
+		$name = mysqli_real_escape_string($con, $_POST['program_name']);
+		$version = mysqli_real_escape_string($con, $_POST['version']);
+		$release = mysqli_real_escape_string($con, $_POST['release']);
 
 		$con = mysqli_connect("localhost","root");
 		mysqli_select_db($con, "Bughound");
@@ -46,7 +46,7 @@
 	}	
 	
 	if(isset($_POST['area_name'])){
-		$name = $_POST['area_name'];
+		$name = mysqli_real_escape_string($con, $_POST['area_name']);
 		$program_id = $_POST['program_id'];
 
 		$con = mysqli_connect("localhost","root");
