@@ -5,7 +5,7 @@
 - https://www.phpmyadmin.net
 -
 - Host: localhost
-- Generation Time: Mar 19, 2019 at 05:28 AM
+- Generation Time: Mar 21, 2019 at 05:47 PM
 - Server version: 10.1.37-MariaDB
 - PHP Version: 7.3.1
 -->
@@ -35,7 +35,7 @@
                   PRIMARY KEY (`attachment_id`),
                   KEY `fk_bug_key` (`bug_id`),
                   CONSTRAINT `fk_bug_key` FOREIGN KEY (`bug_id`) REFERENCES `bugs` (`bug_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="bugs">
                 CREATE TABLE `bugs` (
@@ -65,10 +65,12 @@
                   KEY `fk_program_key` (`program_id`),
                   KEY `fk_area_key` (`area_id`),
                   KEY `fk_employee_id` (`employee_id`),
+                  KEY `fk_severity_key` (`severity`),
                   CONSTRAINT `fk_area_key` FOREIGN KEY (`area_id`) REFERENCES `areas` (`area_id`),
                   CONSTRAINT `fk_employee_id` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`),
-                  CONSTRAINT `fk_program_key` FOREIGN KEY (`program_id`) REFERENCES `programs` (`program_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+                  CONSTRAINT `fk_program_key` FOREIGN KEY (`program_id`) REFERENCES `programs` (`program_id`),
+                  CONSTRAINT `fk_severity_key` FOREIGN KEY (`severity`) REFERENCES `severity` (`severity_id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="employees">
                 CREATE TABLE `employees` (
@@ -88,6 +90,13 @@
                   `release_build` int(11) NOT NULL,
                   PRIMARY KEY (`program_id`)
                 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="severity">
+                CREATE TABLE `severity` (
+                  `severity_id` int(11) NOT NULL,
+                  `severity_name` varchar(512) NOT NULL,
+                  PRIMARY KEY (`severity_id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
             </pma:table>
         </pma:database>
     </pma:structure_schemas>
@@ -137,6 +146,36 @@
             <column name="path"></column>
             <column name="file_name"></column>
             <column name="bug_id">3</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">9</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">5</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">10</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">5</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">11</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">6</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">12</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">6</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">13</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">2</column>
         </table>
         <!-- Table bugs -->
         <table name="bugs">
@@ -211,6 +250,54 @@
             <column name="deferred">0</column>
             <column name="employee_id">13</column>
         </table>
+        <table name="bugs">
+            <column name="bug_id">5</column>
+            <column name="program_id">4</column>
+            <column name="report_type">codingError</column>
+            <column name="severity">1</column>
+            <column name="problem_summary">bug from user not showing up1?!?</column>
+            <column name="problem">Bug not showing up from user</column>
+            <column name="reproducible">0</column>
+            <column name="suggested_fix">QUERY FIX??</column>
+            <column name="bug_date">2019-05-21</column>
+            <column name="area_id">1</column>
+            <column name="assignee">13</column>
+            <column name="comments">Assigning it to testaccount</column>
+            <column name="bug_status">close</column>
+            <column name="priority">1</column>
+            <column name="resolution">0</column>
+            <column name="resolution_version">1</column>
+            <column name="resolvee">13</column>
+            <column name="resolve_date">2019-05-21</column>
+            <column name="testee">13</column>
+            <column name="test_date">2019</column>
+            <column name="deferred">0</column>
+            <column name="employee_id">13</column>
+        </table>
+        <table name="bugs">
+            <column name="bug_id">6</column>
+            <column name="program_id">4</column>
+            <column name="report_type">codingError</column>
+            <column name="severity">1</column>
+            <column name="problem_summary">Testing bug</column>
+            <column name="problem">testing bug prob;em, asdfasdf</column>
+            <column name="reproducible">1</column>
+            <column name="suggested_fix">nothing</column>
+            <column name="bug_date">2019-05-21</column>
+            <column name="area_id">1</column>
+            <column name="assignee">0</column>
+            <column name="comments"></column>
+            <column name="bug_status">open</column>
+            <column name="priority">0</column>
+            <column name="resolution">0</column>
+            <column name="resolution_version">0</column>
+            <column name="resolvee">0</column>
+            <column name="resolve_date">0000-00-00</column>
+            <column name="testee">0</column>
+            <column name="test_date">0</column>
+            <column name="deferred">0</column>
+            <column name="employee_id">13</column>
+        </table>
         <!-- Table employees -->
         <table name="employees">
             <column name="employee_id">13</column>
@@ -238,6 +325,19 @@
             <column name="program_name">pascal21</column>
             <column name="program_version">1</column>
             <column name="release_build">3</column>
+        </table>
+        <!-- Table severity -->
+        <table name="severity">
+            <column name="severity_id">1</column>
+            <column name="severity_name">fatal</column>
+        </table>
+        <table name="severity">
+            <column name="severity_id">2</column>
+            <column name="severity_name">minor</column>
+        </table>
+        <table name="severity">
+            <column name="severity_id">3</column>
+            <column name="severity_name">serious</column>
         </table>
     </database>
 </pma_xml_export>
