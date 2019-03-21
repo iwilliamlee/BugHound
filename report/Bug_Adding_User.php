@@ -34,7 +34,7 @@
                         '$problem',
                         '$suggestedFix',
                         '$reportedBy', '$dateEntered',
-                        
+
                         '$functionalArea')";
                 if(!mysqli_query($con, $query))
                 {
