@@ -137,8 +137,11 @@
                         $none = 0;
                         while($row=mysqli_fetch_row($result)) {
                             $none=1;
+                            
                             printf(
-                                "<tr><td>%s</td></tr>\n",$row[1]);
+                                "<tr><td>
+                                    <a href='./uploads/%s' download=%s>%s</a>
+                                </td></tr>\n",$row[1], $row[1], $row[1]);
                         }
                     ?>
                 </tr>

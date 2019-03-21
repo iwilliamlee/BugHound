@@ -274,7 +274,7 @@
     <p><form action="../Database/output.php" method="post">
         <input type="hidden" name="bug" value="1">
         <input type="hidden" name="query" value="<?php echo htmlspecialchars($query); ?>">
-        <input type="submit" name="outputText" value="Output to XML">
+        <input type="submit" name="outputText" value="Output to XML and ASCII">
     </form>
 
     <p><INPUT type="button" value="Create New Bug" id=button1 name=button1 onclick="create()">

@@ -17,7 +17,6 @@
                 problem, 
                 suggested_fix,
                 employee_id, bug_date, 
-
                 area_id,assignee,
                 comments,
                 bug_status, priority, resolution, resolution_version, 
@@ -137,8 +136,11 @@
                         $none = 0;
                         while($row=mysqli_fetch_row($result)) {
                             $none=1;
+                            
                             printf(
-                                "<tr><td>%s</td></tr>\n",$row[1]);
+                                "<tr><td>
+                                    <a href='./uploads/%s' download=%s>%s</a>
+                                </td></tr>\n",$row[1], $row[1], $row[1]);
                         }
                     ?>
                 </tr>
