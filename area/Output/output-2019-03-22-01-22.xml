@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<AreaExport>
+  <AreaList>
+    <Area>
+      <area_id>3</area_id>
+      <program_name>Ada96 Coder</program_name>
+      <area_name>Parser</area_name>
+    </Area>
+    <Area>
+      <area_id>4</area_id>
+      <program_name>Ada96 Coder</program_name>
+      <area_name>Lexer</area_name>
+    </Area>
+    <Area>
+      <area_id>5</area_id>
+      <program_name>Ada96 Coder</program_name>
+      <area_name>IDE</area_name>
+    </Area>
+    <Area>
+      <area_id>6</area_id>
+      <program_name>COBOL Coder</program_name>
+      <area_name>Lexer</area_name>
+    </Area>
+    <Area>
+      <area_id>7</area_id>
+      <program_name>COBOL Coder</program_name>
+      <area_name>Code Generator</area_name>
+    </Area>
+    <Area>
+      <area_id>18</area_id>
+      <program_name>COBOL Coder</program_name>
+      <area_name>Parser</area_name>
+    </Area>
+    <Area>
+      <area_id>19</area_id>
+      <program_name>COBOL Coder</program_name>
+      <area_name>Linker</area_name>
+    </Area>
+    <Area>
+      <area_id>8</area_id>
+      <program_name>Bughound</program_name>
+      <area_name>Logon</area_name>
+    </Area>
+    <Area>
+      <area_id>9</area_id>
+      <program_name>Bughound</program_name>
+      <area_name>Start</area_name>
+    </Area>
+    <Area>
+      <area_id>10</area_id>
+      <program_name>Bughound</program_name>
+      <area_name>DB Maintenance</area_name>
+    </Area>
+    <Area>
+      <area_id>11</area_id>
+      <program_name>Bughound</program_name>
+      <area_name>Search</area_name>
+    </Area>
+    <Area>
+      <area_id>12</area_id>
+      <program_name>Bughound</program_name>
+      <area_name>Insert New</area_name>
+    </Area>
+    <Area>
+      <area_id>13</area_id>
+      <program_name>Bughound</program_name>
+      <area_name>Search Results</area_name>
+    </Area>
+    <Area>
+      <area_id>14</area_id>
+      <program_name>Bughound</program_name>
+      <area_name>Add Edit Areas</area_name>
+    </Area>
+    <Area>
+      <area_id>15</area_id>
+      <program_name>Bughound</program_name>
+      <area_name>Add Employees</area_name>
+    </Area>
+    <Area>
+      <area_id>16</area_id>
+      <program_name>Bughound</program_name>
+      <area_name>Add Programs</area_name>
+    </Area>
+    <Area>
+      <area_id>17</area_id>
+      <program_name>Bughound</program_name>
+      <area_name>View Bugs</area_name>
+    </Area>
+    <Area>
+      <area_id>20</area_id>
+      <program_name>COBOL Coder</program_name>
+      <area_name>Lexer</area_name>
+    </Area>
+    <Area>
+      <area_id>21</area_id>
+      <program_name>COBOL Coder</program_name>
+      <area_name>Parser</area_name>
+    </Area>
+    <Area>
+      <area_id>22</area_id>
+      <program_name>COBOL Coder</program_name>
+      <area_name>Code Generator</area_name>
+    </Area>
+    <Area>
+      <area_id>23</area_id>
+      <program_name>COBOL Coder</program_name>
+      <area_name>Linker</area_name>
+    </Area>
+    <Area>
+      <area_id>24</area_id>
+      <program_name>COBOL Coder</program_name>
+      <area_name>Lexer</area_name>
+    </Area>
+    <Area>
+      <area_id>25</area_id>
+      <program_name>COBOL Coder</program_name>
+      <area_name>Parser</area_name>
+    </Area>
+    <Area>
+      <area_id>26</area_id>
+      <program_name>COBOL Coder</program_name>
+      <area_name>Code Generator</area_name>
+    </Area>
+    <Area>
+      <area_id>27</area_id>
+      <program_name>COBOL Coder</program_name>
+      <area_name>Linker</area_name>
+    </Area>
+    <Area>
+      <area_id>28</area_id>
+      <program_name>COBOL Coder</program_name>
+      <area_name>IDE</area_name>
+    </Area>
+    <Area>
+      <area_id>29</area_id>
+      <program_name>Pascal Coder</program_name>
+      <area_name>Lexer</area_name>
+    </Area>
+    <Area>
+      <area_id>30</area_id>
+      <program_name>Pascal Coder</program_name>
+      <area_name>Parser</area_name>
+    </Area>
+    <Area>
+      <area_id>31</area_id>
+      <program_name>Pascal Coder</program_name>
+      <area_name>Code Generator</area_name>
+    </Area>
+    <Area>
+      <area_id>32</area_id>
+      <program_name>Pascal Coder</program_name>
+      <area_name>Linker</area_name>
+    </Area>
+    <Area>
+      <area_id>33</area_id>
+      <program_name>Pascal Coder</program_name>
+      <area_name>IDE</area_name>
+    </Area>
+    <Area>
+      <area_id>34</area_id>
+      <program_name>Word Writer 2011</program_name>
+      <area_name>Editor</area_name>
+    </Area>
+    <Area>
+      <area_id>35</area_id>
+      <program_name>Word Writer 2011</program_name>
+      <area_name>Spell Checker</area_name>
+    </Area>
+    <Area>
+      <area_id>36</area_id>
+      <program_name>Word Writer 2011</program_name>
+      <area_name>Dynodraw</area_name>
+    </Area>
+    <Area>
+      <area_id>37</area_id>
+      <program_name>Word Writer 2011</program_name>
+      <area_name>Formulator</area_name>
+    </Area>
+  </AreaList>
+</AreaExport>

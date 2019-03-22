@@ -1,0 +1,175 @@
+Area ID: 3
+Program Name: Ada96 Coder
+Area Name: Parser
+
+=======================
+Area ID: 4
+Program Name: Ada96 Coder
+Area Name: Lexer
+
+=======================
+Area ID: 5
+Program Name: Ada96 Coder
+Area Name: IDE
+
+=======================
+Area ID: 6
+Program Name: COBOL Coder
+Area Name: Lexer
+
+=======================
+Area ID: 7
+Program Name: COBOL Coder
+Area Name: Code Generator
+
+=======================
+Area ID: 18
+Program Name: COBOL Coder
+Area Name: Parser
+
+=======================
+Area ID: 19
+Program Name: COBOL Coder
+Area Name: Linker
+
+=======================
+Area ID: 8
+Program Name: Bughound
+Area Name: Logon
+
+=======================
+Area ID: 9
+Program Name: Bughound
+Area Name: Start
+
+=======================
+Area ID: 10
+Program Name: Bughound
+Area Name: DB Maintenance
+
+=======================
+Area ID: 11
+Program Name: Bughound
+Area Name: Search
+
+=======================
+Area ID: 12
+Program Name: Bughound
+Area Name: Insert New
+
+=======================
+Area ID: 13
+Program Name: Bughound
+Area Name: Search Results
+
+=======================
+Area ID: 14
+Program Name: Bughound
+Area Name: Add Edit Areas
+
+=======================
+Area ID: 15
+Program Name: Bughound
+Area Name: Add Employees
+
+=======================
+Area ID: 16
+Program Name: Bughound
+Area Name: Add Programs
+
+=======================
+Area ID: 17
+Program Name: Bughound
+Area Name: View Bugs
+
+=======================
+Area ID: 20
+Program Name: COBOL Coder
+Area Name: Lexer
+
+=======================
+Area ID: 21
+Program Name: COBOL Coder
+Area Name: Parser
+
+=======================
+Area ID: 22
+Program Name: COBOL Coder
+Area Name: Code Generator
+
+=======================
+Area ID: 23
+Program Name: COBOL Coder
+Area Name: Linker
+
+=======================
+Area ID: 24
+Program Name: COBOL Coder
+Area Name: Lexer
+
+=======================
+Area ID: 25
+Program Name: COBOL Coder
+Area Name: Parser
+
+=======================
+Area ID: 26
+Program Name: COBOL Coder
+Area Name: Code Generator
+
+=======================
+Area ID: 27
+Program Name: COBOL Coder
+Area Name: Linker
+
+=======================
+Area ID: 28
+Program Name: COBOL Coder
+Area Name: IDE
+
+=======================
+Area ID: 29
+Program Name: Pascal Coder
+Area Name: Lexer
+
+=======================
+Area ID: 30
+Program Name: Pascal Coder
+Area Name: Parser
+
+=======================
+Area ID: 31
+Program Name: Pascal Coder
+Area Name: Code Generator
+
+=======================
+Area ID: 32
+Program Name: Pascal Coder
+Area Name: Linker
+
+=======================
+Area ID: 33
+Program Name: Pascal Coder
+Area Name: IDE
+
+=======================
+Area ID: 34
+Program Name: Word Writer 2011
+Area Name: Editor
+
+=======================
+Area ID: 35
+Program Name: Word Writer 2011
+Area Name: Spell Checker
+
+=======================
+Area ID: 36
+Program Name: Word Writer 2011
+Area Name: Dynodraw
+
+=======================
+Area ID: 37
+Program Name: Word Writer 2011
+Area Name: Formulator
+
+=======================
