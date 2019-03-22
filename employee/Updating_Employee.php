@@ -41,8 +41,10 @@
                     <input type="Password" name="password" value="<?php echo htmlspecialchars($password); ?>"</td></tr>
 				<tr><td>Userlevel:</td><td>
 					<select type="number" name="userlevel" size=1 value="4">
-					  <option value="1" <?php if($level == 1) { ?> selected="selected" <?php } ?> >user</option>
-					  <option value="2" <?php if($level == 2) { ?> selected="selected" <?php } ?> >admin</option>
+					  <option value="1" <?php if($level == 1) { ?> selected="selected" <?php } ?> >1</option>
+					  <option value="2" <?php if($level == 2) { ?> selected="selected" <?php } ?> >2</option>
+                      <option value="3" <?php if($level == 3) { ?> selected="selected" <?php } ?> >3</option>
+					  <option value="4" <?php if($level == 4) { ?> selected="selected" <?php } ?> >4</option>
 					</select></td>
 				</tr>
             </table>

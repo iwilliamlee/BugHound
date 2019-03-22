@@ -39,6 +39,10 @@
                 <td><input type="Text" name="priority" value="<?php  if(isset($_GET['priority'])) echo htmlspecialchars($_GET['priority']); ?>"</td>
             </tr>
             <tr>
+                <td>Closed:</td>
+                <td><input type="Text" name="closed" value="<?php  if(isset($_GET['closed'])) echo htmlspecialchars($_GET['closed']); ?>"</td>
+            </tr>
+            <tr>
                 <td>Resolution:</td>
                 <td><input type="Text" name="resolution" value="<?php  if(isset($_GET['resolution'])) echo htmlspecialchars($_GET['resolution']); ?>"</td>
             </tr>
@@ -205,7 +209,9 @@
         // $query = "SELECT * FROM bugs";
         $result = mysqli_query($con, $query);
         
-        
+        if (!mysqli_query($con, $query )){
+            echo("Error description: " . mysqli_error($con));
+        }
 
         echo "<p><table border=1 >
             <th>ID</th>
