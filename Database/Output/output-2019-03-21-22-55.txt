@@ -1,0 +1,150 @@
+Bug ID: 1
+Program Name: pascal21
+Report type: 1
+Severity: 3
+Problem Summary: Terrible problem in COBOL
+Problem: 1994-07-11
+Reproducible 0000-00-00
+Suggested Fix: COBOL programmers are dying
+Reported by: low
+Report Date: on going
+-----
+Area: codingError
+Assigned to: fatal
+Comments: 1
+Bug Status: input
+Priority: test
+Resolution: open
+Resolution Version Hire some more
+Resolved by: Assigning it to testaccount
+Resolved date: testname
+Tested by: 1
+Test Date: testname
+Deferred: testname
+
+=======================
+Bug ID: 2
+Program Name: ada65
+Report type: 2
+Severity: 3
+Problem Summary: Minor issue in Pascal input
+Problem: 1994-07-12
+Reproducible 0000-00-00
+Suggested Fix: pascal cant handle concat
+Reported by: low
+Report Date: on going
+-----
+Area: codingError
+Assigned to: serious
+Comments: 0
+Bug Status: output
+Priority: testname
+Resolution: open
+Resolution Version not sure
+Resolved by: Assigning it to testser
+Resolved date: testname
+Tested by: 1
+Test Date: testname
+Deferred: testname
+
+=======================
+Bug ID: 6
+Program Name: ada65
+Report type: 2
+Severity: 3
+Problem Summary: Testing bug
+Problem: 2019-05-21
+Reproducible 0000-00-00
+Suggested Fix: testing bug prob;em, asdfasdf
+Reported by: medium
+Report Date: on going
+-----
+Area: codingError
+Assigned to: fatal
+Comments: 1
+Bug Status: output
+Priority: testname
+Resolution: open
+Resolution Version nothing
+Resolved by: 
+Resolved date: testname
+Tested by: 1
+Test Date: testname
+Deferred: testname
+
+=======================
+Bug ID: 7
+Program Name: ada65
+Report type: 2
+Severity: 3
+Problem Summary: Test priority
+Problem: 2019-05-21
+Reproducible 0000-00-00
+Suggested Fix: test priority from admin
+Reported by: medium
+Report Date: resolved
+-----
+Area: codingError
+Assigned to: fatal
+Comments: 0
+Bug Status: output
+Priority: testname
+Resolution: open
+Resolution Version 
+Resolved by: test priority
+Resolved date: testname
+Tested by: 2
+Test Date: testname
+Deferred: testname
+
+=======================
+Bug ID: 8
+Program Name: ada65
+Report type: 2
+Severity: 3
+Problem Summary: test priority as user
+Problem: 2019-05-21
+Reproducible 0000-00-00
+Suggested Fix: test priority as user
+Reported by: medium
+Report Date: on going
+-----
+Area: codingError
+Assigned to: minor
+Comments: 1
+Bug Status: output
+Priority: testname
+Resolution: open
+Resolution Version jiust a test
+Resolved by: 
+Resolved date: testname
+Tested by: 1
+Test Date: testname
+Deferred: testname
+
+=======================
+Bug ID: 9
+Program Name: ada65
+Report type: 2
+Severity: 3
+Problem Summary: New bug to test
+Problem: 2019-05-21
+Reproducible 0000-00-00
+Suggested Fix: new bug to test
+Reported by: 
+Report Date: on going
+-----
+Area: codingError
+Assigned to: fatal
+Comments: 0
+Bug Status: output
+Priority: 
+Resolution: open
+Resolution Version fix this bug
+Resolved by: 
+Resolved date: testname
+Tested by: 0
+Test Date: 
+Deferred: 
+
+=======================

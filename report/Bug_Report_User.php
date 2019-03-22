@@ -78,7 +78,7 @@
             </table>
             Select image to upload:
             <input type="file" name="file[]" id="file" multiple="">
-            <input type="hidden" name="functionalArea" value='1'> <!-- default AREA for all new bugs -->
+            <input type="hidden" name="functionalArea" value='3'> <!-- TODO://default AREA for all new bugs -->
 
             <input type="submit" name="submit" value="Next">
             <input type="button" name="reset" value="Reset" onclick="reset()">

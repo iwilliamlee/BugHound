@@ -7,21 +7,22 @@
     <body>
         <h2>
             <?php
+                $con = mysqli_connect("localhost","root");
+                mysqli_select_db($con, "Bughound");
+
                 $bugID = $_POST['bugID'];
                 $programID = $_POST['programName'];
                 $reportType = $_POST['reportType'];
 				$severity = $_POST['severity'];
-                $problemSummary = $_POST['problemSummary'];
+                $problemSummary = mysqli_real_escape_string($con, $_POST['problemSummary']);
                 $reproducible = isset($_POST['reproducible']);
-                $problem = $_POST['problem'];
-                $suggestedFix = $_POST['suggestedFix'];
+                $problem = mysqli_real_escape_string($con, $_POST['problem']);
+                $suggestedFix = mysqli_real_escape_string($con, $_POST['suggestedFix']);
                 $reportedBy = $_POST['reportedBy'];
                 $dateEntered = $_POST['dateEntered'];
                 $functionalArea = $_POST['functionalArea'];
 
                 printf("<p>Bug %d updated</p>", $bugID);
-				$con = mysqli_connect("localhost","root");
-                mysqli_select_db($con, "Bughound");
 				$query = "UPDATE bugs SET
                     program_id = '$programID', report_type = '$reportType', severity = '$severity', 
                     problem_summary = '$problemSummary', reproducible = '$reproducible',
