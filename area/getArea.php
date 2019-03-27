@@ -20,6 +20,7 @@
 		$result = mysqli_query($con, $query_check);
 		
 
+
 		if (mysqli_num_rows($result) == 0){
 			echo "<SCRIPT type='text/javascript'>
 				alert('Program not in database);
@@ -37,18 +38,24 @@
 			}
 			else {
 				while($row=mysqli_fetch_array($result)) {
-					printf("<tr>
-								<td>
-									<A href='update_area.php?area_id={$row[0]}'>
-									<span class=\"linkline\">%d</span></a>
-								</td>
-								<td>%s</td>
-								<td>%s</td>
-							</tr>\n",
-							$row['area_id'],
-							$row['area_name'],
-							$row['program_name'] . " v" . $row['program_version'] 
-					);
+					$rows = array();
+					while($r = mysqli_fetch_row($result)) {
+						$rows[] = $r;
+					}
+					print json_encode($rows);
+
+					// printf("<tr>
+					// 			<td>
+					// 				<A href='update_area.php?area_id={$row[0]}'>
+					// 				<span class=\"linkline\">%d</span></a>
+					// 			</td>
+					// 			<td>%s</td>
+					// 			<td>%s</td>
+					// 		</tr>\n",
+					// 		$row['area_id'],
+					// 		$row['area_name'],
+					// 		$row['program_name'] . " v" . $row['program_version'] 
+					// );
 				}
 			}	
 		}		
