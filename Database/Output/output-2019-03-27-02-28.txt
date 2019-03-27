@@ -1,0 +1,75 @@
+Bug ID: 1
+Program Name: Visual Ada95
+Report type: 1
+Severity: 2
+Problem Summary: This is a new bug 2
+Problem: 2019-05-21
+Reproducible 0000-00-00
+Suggested Fix: New bug
+Reported by: low
+Report Date: on going
+-----
+Area: suggestion
+Assigned to: fatal
+Comments: 0
+Bug Status: Code Generator
+Priority: userName
+Resolution: open
+Resolution Version hello world
+Resolved by: Hello World
+Resolved date: Jorge
+Tested by: 1
+Test Date: userName
+Deferred: userName
+
+=======================
+Bug ID: 2
+Program Name: Skyrim
+Report type: 1
+Severity: 1
+Problem Summary: Another new bug by admin
+Problem: 2019-02-12
+Reproducible 0000-00-00
+Suggested Fix: new bug by admin
+Reported by: low
+Report Date: on going
+-----
+Area: codingError
+Assigned to: fatal
+Comments: 1
+Bug Status: Menu
+Priority: userName
+Resolution: open
+Resolution Version NOTHING
+Resolved by: Hello World
+Resolved date: userName
+Tested by: 1
+Test Date: userName
+Deferred: userName
+
+=======================
+Bug ID: 3
+Program Name: Skyrim
+Report type: 1
+Severity: 1
+Problem Summary: In cell Dead Man's Drink, the fire pit is always out
+Problem: 2019-05-26
+Reproducible 0000-00-00
+Suggested Fix: Missing graphics object in the fire pit.
+Reported by: low
+Report Date: on going
+-----
+Area: codingError
+Assigned to: minor
+Comments: 1
+Bug Status: Menu
+Priority: userName
+Resolution: open
+Resolution Version 
+Resolved by: 
+Resolved date: Hanna
+Tested by: 1
+Test Date: userName
+Deferred: userName
+
+=======================

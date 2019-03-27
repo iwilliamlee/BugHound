@@ -5,7 +5,7 @@
 - https://www.phpmyadmin.net
 -
 - Host: localhost
-- Generation Time: Mar 27, 2019 at 01:27 AM
+- Generation Time: Mar 27, 2019 at 03:28 AM
 - Server version: 10.1.37-MariaDB
 - PHP Version: 7.3.1
 -->
@@ -35,7 +35,7 @@
                   PRIMARY KEY (`attachment_id`),
                   KEY `fk_bug_key` (`bug_id`),
                   CONSTRAINT `fk_bug_key` FOREIGN KEY (`bug_id`) REFERENCES `bugs` (`bug_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="bugs">
                 CREATE TABLE `bugs` (
@@ -72,7 +72,7 @@
                   CONSTRAINT `fk_program_key` FOREIGN KEY (`program_id`) REFERENCES `programs` (`program_id`),
                   CONSTRAINT `fk_resolution_key` FOREIGN KEY (`resolution`) REFERENCES `resolution` (`resolution_id`),
                   CONSTRAINT `fk_severity_key` FOREIGN KEY (`severity`) REFERENCES `severity` (`severity_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="employees">
                 CREATE TABLE `employees` (
@@ -347,18 +347,180 @@
             <column name="file_name"></column>
             <column name="bug_id">2</column>
         </table>
+        <table name="attachments">
+            <column name="attachment_id">5</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">3</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">6</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">3</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">7</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">3</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">8</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">1</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">9</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">2</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">10</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">1</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">11</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">4</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">12</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">2</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">13</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">1</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">14</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">3</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">15</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">5</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">16</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">6</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">17</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">7</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">18</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">7</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">19</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">5</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">20</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">5</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">21</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">5</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">22</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">5</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">23</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">5</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">24</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">5</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">25</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">5</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">26</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">5</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">27</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">5</column>
+        </table>
         <!-- Table bugs -->
         <table name="bugs">
             <column name="bug_id">1</column>
-            <column name="program_id">9</column>
-            <column name="report_type">suggestion</column>
-            <column name="severity">1</column>
-            <column name="problem_summary">This is a new bug 2</column>
-            <column name="problem">New bug</column>
-            <column name="reproducible">0</column>
-            <column name="suggested_fix">hello world</column>
-            <column name="bug_date">2019-05-21</column>
-            <column name="area_id">7</column>
+            <column name="program_id">10</column>
+            <column name="report_type">design_Issue</column>
+            <column name="severity">2</column>
+            <column name="problem_summary">Brenda Says IDE File -&gt; Print defaults to PDF - Should be blank initially</column>
+            <column name="problem">IDE file</column>
+            <column name="reproducible">1</column>
+            <column name="suggested_fix"></column>
+            <column name="bug_date">2019-03-26</column>
+            <column name="area_id">28</column>
+            <column name="assignee">13</column>
+            <column name="comments">Hello World</column>
+            <column name="bug_status">open</column>
+            <column name="priority">1</column>
+            <column name="resolution">0</column>
+            <column name="resolution_version">1</column>
+            <column name="resolvee">13</column>
+            <column name="resolve_date">0000-00-00</column>
+            <column name="testee">13</column>
+            <column name="test_date">0</column>
+            <column name="deferred">0</column>
+            <column name="employee_id">27</column>
+        </table>
+        <table name="bugs">
+            <column name="bug_id">2</column>
+            <column name="program_id">12</column>
+            <column name="report_type">design_Issue</column>
+            <column name="severity">3</column>
+            <column name="problem_summary">Jorge says Formulator missing capital Greek Sigma</column>
+            <column name="problem">Formulator</column>
+            <column name="reproducible">1</column>
+            <column name="suggested_fix"></column>
+            <column name="bug_date">2019-03-26</column>
+            <column name="area_id">37</column>
             <column name="assignee">13</column>
             <column name="comments">Hello World</column>
             <column name="bug_status">open</column>
@@ -373,18 +535,18 @@
             <column name="employee_id">23</column>
         </table>
         <table name="bugs">
-            <column name="bug_id">2</column>
+            <column name="bug_id">3</column>
             <column name="program_id">6</column>
             <column name="report_type">codingError</column>
-            <column name="severity">1</column>
-            <column name="problem_summary">Another new bug by admin</column>
-            <column name="problem">new bug by admin</column>
+            <column name="severity">2</column>
+            <column name="problem_summary">In cell Dead Man's Drink, the fire pit is always out</column>
+            <column name="problem">Missing graphics object in the fire pit.</column>
             <column name="reproducible">1</column>
-            <column name="suggested_fix">NOTHING</column>
-            <column name="bug_date">2019-02-12</column>
+            <column name="suggested_fix"></column>
+            <column name="bug_date">2019-03-26</column>
             <column name="area_id">3</column>
             <column name="assignee">13</column>
-            <column name="comments">Hello World</column>
+            <column name="comments"></column>
             <column name="bug_status">open</column>
             <column name="priority">1</column>
             <column name="resolution">0</column>
@@ -394,7 +556,103 @@
             <column name="testee">13</column>
             <column name="test_date">0</column>
             <column name="deferred">0</column>
-            <column name="employee_id">13</column>
+            <column name="employee_id">24</column>
+        </table>
+        <table name="bugs">
+            <column name="bug_id">4</column>
+            <column name="program_id">11</column>
+            <column name="report_type">design_Issue</column>
+            <column name="severity">2</column>
+            <column name="problem_summary">Timmy says IDE should have a toolbar from compiling, linking, running. Suggestion.</column>
+            <column name="problem">Missing toolbar</column>
+            <column name="reproducible">1</column>
+            <column name="suggested_fix"></column>
+            <column name="bug_date">2019-05-26</column>
+            <column name="area_id">33</column>
+            <column name="assignee">13</column>
+            <column name="comments"></column>
+            <column name="bug_status">open</column>
+            <column name="priority">1</column>
+            <column name="resolution">0</column>
+            <column name="resolution_version">1</column>
+            <column name="resolvee">13</column>
+            <column name="resolve_date">0000-00-00</column>
+            <column name="testee">13</column>
+            <column name="test_date">0</column>
+            <column name="deferred">0</column>
+            <column name="employee_id">22</column>
+        </table>
+        <table name="bugs">
+            <column name="bug_id">5</column>
+            <column name="program_id">17</column>
+            <column name="report_type">design_Issue</column>
+            <column name="severity">3</column>
+            <column name="problem_summary">Louis XIV says ''La distance n'est pas en kilomet'res!''</column>
+            <column name="problem">Distance in Kilometers</column>
+            <column name="reproducible">1</column>
+            <column name="suggested_fix">Make Distance units selectable as kilometers or miles</column>
+            <column name="bug_date">2019-03-26</column>
+            <column name="area_id">41</column>
+            <column name="assignee">24</column>
+            <column name="comments"></column>
+            <column name="bug_status">open</column>
+            <column name="priority">3</column>
+            <column name="resolution">1</column>
+            <column name="resolution_version">7</column>
+            <column name="resolvee">24</column>
+            <column name="resolve_date">2019-03-26</column>
+            <column name="testee">24</column>
+            <column name="test_date">2019</column>
+            <column name="deferred">0</column>
+            <column name="employee_id">26</column>
+        </table>
+        <table name="bugs">
+            <column name="bug_id">6</column>
+            <column name="program_id">8</column>
+            <column name="report_type">codingError</column>
+            <column name="severity">3</column>
+            <column name="problem_summary">Brenda says &quot;add areas page&quot; has no means to Cancel or quit after adding.</column>
+            <column name="problem">No cancel after areas</column>
+            <column name="reproducible">1</column>
+            <column name="suggested_fix"></column>
+            <column name="bug_date">2019-03-26</column>
+            <column name="area_id">14</column>
+            <column name="assignee">13</column>
+            <column name="comments"></column>
+            <column name="bug_status">open</column>
+            <column name="priority">1</column>
+            <column name="resolution">0</column>
+            <column name="resolution_version">1</column>
+            <column name="resolvee">13</column>
+            <column name="resolve_date">0000-00-00</column>
+            <column name="testee">13</column>
+            <column name="test_date">0</column>
+            <column name="deferred">0</column>
+            <column name="employee_id">27</column>
+        </table>
+        <table name="bugs">
+            <column name="bug_id">7</column>
+            <column name="program_id">7</column>
+            <column name="report_type">codingError</column>
+            <column name="severity">1</column>
+            <column name="problem_summary">Johann Gomblepuddy reports that math.p library is not found by the linker</column>
+            <column name="problem">Math.p Linker Issue</column>
+            <column name="reproducible">0</column>
+            <column name="suggested_fix"></column>
+            <column name="bug_date">2019-05-26</column>
+            <column name="area_id">19</column>
+            <column name="assignee">22</column>
+            <column name="comments"></column>
+            <column name="bug_status">open</column>
+            <column name="priority">1</column>
+            <column name="resolution">0</column>
+            <column name="resolution_version">1</column>
+            <column name="resolvee">13</column>
+            <column name="resolve_date">0000-00-00</column>
+            <column name="testee">13</column>
+            <column name="test_date">0</column>
+            <column name="deferred">0</column>
+            <column name="employee_id">22</column>
         </table>
         <!-- Table employees -->
         <table name="employees">

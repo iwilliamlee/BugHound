@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<bugReport>
+  <bugContent>
+    <bug>
+      <bug_id>1</bug_id>
+      <problem_summary>This is a new bug 2</problem_summary>
+      <program_name>Visual Ada95</program_name>
+      <program_version>1</program_version>
+      <release_build>2</release_build>
+      <report_type>suggestion</report_type>
+      <severity_name>fatal</severity_name>
+      <area_name>Code Generator</area_name>
+      <Assignee>userName</Assignee>
+      <bug_status>open</bug_status>
+      <priority_name>low</priority_name>
+      <resolution_name>on going</resolution_name>
+      <name>Jorge</name>
+      <bug_date>2019-05-21</bug_date>
+      <resolve_date>0000-00-00</resolve_date>
+      <problem>New bug</problem>
+      <reproducible>0</reproducible>
+      <suggested_fix>hello world</suggested_fix>
+      <comments>Hello World</comments>
+      <resolution_version>1</resolution_version>
+      <Resolvee>userName</Resolvee>
+      <Testee>userName</Testee>
+      <test_date>0</test_date>
+      <deferred>0</deferred>
+    </bug>
+    <bug>
+      <bug_id>2</bug_id>
+      <problem_summary>Another new bug by admin</problem_summary>
+      <program_name>Skyrim</program_name>
+      <program_version>1</program_version>
+      <release_build>1</release_build>
+      <report_type>codingError</report_type>
+      <severity_name>fatal</severity_name>
+      <area_name>Menu</area_name>
+      <Assignee>userName</Assignee>
+      <bug_status>open</bug_status>
+      <priority_name>low</priority_name>
+      <resolution_name>on going</resolution_name>
+      <name>userName</name>
+      <bug_date>2019-02-12</bug_date>
+      <resolve_date>0000-00-00</resolve_date>
+      <problem>new bug by admin</problem>
+      <reproducible>1</reproducible>
+      <suggested_fix>NOTHING</suggested_fix>
+      <comments>Hello World</comments>
+      <resolution_version>1</resolution_version>
+      <Resolvee>userName</Resolvee>
+      <Testee>userName</Testee>
+      <test_date>0</test_date>
+      <deferred>0</deferred>
+    </bug>
+    <bug>
+      <bug_id>3</bug_id>
+      <problem_summary>In cell Dead Man's Drink, the fire pit is always out</problem_summary>
+      <program_name>Skyrim</program_name>
+      <program_version>1</program_version>
+      <release_build>1</release_build>
+      <report_type>codingError</report_type>
+      <severity_name>minor</severity_name>
+      <area_name>Menu</area_name>
+      <Assignee>userName</Assignee>
+      <bug_status>open</bug_status>
+      <priority_name>low</priority_name>
+      <resolution_name>on going</resolution_name>
+      <name>Hanna</name>
+      <bug_date>2019-05-26</bug_date>
+      <resolve_date>0000-00-00</resolve_date>
+      <problem>Missing graphics object in the fire pit.</problem>
+      <reproducible>1</reproducible>
+      <suggested_fix/>
+      <comments/>
+      <resolution_version>1</resolution_version>
+      <Resolvee>userName</Resolvee>
+      <Testee>userName</Testee>
+      <test_date>0</test_date>
+      <deferred>0</deferred>
+    </bug>
+  </bugContent>
+</bugReport>

@@ -105,7 +105,7 @@
 
         <script language=Javascript>
             function go_home() {
-                window.location.replace("../index.php");
+                window.location.replace("./bug_view.php");
             }
             function reset() {
                 window.location.reload(true);
