@@ -85,11 +85,12 @@
                     <td>Functional Area:</td>
                     <td><select name="functionalArea">
                     <?php
-                        $query = "SELECT * FROM areas";
+                        $query = "SELECT * FROM areas INNER JOIN Programs
+                            on areas.program_id = programs.program_id";
                         $result = mysqli_query($con, $query);
                         $none = 0;
                         while($row=$result->fetch_assoc()) {
-                            echo "<option value=".$row['area_id'].">" . $row['area_name'] . "</option>";
+                            echo "<option value=".$row['area_id'].">" . $row['program_name'] . " " . $row['area_name'] ."</option>";
                         }
                     ?>
 					</select></td>
