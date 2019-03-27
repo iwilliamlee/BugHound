@@ -45,7 +45,7 @@
                 </tr>
                 <tr><!-- Line 1 -->
                     <td>Program:</td> 
-                    <td><select name="programName">
+                    <td><select name="programName" onChange="programChange(this)">
                         <?php
                             $query = "SELECT * FROM programs";
                             $result = mysqli_query($con, $query);
@@ -297,6 +297,11 @@
                     return false;
                 }
                 return true;
+            }
+            function programChange(programSelectObject) {
+                var value = programSelectObject.value;
+                var xhttp = new XMLHttpRequest();
+                console.log('Value clicked: ' + value);
             }
 		</script>
         <script language=Javascript>

@@ -5,7 +5,7 @@
 - https://www.phpmyadmin.net
 -
 - Host: localhost
-- Generation Time: Mar 22, 2019 at 02:34 AM
+- Generation Time: Mar 27, 2019 at 01:27 AM
 - Server version: 10.1.37-MariaDB
 - PHP Version: 7.3.1
 -->
@@ -24,7 +24,7 @@
                   PRIMARY KEY (`area_id`),
                   KEY `fk_program_id` (`program_id`),
                   CONSTRAINT `fk_program_id` FOREIGN KEY (`program_id`) REFERENCES `programs` (`program_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="attachments">
                 CREATE TABLE `attachments` (
@@ -35,7 +35,7 @@
                   PRIMARY KEY (`attachment_id`),
                   KEY `fk_bug_key` (`bug_id`),
                   CONSTRAINT `fk_bug_key` FOREIGN KEY (`bug_id`) REFERENCES `bugs` (`bug_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="bugs">
                 CREATE TABLE `bugs` (
@@ -72,7 +72,7 @@
                   CONSTRAINT `fk_program_key` FOREIGN KEY (`program_id`) REFERENCES `programs` (`program_id`),
                   CONSTRAINT `fk_resolution_key` FOREIGN KEY (`resolution`) REFERENCES `resolution` (`resolution_id`),
                   CONSTRAINT `fk_severity_key` FOREIGN KEY (`severity`) REFERENCES `severity` (`severity_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="employees">
                 CREATE TABLE `employees` (
@@ -314,11 +314,88 @@
         </table>
         <table name="areas">
             <column name="area_id">41</column>
-            <column name="area_name">Datbase</column>
+            <column name="area_name">Database</column>
+            <column name="program_id">17</column>
+        </table>
+        <table name="areas">
+            <column name="area_id">42</column>
+            <column name="area_name">GUI</column>
             <column name="program_id">17</column>
         </table>
         <!-- Table attachments -->
+        <table name="attachments">
+            <column name="attachment_id">1</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">1</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">2</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">1</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">3</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">1</column>
+        </table>
+        <table name="attachments">
+            <column name="attachment_id">4</column>
+            <column name="path"></column>
+            <column name="file_name"></column>
+            <column name="bug_id">2</column>
+        </table>
         <!-- Table bugs -->
+        <table name="bugs">
+            <column name="bug_id">1</column>
+            <column name="program_id">9</column>
+            <column name="report_type">suggestion</column>
+            <column name="severity">1</column>
+            <column name="problem_summary">This is a new bug 2</column>
+            <column name="problem">New bug</column>
+            <column name="reproducible">0</column>
+            <column name="suggested_fix">hello world</column>
+            <column name="bug_date">2019-05-21</column>
+            <column name="area_id">7</column>
+            <column name="assignee">13</column>
+            <column name="comments">Hello World</column>
+            <column name="bug_status">open</column>
+            <column name="priority">1</column>
+            <column name="resolution">0</column>
+            <column name="resolution_version">1</column>
+            <column name="resolvee">13</column>
+            <column name="resolve_date">0000-00-00</column>
+            <column name="testee">13</column>
+            <column name="test_date">0</column>
+            <column name="deferred">0</column>
+            <column name="employee_id">23</column>
+        </table>
+        <table name="bugs">
+            <column name="bug_id">2</column>
+            <column name="program_id">6</column>
+            <column name="report_type">codingError</column>
+            <column name="severity">1</column>
+            <column name="problem_summary">Another new bug by admin</column>
+            <column name="problem">new bug by admin</column>
+            <column name="reproducible">1</column>
+            <column name="suggested_fix">NOTHING</column>
+            <column name="bug_date">2019-02-12</column>
+            <column name="area_id">3</column>
+            <column name="assignee">13</column>
+            <column name="comments">Hello World</column>
+            <column name="bug_status">open</column>
+            <column name="priority">1</column>
+            <column name="resolution">0</column>
+            <column name="resolution_version">1</column>
+            <column name="resolvee">13</column>
+            <column name="resolve_date">0000-00-00</column>
+            <column name="testee">13</column>
+            <column name="test_date">0</column>
+            <column name="deferred">0</column>
+            <column name="employee_id">13</column>
+        </table>
         <!-- Table employees -->
         <table name="employees">
             <column name="employee_id">13</column>
@@ -335,55 +412,6 @@
             <column name="user_level">2</column>
         </table>
         <table name="employees">
-            <column name="employee_id">15</column>
-            <column name="name">Bob</column>
-            <column name="user_name">smithbob</column>
-            <column name="password">123</column>
-            <column name="user_level">3</column>
-        </table>
-        <table name="employees">
-            <column name="employee_id">16</column>
-            <column name="name">Sue</column>
-            <column name="user_name">Jonessue</column>
-            <column name="password">123</column>
-            <column name="user_level">2</column>
-        </table>
-        <table name="employees">
-            <column name="employee_id">17</column>
-            <column name="name">Habib</column>
-            <column name="user_name">smithhabib</column>
-            <column name="password">123</column>
-            <column name="user_level">2</column>
-        </table>
-        <table name="employees">
-            <column name="employee_id">18</column>
-            <column name="name">Yoshi</column>
-            <column name="user_name">jonesyoshi</column>
-            <column name="password">123</column>
-            <column name="user_level">1</column>
-        </table>
-        <table name="employees">
-            <column name="employee_id">19</column>
-            <column name="name">Francois</column>
-            <column name="user_name">smithfrancois</column>
-            <column name="password">123</column>
-            <column name="user_level">2</column>
-        </table>
-        <table name="employees">
-            <column name="employee_id">20</column>
-            <column name="name">Becky</column>
-            <column name="user_name">jonesbecky</column>
-            <column name="password">123</column>
-            <column name="user_level">1</column>
-        </table>
-        <table name="employees">
-            <column name="employee_id">21</column>
-            <column name="name">Felix</column>
-            <column name="user_name">smithfelix</column>
-            <column name="password">123</column>
-            <column name="user_level">2</column>
-        </table>
-        <table name="employees">
             <column name="employee_id">22</column>
             <column name="name">Timmy</column>
             <column name="user_name">Timmy!</column>
@@ -395,7 +423,7 @@
             <column name="name">Jorge</column>
             <column name="user_name">Jorge</column>
             <column name="password">123</column>
-            <column name="user_level">2</column>
+            <column name="user_level">3</column>
         </table>
         <table name="employees">
             <column name="employee_id">24</column>
@@ -484,7 +512,7 @@
         </table>
         <table name="programs">
             <column name="program_id">12</column>
-            <column name="program_name">Word Writer 2011</column>
+            <column name="program_name">Word Writer 2019</column>
             <column name="program_version">1</column>
             <column name="release_build">1</column>
         </table>
