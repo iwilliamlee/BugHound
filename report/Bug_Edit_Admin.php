@@ -301,7 +301,7 @@
             function programChange(programSelectObject) {
                 var value = programSelectObject.value;
                 var xhttp = new XMLHttpRequest();
-                console.log('Value clicked: ' + value);
+                console.log('Value clicked: ' + val)
             }
 		</script>
         <script language=Javascript>
